@@ -134,10 +134,12 @@ const HomePage = () => {
             className="w-full h-40 object-cover"
           />
           <div className="p-4">
-            <h3 className="font-medium text-lg">Программа похудения: 10 сеансов</h3>
-            <p className="text-sm text-gray-600 mt-1">Комплексная программа включает прессотерапию, вибро-прессо-роликовый массаж и антицеллюлитный массаж</p>
-            <div className="flex justify-between items-center mt-3">
+            <div className="flex justify-between items-start">
+              <h3 className="font-medium text-lg">Программа похудения: 10 сеансов</h3>
               <p className="font-medium text-[#FF6B35]">35000₽</p>
+            </div>
+            <p className="text-sm text-gray-600 mt-1">Комплексная программа включает прессотерапию, вибро-прессо-роликовый массаж и антицеллюлитный массаж</p>
+            <div className="flex justify-end mt-3">
               <Button 
                 className="bg-primary hover:bg-primary/80 text-white"
                 onClick={() => navigate("/services")}

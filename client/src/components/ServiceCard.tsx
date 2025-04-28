@@ -27,8 +27,10 @@ const ServiceCard = ({
           <img src={image} alt={name} className="w-full h-32 object-cover" />
         )}
         <div className="p-3">
-          <h3 className="font-medium">{name}</h3>
-          <p className="text-[#FF6B35] font-medium mt-1">{price}</p>
+          <div className="flex justify-between items-start">
+            <h3 className="font-medium">{name}</h3>
+            <p className="text-[#FF6B35] font-medium">{price}</p>
+          </div>
         </div>
       </div>
     );
