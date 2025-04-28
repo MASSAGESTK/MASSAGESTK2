@@ -28,11 +28,11 @@ const AboutPage = () => {
           <div className="space-y-3">
             <div className="flex">
               <span className="material-icons text-primary mr-3 drop-shadow-sm">location_on</span>
-              <p className="text-sm">г. Сыктывкар, ул. Красная, д. 12</p>
+              <p className="text-sm">г. Сыктывкар, ул. Морозова, д. 3 каб.325</p>
             </div>
             <div className="flex">
               <span className="material-icons text-primary mr-3 drop-shadow-sm">phone</span>
-              <p className="text-sm">+7 (495) 123-45-67</p>
+              <p className="text-sm">+7 (950) 565-64-44</p>
             </div>
             <div className="flex">
               <span className="material-icons text-primary mr-3 drop-shadow-sm">email</span>
@@ -40,7 +40,7 @@ const AboutPage = () => {
             </div>
             <div className="flex">
               <span className="material-icons text-primary mr-3 drop-shadow-sm">schedule</span>
-              <p className="text-sm">Пн-Вс: 10:00 - 21:00</p>
+              <p className="text-sm">Пн-Вс: 10:00 - 18:00</p>
             </div>
           </div>
         </div>
