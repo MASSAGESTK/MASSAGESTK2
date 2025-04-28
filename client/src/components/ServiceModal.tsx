@@ -38,15 +38,15 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
     <>
       <Dialog open={isOpen && !showTelegramModal} onOpenChange={onClose}>
         <DialogContent className="bg-card text-card-foreground rounded-lg max-w-lg w-full overflow-hidden max-h-[90vh] flex flex-col sm:max-w-lg transition-all duration-200 shadow-xl dark:shadow-white/10">
-          <DialogHeader className="border-b border-border p-3 flex justify-between items-center">
+          <DialogHeader className="border-b border-border p-3 flex justify-between items-center flex-shrink-0">
             <DialogTitle className="text-base font-medium">{service.name}</DialogTitle>
           </DialogHeader>
           
-          <div className="overflow-y-auto flex-grow p-3">
+          <div className="overflow-y-auto flex-grow p-3 scrollbar-thin scrollbar-thumb-muted-foreground/20 scrollbar-track-transparent">
             <img 
               src={service.image} 
               alt={service.name} 
-              className="w-full h-48 object-cover rounded-lg mb-3 shadow-md"
+              className="w-full h-40 object-cover rounded-lg mb-3 shadow-md"
             />
             <p className="text-[#FF6B35] font-semibold text-lg mb-2 drop-shadow-sm">{service.price}</p>
             <div className="space-y-3">
@@ -69,7 +69,7 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
             </div>
           </div>
           
-          <DialogFooter className="p-3 border-t border-border">
+          <DialogFooter className="p-3 border-t border-border flex-shrink-0">
             <Button 
               className="w-full bg-primary hover:bg-primary/90 text-white shadow-sm hover:shadow-md transition-all"
               onClick={handleBooking}

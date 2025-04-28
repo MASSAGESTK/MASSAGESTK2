@@ -46,72 +46,75 @@ const ProgramModal = ({ isOpen, onClose, program }: ProgramModalProps) => {
   return (
     <>
       <Dialog open={isOpen && !showTelegramModal} onOpenChange={onClose}>
-        <DialogContent className="bg-card text-card-foreground rounded-lg max-w-md w-full shadow-xl dark:shadow-white/10 transition-all duration-200">
-          <DialogHeader>
+        <DialogContent className="bg-card text-card-foreground rounded-lg max-w-md w-full shadow-xl dark:shadow-white/10 transition-all duration-200 max-h-[90vh] flex flex-col">
+          <DialogHeader className="flex-shrink-0">
             <DialogTitle className="text-center text-lg font-semibold">
               {program.title}
             </DialogTitle>
           </DialogHeader>
           
-          <div className="overflow-hidden rounded-md mb-3 shadow-md">
+          <div className="overflow-hidden rounded-md mb-3 shadow-md flex-shrink-0">
             <img 
               src={program.image} 
               alt={program.title} 
-              className="w-full h-48 object-cover"
+              className="w-full h-40 object-cover"
             />
           </div>
           
-          <div className="space-y-3">
-            <div className="flex justify-between items-start">
-              <div className="space-y-1">
-                {program.duration && (
-                  <Badge variant="outline" className="bg-muted/50 shadow-sm">
-                    <span className="material-icons text-sm mr-1">schedule</span>
-                    {program.duration}
-                  </Badge>
-                )}
-                {program.sessions && (
-                  <Badge variant="outline" className="bg-muted/50 ml-2 shadow-sm">
-                    <span className="material-icons text-sm mr-1">repeat</span>
-                    {program.sessions}
-                  </Badge>
-                )}
+          <div className="flex justify-between items-start flex-shrink-0 mb-2">
+            <div className="space-y-1">
+              {program.duration && (
+                <Badge variant="outline" className="bg-muted/50 shadow-sm">
+                  <span className="material-icons text-sm mr-1">schedule</span>
+                  {program.duration}
+                </Badge>
+              )}
+              {program.sessions && (
+                <Badge variant="outline" className="bg-muted/50 ml-2 shadow-sm">
+                  <span className="material-icons text-sm mr-1">repeat</span>
+                  {program.sessions}
+                </Badge>
+              )}
+            </div>
+            <span className="font-semibold text-[#FF6B35] text-lg drop-shadow-sm">{program.price}</span>
+          </div>
+          
+          {/* Область с прокруткой */}
+          <div className="overflow-y-auto pr-1 flex-grow scrollbar-thin scrollbar-thumb-muted-foreground/20 scrollbar-track-transparent">
+            <div className="space-y-3">
+              <div>
+                <p className="text-sm text-muted-foreground">{program.description}</p>
               </div>
-              <span className="font-semibold text-[#FF6B35] text-lg drop-shadow-sm">{program.price}</span>
-            </div>
-            
-            <div>
-              <p className="text-sm text-muted-foreground">{program.description}</p>
-            </div>
-            
-            <div className="pt-2">
-              <h4 className="text-sm font-medium mb-2">Процедуры включены в программу:</h4>
-              <div className="space-y-1">
-                {program.features.map((feature, index) => (
-                  <div key={index} className="flex items-center text-sm">
-                    <span className="material-icons text-primary text-sm mr-2 drop-shadow-sm">check_circle</span>
-                    <span>{feature}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {program.additionalInfo && program.additionalInfo.length > 0 && (
+              
               <div className="pt-2">
-                <h4 className="text-sm font-medium mb-2">Дополнительно:</h4>
+                <h4 className="text-sm font-medium mb-2">Процедуры включены в программу:</h4>
                 <div className="space-y-1">
-                  {program.additionalInfo.map((info, index) => (
+                  {program.features.map((feature, index) => (
                     <div key={index} className="flex items-center text-sm">
-                      <span className="material-icons text-primary text-sm mr-2 drop-shadow-sm">info</span>
-                      <span>{info}</span>
+                      <span className="material-icons text-primary text-sm mr-2 drop-shadow-sm">check_circle</span>
+                      <span>{feature}</span>
                     </div>
                   ))}
                 </div>
               </div>
-            )}
+
+              {program.additionalInfo && program.additionalInfo.length > 0 && (
+                <div className="pt-2">
+                  <h4 className="text-sm font-medium mb-2">Дополнительно:</h4>
+                  <div className="space-y-1">
+                    {program.additionalInfo.map((info, index) => (
+                      <div key={index} className="flex items-center text-sm">
+                        <span className="material-icons text-primary text-sm mr-2 drop-shadow-sm">info</span>
+                        <span>{info}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
           
-          <DialogFooter className="flex justify-center pt-2">
+          <DialogFooter className="flex justify-center pt-3 flex-shrink-0 mt-2">
             <Button 
               className="bg-primary hover:bg-primary/90 text-white w-full shadow-sm hover:shadow-md transition-all"
               onClick={handleBooking}
