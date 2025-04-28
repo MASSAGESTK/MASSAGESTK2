@@ -34,7 +34,7 @@ const massageServices = [
 
 const bodyCorrectionServices = [
   { id: 10, name: "Прессотерапия", duration: "40 минут", price: "1200₽", category: "bodyCorrection" },
-  { id: 11, name: "Вибро-прессо-роликовый массаж", duration: "50 минут", price: "1600₽", category: "bodyCorrection" },
+  { id: 11, name: "Вибро-прессо-роликовый массаж", duration: "30 минут", price: "1600₽", category: "bodyCorrection" },
 ];
 
 const menServices = [

@@ -79,7 +79,7 @@ export type InsertPromotion = z.infer<typeof insertPromotionSchema>;
 export type ServiceEffect = typeof serviceEffects.$inferSelect;
 export type InsertServiceEffect = z.infer<typeof insertServiceEffectSchema>;
 
-// Users (keeping it from the base template)
+// Пользователи (сохранение из базового шаблона)
 export const users = pgTable("users", {
   id: serial("id").primaryKey(),
   username: text("username").notNull().unique(),
