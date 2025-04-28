@@ -282,13 +282,13 @@ const HomePage = () => {
 
       {/* Модальное окно с предупреждением о Telegram */}
       <Dialog open={showTelegramModal} onOpenChange={() => setShowTelegramModal(false)}>
-        <DialogContent className="bg-white rounded-lg max-w-md w-full p-4">
+        <DialogContent className="bg-card text-card-foreground rounded-lg max-w-md w-full p-4 transition-colors duration-200">
           <DialogHeader>
             <DialogTitle className="text-center text-base">Запись на услугу</DialogTitle>
           </DialogHeader>
           
           <div className="py-3">
-            <p className="text-sm text-center">
+            <p className="text-sm text-center text-muted-foreground">
               Для записи на услугу вы будете перенаправлены в Telegram бот, 
               где сможете выбрать удобное время и оформить запись.
             </p>
