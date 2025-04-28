@@ -158,7 +158,11 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
   }
 };
 
-const HomePage = () => {
+interface HomePageProps {
+  setActiveTab: (tab: string) => void;
+}
+
+const HomePage = ({ setActiveTab }: HomePageProps) => {
   const [, navigate] = useLocation();
   const [selectedService, setSelectedService] = useState<ServiceDetails | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
@@ -172,6 +176,7 @@ const HomePage = () => {
 
   const handleComplexServiceClick = (id: number) => {
     navigate("/services");
+    setActiveTab("services");
   };
 
   const handleBooking = () => {
@@ -209,7 +214,12 @@ const HomePage = () => {
       <div className="mb-8">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-semibold">Популярные услуги</h2>
-          <a href="/services" className="text-primary text-sm font-medium">Смотреть все</a>
+          <span 
+            onClick={() => handleComplexServiceClick(1)} // 1 соответствует services в навигации
+            className="text-primary text-sm font-medium cursor-pointer"
+          >
+            Смотреть все
+          </span>
         </div>
         
         <div className="overflow-x-auto scrollbar-hide -mx-4 px-4">
@@ -264,7 +274,10 @@ const HomePage = () => {
             <div className="flex justify-end mt-3">
               <Button 
                 className="bg-primary hover:bg-primary/80 text-white"
-                onClick={() => navigate("/services")}
+                onClick={() => {
+                  navigate("/services");
+                  setActiveTab("services");
+                }}
               >
                 Подробнее
               </Button>

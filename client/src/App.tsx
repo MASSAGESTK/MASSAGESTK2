@@ -13,10 +13,12 @@ import SettingsPage from "@/pages/SettingsPage";
 import AboutPage from "@/pages/AboutPage";
 import BottomNavigation from "@/components/BottomNavigation";
 
-function Router() {
+function Router({ setActiveTab }: { setActiveTab: (tab: string) => void }) {
   return (
     <Switch>
-      <Route path="/" component={HomePage} />
+      <Route path="/">
+        {() => <HomePage setActiveTab={setActiveTab} />}
+      </Route>
       <Route path="/services" component={ServicesPage} />
       <Route path="/promotions" component={PromotionsPage} />
       <Route path="/settings" component={SettingsPage} />
@@ -35,7 +37,7 @@ function App() {
         <TooltipProvider>
           <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
             <main className="pt-4 pb-28"> {/* Убран большой отступ сверху, добавлен небольшой */}
-              <Router />
+              <Router setActiveTab={setActiveTab} />
             </main>
             <BottomNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
           </div>
