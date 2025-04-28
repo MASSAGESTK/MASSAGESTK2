@@ -276,12 +276,12 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
             alt="Специальное предложение" 
             className="w-full h-40 object-cover"
           />
-          <div className="p-4">
+          <div className="p-4 flex flex-col" style={{ minHeight: '180px' }}>
             <div className="flex justify-between items-start">
               <h3 className="font-medium text-lg">Программа похудения: 10 сеансов</h3>
               <p className="font-medium text-[#FF6B35]">35000₽</p>
             </div>
-            <p className="text-sm text-muted-foreground mt-1">Комплексная программа включает прессотерапию, вибро-прессо-роликовый массаж и антицеллюлитный массаж</p>
+            <p className="text-sm text-muted-foreground mt-1 flex-grow">Комплексная программа включает прессотерапию, вибро-прессо-роликовый массаж и антицеллюлитный массаж</p>
             <div className="flex justify-end mt-3">
               <Button 
                 className="bg-primary hover:bg-primary/80 text-white"
