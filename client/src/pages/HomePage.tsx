@@ -32,6 +32,7 @@ const complexServices = [
   { id: 2, title: "Мужской уход", icon: "face", category: "men" },
   { id: 3, title: "SPA-программы", icon: "self_improvement", category: "massage" },
   { id: 4, title: "Коррекция фигуры", icon: "auto_awesome", category: "bodyCorrection" },
+  { id: 5, title: "Комплексные программы", icon: "dashboard", category: "complex" },
 ];
 
 // Полные данные о всех услугах с эффектами
@@ -252,15 +253,15 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
       {/* Комплексные услуги */}
       <div className="mb-8">
         <h2 className="text-lg font-semibold mb-4">Комплексные программы</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
           {complexServices.map((service) => (
             <div 
               key={service.id}
-              className="bg-primary rounded-lg p-4 text-white flex flex-col items-center justify-center aspect-square shadow-md cursor-pointer"
+              className="bg-primary rounded-lg p-3 text-white flex flex-col items-center justify-center aspect-square shadow-md cursor-pointer"
               onClick={() => handleComplexServiceClick(service.id)}
             >
               <span className="material-icons text-3xl mb-2">{service.icon}</span>
-              <h3 className="text-center font-medium">{service.title}</h3>
+              <h3 className="text-center font-medium text-sm md:text-base">{service.title}</h3>
             </div>
           ))}
         </div>
