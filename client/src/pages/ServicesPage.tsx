@@ -367,26 +367,28 @@ const ServicesPage = () => {
   };
 
   return (
-    <div className="p-4 md:p-8">
-      <h1 className="text-xl font-semibold mb-6">Услуги</h1>
+    <div className="p-4 md:p-8 pt-0">
+      <h1 className="text-xl font-semibold mb-6 pt-4">Услуги</h1>
       
-      {/* Фильтры категорий */}
-      <div className="mb-6 overflow-x-auto scrollbar-hide -mx-4 px-4">
-        <div className="flex space-x-2 pb-2">
-          {categories.map((category) => (
-            <Button
-              key={category.id}
-              variant={selectedCategory === category.id ? "default" : "outline"}
-              className={
-                selectedCategory === category.id
-                  ? "bg-primary text-white"
-                  : "bg-white text-dark"
-              }
-              onClick={() => setSelectedCategory(category.id as ServiceCategory)}
-            >
-              {category.label}
-            </Button>
-          ))}
+      {/* Фильтры категорий - закреплены при прокрутке */}
+      <div className="sticky top-0 bg-white z-10 pt-4 pb-2 mb-4 -mx-4 px-4 shadow-sm">
+        <div className="overflow-x-auto scrollbar-hide">
+          <div className="flex space-x-2 pb-2">
+            {categories.map((category) => (
+              <Button
+                key={category.id}
+                variant={selectedCategory === category.id ? "default" : "outline"}
+                className={
+                  selectedCategory === category.id
+                    ? "bg-primary text-white"
+                    : "bg-white text-dark"
+                }
+                onClick={() => setSelectedCategory(category.id as ServiceCategory)}
+              >
+                {category.label}
+              </Button>
+            ))}
+          </div>
         </div>
       </div>
       
