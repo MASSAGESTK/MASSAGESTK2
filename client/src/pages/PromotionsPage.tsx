@@ -52,15 +52,19 @@ const PromotionsPage = () => {
   };
 
   const handleConfirmTelegram = () => {
-    // Формируем текст сообщения в зависимости от выбранной акции
-    let messageText = "";
-    
+    // Кодируем информацию об акции в параметре start
     if (selectedPromoId === 1) {
-      messageText = encodeURIComponent("Здравствуйте! Я хочу получить скидку 10% на первое посещение салона.");
-      window.open(`https://t.me/Natali_Secrets_bot?start=promo_${selectedPromoId}&text=${messageText}`, "_blank");
+      const promoTitle = btoa(encodeURIComponent("Скидка 10% на первое посещение"));
+      const promoDesc = btoa(encodeURIComponent("Скидка для новых клиентов"));
+      
+      const startParam = `promo_${selectedPromoId}_${promoTitle}_${promoDesc}`;
+      window.open(`https://t.me/Natali_Secrets_bot?start=${startParam}`, "_blank");
     } else if (selectedPromoId === 2) {
-      messageText = encodeURIComponent("Здравствуйте! Я хочу приобрести абонемент на массаж спины (10 сеансов) за 8200₽.");
-      window.open(`https://t.me/Natali_Secrets_bot?start=promo_${selectedPromoId}&text=${messageText}`, "_blank");
+      const promoTitle = btoa(encodeURIComponent("Абонемент на массаж спины"));
+      const promoDesc = btoa(encodeURIComponent("10 сеансов за 8200₽"));
+      
+      const startParam = `promo_${selectedPromoId}_${promoTitle}_${promoDesc}`;
+      window.open(`https://t.me/Natali_Secrets_bot?start=${startParam}`, "_blank");
     } else {
       window.open("https://t.me/Natali_Secrets_bot", "_blank");
     }

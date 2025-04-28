@@ -231,11 +231,12 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
   };
 
   const handleConfirmTelegram = () => {
-    // Формируем общее сообщение для записи через главный баннер
-    const messageText = encodeURIComponent("Здравствуйте! Я хочу получить информацию об услугах салона и записаться на консультацию.");
+    // Кодируем простую информацию для главного баннера
+    const source = btoa(encodeURIComponent("main_banner"));
+    const description = btoa(encodeURIComponent("Запись на консультацию"));
     
-    // Открываем Telegram бот с предзаполненным сообщением
-    window.open(`https://t.me/Natali_Secrets_bot?start=main_banner&text=${messageText}`, "_blank");
+    // Открываем Telegram бот с закодированной информацией
+    window.open(`https://t.me/Natali_Secrets_bot?start=main_${source}_${description}`, "_blank");
     setShowTelegramModal(false);
   };
 
