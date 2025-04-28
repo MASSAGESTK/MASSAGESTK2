@@ -5,9 +5,9 @@ const promotions = [
   {
     id: 1,
     title: "Скидка 10% на первое посещение",
-    description: "Получите скидку 20% на любую услугу при первом посещении нашего салона. Предложение действует для новых клиентов.",
+    description: "Получите скидку 10% на любую услугу при первом посещении нашего салона. Предложение действует для новых клиентов.",
     image: imageUrls.beautyServices[0],
-    badge: "До 31.12.2023",
+    badge: "Актуально",
     buttonText: "Получить скидку",
   },
   {
@@ -39,7 +39,7 @@ const PromotionsPage = () => {
       <h1 className="text-xl font-semibold mb-6">Акции и предложения</h1>
       
       {/* Список акций */}
-      <div className="space-y-6">
+      <div className="space-y-4">
         {promotions.map((promo) => (
           <PromotionCard
             key={promo.id}
