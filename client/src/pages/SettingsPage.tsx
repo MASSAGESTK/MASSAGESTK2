@@ -1,12 +1,5 @@
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
-import { 
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
@@ -14,7 +7,6 @@ import { useTheme } from "next-themes";
 const SettingsPage = () => {
   const [notifications, setNotifications] = useState(true);
   const [reminders, setReminders] = useState(true);
-  const [language, setLanguage] = useState("russian");
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -82,25 +74,6 @@ const SettingsPage = () => {
               onCheckedChange={toggleTheme}
               className="data-[state=checked]:bg-primary"
             />
-          </div>
-
-          <div className="flex items-center justify-between">
-            <div>
-              <h3 className="font-medium">Язык</h3>
-              <p className="text-sm text-muted-foreground">Выбор языка интерфейса</p>
-            </div>
-            <Select 
-              value={language}
-              onValueChange={setLanguage}
-            >
-              <SelectTrigger className="w-[140px]">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="russian">Русский</SelectItem>
-                <SelectItem value="english">English</SelectItem>
-              </SelectContent>
-            </Select>
           </div>
           
           <div>
