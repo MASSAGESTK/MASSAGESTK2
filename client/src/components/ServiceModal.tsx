@@ -28,8 +28,15 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
   };
 
   const handleConfirmTelegram = () => {
-    // Здесь можно добавить перенаправление на Telegram бота
-    // window.open('https://t.me/your_bot_name', '_blank');
+    if (service) {
+      // Формируем сообщение для Telegram бота с информацией о выбранной услуге
+      const messageText = encodeURIComponent(`Здравствуйте! Я хочу записаться на услугу "${service.name}" стоимостью ${service.price}, длительность ${service.duration}.`);
+      
+      // Открываем Telegram бот с предзаполненным сообщением
+      window.open(`https://t.me/Natali_Secrets_bot?start=service_${service.id}&text=${messageText}`, "_blank");
+    } else {
+      window.open("https://t.me/Natali_Secrets_bot", "_blank");
+    }
     setShowTelegramModal(false);
     onClose();
   };

@@ -52,8 +52,19 @@ const PromotionsPage = () => {
   };
 
   const handleConfirmTelegram = () => {
-    // Здесь можно добавить перенаправление на Telegram бота
-    window.open("https://t.me/Natali_Secrets_bot", "_blank");
+    // Формируем текст сообщения в зависимости от выбранной акции
+    let messageText = "";
+    
+    if (selectedPromoId === 1) {
+      messageText = encodeURIComponent("Здравствуйте! Я хочу получить скидку 10% на первое посещение салона.");
+      window.open(`https://t.me/Natali_Secrets_bot?start=promo_${selectedPromoId}&text=${messageText}`, "_blank");
+    } else if (selectedPromoId === 2) {
+      messageText = encodeURIComponent("Здравствуйте! Я хочу приобрести абонемент на массаж спины (10 сеансов) за 8200₽.");
+      window.open(`https://t.me/Natali_Secrets_bot?start=promo_${selectedPromoId}&text=${messageText}`, "_blank");
+    } else {
+      window.open("https://t.me/Natali_Secrets_bot", "_blank");
+    }
+    
     setShowTelegramModal(false);
   };
 

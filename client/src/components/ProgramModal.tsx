@@ -37,8 +37,23 @@ const ProgramModal = ({ isOpen, onClose, program }: ProgramModalProps) => {
   };
 
   const handleConfirmTelegram = () => {
-    // Здесь можно добавить перенаправление на Telegram бота
-    // window.open('https://t.me/your_bot_name', '_blank');
+    if (program) {
+      // Формируем сообщение для Telegram бота с информацией о выбранной программе
+      let detailsText = `${program.title} стоимостью ${program.price}`;
+      if (program.sessions) {
+        detailsText += `, ${program.sessions}`;
+      }
+      if (program.duration) {
+        detailsText += `, длительность ${program.duration}`;
+      }
+      
+      const messageText = encodeURIComponent(`Здравствуйте! Я хочу получить консультацию по программе "${detailsText}".`);
+      
+      // Открываем Telegram бот с предзаполненным сообщением
+      window.open(`https://t.me/Natali_Secrets_bot?start=program_${program.id}&text=${messageText}`, "_blank");
+    } else {
+      window.open("https://t.me/Natali_Secrets_bot", "_blank");
+    }
     setShowTelegramModal(false);
     onClose();
   };

@@ -85,8 +85,15 @@ const CertificateModal = ({ isOpen, onClose }: CertificateModalProps) => {
   };
 
   const handleConfirmTelegram = () => {
-    // Здесь можно добавить перенаправление на Telegram бота
-    window.open("https://t.me/Natali_Secrets_bot", "_blank");
+    if (selectedCertificate) {
+      // Формируем сообщение для Telegram бота с информацией о выбранном сертификате
+      const messageText = encodeURIComponent(`Здравствуйте! Я хочу приобрести подарочный сертификат "${selectedCertificate.title}" стоимостью ${selectedCertificate.price}.`);
+      
+      // Открываем Telegram бот с предзаполненным сообщением
+      window.open(`https://t.me/Natali_Secrets_bot?start=certificate_${selectedCertificate.id}&text=${messageText}`, "_blank");
+    } else {
+      window.open("https://t.me/Natali_Secrets_bot", "_blank");
+    }
     setShowTelegramModal(false);
     onClose();
   };

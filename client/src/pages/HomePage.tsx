@@ -231,8 +231,11 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
   };
 
   const handleConfirmTelegram = () => {
-    // Здесь можно добавить перенаправление на Telegram бота
-    window.open("https://t.me/Natali_Secrets_bot", "_blank");
+    // Формируем общее сообщение для записи через главный баннер
+    const messageText = encodeURIComponent("Здравствуйте! Я хочу получить информацию об услугах салона и записаться на консультацию.");
+    
+    // Открываем Telegram бот с предзаполненным сообщением
+    window.open(`https://t.me/Natali_Secrets_bot?start=main_banner&text=${messageText}`, "_blank");
     setShowTelegramModal(false);
   };
 
