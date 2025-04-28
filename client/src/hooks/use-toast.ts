@@ -90,8 +90,8 @@ export const reducer = (state: State, action: Action): State => {
     case "DISMISS_TOAST": {
       const { toastId } = action
 
-      // ! Side effects ! - This could be extracted into a dismissToast() action,
-      // but I'll keep it here for simplicity
+      // ! Побочные эффекты ! - Это можно было бы вынести в действие dismissToast(),
+      // но я оставлю это здесь для простоты
       if (toastId) {
         addToRemoveQueue(toastId)
       } else {
