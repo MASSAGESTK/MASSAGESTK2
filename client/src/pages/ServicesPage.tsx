@@ -114,7 +114,7 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
       "Подготовка кожи к дальнейшим процедурам"
     ]
   },
-  // Add more service details as needed
+  // Добавьте больше данных об услугах по мере необходимости
 };
 
 const ServicesPage = () => {
@@ -127,7 +127,7 @@ const ServicesPage = () => {
     : allServices.filter(service => service.category === selectedCategory);
 
   const handleServiceClick = (id: number) => {
-    // In a real app, you would fetch the service details from an API
+    // В реальном приложении здесь был бы запрос к API для получения данных об услуге
     setSelectedService(serviceDetailsMap[id] || {
       ...serviceDetailsMap[1],
       id,
@@ -138,7 +138,7 @@ const ServicesPage = () => {
   };
 
   const handleProgramClick = (id: number) => {
-    // Handle program click, perhaps open a modal with program details
+    // Обработка клика по программе, возможно открытие модального окна с подробностями о программе
     console.log("Program clicked:", id);
   };
 
@@ -146,7 +146,7 @@ const ServicesPage = () => {
     <div className="p-4 md:p-8">
       <h1 className="text-xl font-semibold mb-6">Услуги</h1>
       
-      {/* Category Filters */}
+      {/* Фильтры категорий */}
       <div className="mb-6 overflow-x-auto scrollbar-hide -mx-4 px-4">
         <div className="flex space-x-2 pb-2">
           {categories.map((category) => (
@@ -166,7 +166,7 @@ const ServicesPage = () => {
         </div>
       </div>
       
-      {/* Services List */}
+      {/* Список услуг */}
       {(selectedCategory === "all" || selectedCategory === "cosmetology") && (
         <div className="mb-8">
           <h2 className="text-lg font-medium mb-4 text-primary">КОСМЕТОЛОГИЯ</h2>
@@ -277,7 +277,7 @@ const ServicesPage = () => {
         </div>
       )}
 
-      {/* Service Modal */}
+      {/* Модальное окно услуги */}
       <ServiceModal 
         isOpen={modalOpen} 
         onClose={() => setModalOpen(false)} 

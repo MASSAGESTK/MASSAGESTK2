@@ -38,7 +38,7 @@ const PromotionsPage = () => {
     <div className="p-4 md:p-8">
       <h1 className="text-xl font-semibold mb-6">Акции и предложения</h1>
       
-      {/* Promotions List */}
+      {/* Список акций */}
       <div className="space-y-6">
         {promotions.map((promo) => (
           <PromotionCard
