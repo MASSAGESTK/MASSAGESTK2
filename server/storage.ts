@@ -14,29 +14,29 @@ import { imageUrls } from "../client/src/lib/utils";
 
 // Интерфейс для методов хранилища
 export interface IStorage {
-  // Users (keep from base template)
+  // Пользователи (сохранено из базового шаблона)
   getUser(id: number): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
   
-  // Services
+  // Услуги
   getAllServices(): Promise<Service[]>;
   getServiceById(id: number): Promise<Service | undefined>;
   getServicesByCategory(category: string): Promise<Service[]>;
   getPopularServices(): Promise<Service[]>;
   createService(service: InsertService): Promise<Service>;
   
-  // Programs
+  // Программы
   getAllPrograms(): Promise<Program[]>;
   getProgramById(id: number): Promise<Program | undefined>;
   createProgram(program: InsertProgram): Promise<Program>;
   
-  // Promotions
+  // Акции
   getAllPromotions(): Promise<Promotion[]>;
   getPromotionById(id: number): Promise<Promotion | undefined>;
   createPromotion(promotion: InsertPromotion): Promise<Promotion>;
   
-  // Service effects
+  // Эффекты услуг
   getServiceEffects(serviceId: number): Promise<ServiceEffect[]>;
   createServiceEffect(effect: InsertServiceEffect): Promise<ServiceEffect>;
 }
@@ -173,7 +173,7 @@ export class MemStorage implements IStorage {
     promotions.forEach(promotion => this.createPromotion(promotion));
   }
 
-  // User methods (keeping from base template)
+  // Методы пользователя (сохранены из базового шаблона)
   async getUser(id: number): Promise<User | undefined> {
     return this.users.get(id);
   }
@@ -191,7 +191,7 @@ export class MemStorage implements IStorage {
     return user;
   }
 
-  // Service methods
+  // Методы для работы с услугами
   async getAllServices(): Promise<Service[]> {
     return Array.from(this.services.values());
   }
@@ -219,7 +219,7 @@ export class MemStorage implements IStorage {
     return service;
   }
 
-  // Program methods
+  // Методы для работы с программами
   async getAllPrograms(): Promise<Program[]> {
     return Array.from(this.programs.values());
   }
@@ -235,7 +235,7 @@ export class MemStorage implements IStorage {
     return program;
   }
 
-  // Promotion methods
+  // Методы для работы с акциями
   async getAllPromotions(): Promise<Promotion[]> {
     return Array.from(this.promotions.values());
   }
@@ -251,7 +251,7 @@ export class MemStorage implements IStorage {
     return promotion;
   }
 
-  // Service effect methods
+  // Методы для работы с эффектами услуг
   async getServiceEffects(serviceId: number): Promise<ServiceEffect[]> {
     return this.serviceEffects.get(serviceId) || [];
   }
