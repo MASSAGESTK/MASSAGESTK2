@@ -1,10 +1,24 @@
 import express, { type Request, Response, NextFunction } from "express";
+import path from "path";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+// Serve PWA static files from client/public directory
+app.use(express.static(path.join(import.meta.dirname, '../client/public')));
+
+// Serve manifest.json file
+app.get('/manifest.json', (req, res) => {
+  res.sendFile(path.join(import.meta.dirname, '../client/public/manifest.json'));
+});
+
+// Serve service worker file
+app.get('/sw.js', (req, res) => {
+  res.sendFile(path.join(import.meta.dirname, '../client/public/sw.js'));
+});
 
 app.use((req, res, next) => {
   const start = Date.now();
