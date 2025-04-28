@@ -68,4 +68,16 @@ export const imageUrls = {
     "https://images.unsplash.com/photo-1545658969-19d8739eecc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     "https://images.unsplash.com/photo-1607344585290-2074f292ead7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
   ],
+  // Anti-age процедуры
+  antiAge: [
+    "https://images.unsplash.com/photo-1596704017254-9098c6492856?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+  ],
+  // Массаж лица
+  facialMassage: [
+    "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+  ],
 };

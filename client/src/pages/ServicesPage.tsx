@@ -168,7 +168,7 @@ const programDetailsMap: Record<number, ProgramDetails> = {
     title: "Программа для лица: 1 сеанс",
     price: "4000₽",
     description: "Комплексный уход за лицом, который объединяет все необходимые этапы для достижения видимого результата после одной процедуры. Подарите себе мгновенное преображение.",
-    image: imageUrls.beautyServices[1],
+    image: imageUrls.antiAge[0],
     duration: "90 минут",
     features: [
       "Массаж лица по индивидуальной методике",
@@ -206,7 +206,7 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
     name: "Пилинг омолаживающий",
     price: "2500₽",
     description: "Омолаживающий пилинг помогает отшелушить верхний слой клеток кожи, стимулируя обновление и регенерацию тканей для более молодого и свежего вида.",
-    image: imageUrls.beautyServices[1],
+    image: imageUrls.facialTreatments[2],
     duration: "45 минут",
     effects: [
       "Омоложение кожи",
@@ -221,7 +221,7 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
     name: "Уходовая процедура для проблемной кожи",
     price: "2800₽",
     description: "Комплексный уход за проблемной кожей с использованием специализированных средств для нормализации работы сальных желез и уменьшения воспалений.",
-    image: imageUrls.beautyServices[2],
+    image: imageUrls.facialTreatments[3],
     duration: "60 минут",
     effects: [
       "Уменьшение воспалений",
@@ -251,7 +251,7 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
     name: "Anti-age (омолаживающая, уходовая процедура)",
     price: "3000₽",
     description: "Интенсивная омолаживающая процедура, направленная на борьбу с признаками старения кожи с использованием высококонцентрированных активных компонентов.",
-    image: imageUrls.beautyServices[1],
+    image: imageUrls.antiAge[0],
     duration: "75 минут",
     effects: [
       "Разглаживание морщин",
@@ -296,7 +296,7 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
     name: "Скульптурно-буккальный массаж",
     price: "1800₽",
     description: "Специальная техника массажа лица, включающая как внешнее воздействие на кожу и мышцы, так и работу изнутри ротовой полости.",
-    image: imageUrls.beautyServices[2],
+    image: imageUrls.facialTreatments[2],
     duration: "45 минут",
     effects: [
       "Моделирование овала лица",
@@ -341,7 +341,7 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
     name: "Вибро-прессо-роликовый массаж",
     price: "1600₽",
     description: "Процедура, сочетающая в себе роликовый массаж и прессотерапию, а также вибрационное воздействие для более эффективной коррекции фигуры.",
-    image: imageUrls.beautyServices[2],
+    image: imageUrls.bodyTreatments[1],
     duration: "50 минут",
     effects: [
       "Разрушение жировых клеток",
