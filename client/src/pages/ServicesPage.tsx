@@ -368,12 +368,11 @@ const ServicesPage = () => {
 
   return (
     <div className="p-4 md:p-8 pt-0">
-      <h1 className="text-xl font-semibold mb-6 pt-4">Услуги</h1>
       
       {/* Фильтры категорий - закреплены при прокрутке */}
-      <div className="sticky top-0 bg-white z-10 pt-4 pb-2 mb-4 -mx-4 px-4 shadow-sm">
+      <div className="sticky top-0 bg-white z-10 pt-3 pb-2 mb-4 -mx-4 px-4 shadow-sm">
         <div className="overflow-x-auto scrollbar-hide">
-          <div className="flex space-x-2 pb-2">
+          <div className="flex space-x-2 pb-1">
             {categories.map((category) => (
               <Button
                 key={category.id}
