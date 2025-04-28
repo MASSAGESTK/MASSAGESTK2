@@ -12,7 +12,7 @@ import {
 } from "@shared/schema";
 import { imageUrls } from "../client/src/lib/utils";
 
-// Interface for storage methods
+// Интерфейс для методов хранилища
 export interface IStorage {
   // Users (keep from base template)
   getUser(id: number): Promise<User | undefined>;
@@ -41,7 +41,7 @@ export interface IStorage {
   createServiceEffect(effect: InsertServiceEffect): Promise<ServiceEffect>;
 }
 
-// In-memory storage implementation
+// Реализация хранилища в памяти
 export class MemStorage implements IStorage {
   private users: Map<number, User>;
   private services: Map<number, Service>;
@@ -68,12 +68,12 @@ export class MemStorage implements IStorage {
     this.currentPromotionId = 1;
     this.currentServiceEffectId = 1;
 
-    // Initialize with sample data
+    // Инициализация данными-примерами
     this.initializeData();
   }
 
   private initializeData() {
-    // Sample services
+    // Примеры услуг
     const services: InsertService[] = [
       {
         name: "Комбинированная чистка лица",
@@ -115,7 +115,7 @@ export class MemStorage implements IStorage {
 
     services.forEach(service => this.createService(service));
 
-    // Sample service effects
+    // Примеры эффектов от услуг
     const serviceEffects: InsertServiceEffect[] = [
       { serviceId: 1, effect: "Глубокое очищение пор" },
       { serviceId: 1, effect: "Удаление комедонов и загрязнений" },
@@ -131,7 +131,7 @@ export class MemStorage implements IStorage {
 
     serviceEffects.forEach(effect => this.createServiceEffect(effect));
 
-    // Sample programs
+    // Примеры программ
     const programs: InsertProgram[] = [
       {
         title: "Коррекция фигуры: 5 сеансов",
@@ -149,7 +149,7 @@ export class MemStorage implements IStorage {
 
     programs.forEach(program => this.createProgram(program));
 
-    // Sample promotions
+    // Примеры акций
     const promotions: InsertPromotion[] = [
       {
         title: "Скидка 20% на первое посещение",

@@ -48,7 +48,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get program by ID
+  // Получить программу по ID
   app.get('/api/programs/:id', async (req, res) => {
     try {
       const program = await storage.getProgramById(parseInt(req.params.id));
@@ -61,7 +61,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get all promotions
+  // Получить все акции
   app.get('/api/promotions', async (req, res) => {
     try {
       const promotions = await storage.getAllPromotions();
