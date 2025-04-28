@@ -5,10 +5,11 @@ import ProgramCard from "@/components/ProgramCard";
 import ServiceModal, { ServiceDetails } from "@/components/ServiceModal";
 import { imageUrls } from "@/lib/utils";
 
-type ServiceCategory = "all" | "cosmetology" | "massage" | "bodyCorrection" | "men";
+type ServiceCategory = "all" | "complex" | "cosmetology" | "massage" | "bodyCorrection" | "men";
 
 const categories = [
   { id: "all", label: "Все" },
+  { id: "complex", label: "Комплексные" },
   { id: "cosmetology", label: "Косметология" },
   { id: "massage", label: "Массаж" },
   { id: "bodyCorrection", label: "Коррекция фигуры" },
@@ -346,7 +347,7 @@ const ServicesPage = () => {
   const initialCategory = (): ServiceCategory => {
     if (typeof window !== 'undefined') {
       const savedCategory = sessionStorage.getItem('selectedServiceCategory');
-      if (savedCategory && ['all', 'cosmetology', 'massage', 'bodyCorrection', 'men'].includes(savedCategory)) {
+      if (savedCategory && ['all', 'complex', 'cosmetology', 'massage', 'bodyCorrection', 'men'].includes(savedCategory)) {
         // Очищаем сохраненную категорию после использования
         sessionStorage.removeItem('selectedServiceCategory');
         return savedCategory as ServiceCategory;
@@ -497,7 +498,7 @@ const ServicesPage = () => {
       )}
       
       {/* КОМПЛЕКСНЫЕ ПРОГРАММЫ */}
-      {selectedCategory === "all" && (
+      {(selectedCategory === "all" || selectedCategory === "complex") && (
         <div className="mb-8">
           <h2 className="text-lg font-medium mb-4 text-primary">КОМПЛЕКСНЫЕ ПРОГРАММЫ</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
