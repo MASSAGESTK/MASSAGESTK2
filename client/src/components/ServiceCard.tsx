@@ -22,7 +22,7 @@ const ServiceCard = ({
 }: ServiceCardProps) => {
   if (featured) {
     return (
-      <div className="service-card bg-white rounded-lg shadow-md flex-shrink-0 w-64 overflow-hidden">
+      <div className="service-card bg-card rounded-lg shadow-md dark:shadow-white/5 flex-shrink-0 w-64 overflow-hidden transition-colors duration-200">
         {image && (
           <img src={image} alt={name} className="w-full h-32 object-cover" />
         )}
@@ -37,11 +37,11 @@ const ServiceCard = ({
   }
 
   return (
-    <div className="service-card bg-white rounded-lg shadow-sm p-4">
+    <div className="service-card bg-card rounded-lg shadow-sm dark:shadow-white/5 p-4 transition-colors duration-200">
       <div className="flex justify-between items-start">
         <div>
           <h3 className="font-medium">{name}</h3>
-          {duration && <p className="text-sm text-gray-500 mt-1">{duration}</p>}
+          {duration && <p className="text-sm text-muted-foreground mt-1">{duration}</p>}
         </div>
         <p className="text-[#FF6B35] font-medium">{price}</p>
       </div>

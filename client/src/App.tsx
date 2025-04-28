@@ -4,6 +4,7 @@ import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { useState } from "react";
+import { ThemeProvider } from "next-themes";
 import NotFound from "@/pages/not-found";
 import HomePage from "@/pages/HomePage";
 import ServicesPage from "@/pages/ServicesPage";
@@ -30,15 +31,17 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <div className="min-h-screen">
-          <main className="pt-4 pb-28"> {/* Убран большой отступ сверху, добавлен небольшой */}
-            <Router />
-          </main>
-          <BottomNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
-        </div>
-        <Toaster />
-      </TooltipProvider>
+      <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+        <TooltipProvider>
+          <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+            <main className="pt-4 pb-28"> {/* Убран большой отступ сверху, добавлен небольшой */}
+              <Router />
+            </main>
+            <BottomNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
+          </div>
+          <Toaster />
+        </TooltipProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }

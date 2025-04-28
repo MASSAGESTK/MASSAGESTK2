@@ -37,8 +37,8 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
   return (
     <>
       <Dialog open={isOpen && !showTelegramModal} onOpenChange={onClose}>
-        <DialogContent className="bg-white rounded-lg max-w-lg w-full overflow-hidden max-h-[90vh] flex flex-col sm:max-w-lg">
-          <DialogHeader className="border-b p-3 flex justify-between items-center">
+        <DialogContent className="bg-card text-card-foreground rounded-lg max-w-lg w-full overflow-hidden max-h-[90vh] flex flex-col sm:max-w-lg transition-colors duration-200">
+          <DialogHeader className="border-b border-border p-3 flex justify-between items-center">
             <DialogTitle className="text-base font-medium">{service.name}</DialogTitle>
           </DialogHeader>
           
@@ -52,11 +52,11 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
             <div className="space-y-3">
               <div>
                 <h3 className="font-medium mb-1 text-sm">Описание</h3>
-                <p className="text-xs text-gray-600">{service.description}</p>
+                <p className="text-xs text-muted-foreground">{service.description}</p>
               </div>
               <div>
                 <h3 className="font-medium mb-1 text-sm">Эффект</h3>
-                <ul className="text-xs text-gray-600 list-disc pl-4 space-y-0.5">
+                <ul className="text-xs text-muted-foreground list-disc pl-4 space-y-0.5">
                   {service.effects.map((effect, index) => (
                     <li key={index}>{effect}</li>
                   ))}
@@ -64,12 +64,12 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
               </div>
               <div>
                 <h3 className="font-medium mb-1 text-sm">Продолжительность</h3>
-                <p className="text-xs text-gray-600">{service.duration}</p>
+                <p className="text-xs text-muted-foreground">{service.duration}</p>
               </div>
             </div>
           </div>
           
-          <DialogFooter className="p-3 border-t">
+          <DialogFooter className="p-3 border-t border-border">
             <Button 
               className="w-full bg-primary hover:bg-primary/80 text-white"
               onClick={handleBooking}
@@ -82,13 +82,13 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
 
       {/* Модальное окно с предупреждением о Telegram */}
       <Dialog open={showTelegramModal} onOpenChange={() => setShowTelegramModal(false)}>
-        <DialogContent className="bg-white rounded-lg max-w-md w-full p-4">
+        <DialogContent className="bg-card text-card-foreground rounded-lg max-w-md w-full p-4 transition-colors duration-200">
           <DialogHeader>
             <DialogTitle className="text-center text-base">Запись на услугу</DialogTitle>
           </DialogHeader>
           
           <div className="py-3">
-            <p className="text-sm text-center">
+            <p className="text-sm text-center text-muted-foreground">
               Для записи на услугу вы будете перенаправлены в Telegram бот, 
               где сможете выбрать удобное время и оформить запись.
             </p>
