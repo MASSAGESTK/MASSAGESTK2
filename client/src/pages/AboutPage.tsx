@@ -35,10 +35,6 @@ const AboutPage = () => {
               <p className="text-sm">+7 (950) 565-64-44</p>
             </div>
             <div className="flex">
-              <span className="material-icons text-primary mr-3 drop-shadow-sm">email</span>
-              <p className="text-sm">info@natalisecrets.ru</p>
-            </div>
-            <div className="flex">
               <span className="material-icons text-primary mr-3 drop-shadow-sm">schedule</span>
               <p className="text-sm">Пн-Вс: 10:00 - 18:00</p>
             </div>
