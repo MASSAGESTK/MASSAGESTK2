@@ -32,9 +32,9 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <div className="min-h-screen pb-20">
+        <div className="min-h-screen">
           <Header />
-          <main>
+          <main className="pt-24 pb-28"> {/* Добавлены отступы сверху и снизу для контента */}
             <Router />
           </main>
           <BottomNavigation activeTab={activeTab} setActiveTab={setActiveTab} />

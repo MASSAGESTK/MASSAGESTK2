@@ -23,23 +23,25 @@ const BottomNavigation = ({ activeTab, setActiveTab }: BottomNavigationProps) =>
   };
 
   return (
-    <nav className="fixed bottom-0 w-full bg-white shadow-lg border-t border-gray-100 z-40">
-      <div className="flex justify-between max-w-screen-lg mx-auto">
-        {navItems.map((item) => (
-          <button
-            key={item.id}
-            className={cn(
-              "nav-item flex flex-col items-center justify-center py-2 flex-1",
-              activeTab === item.id ? "active" : ""
-            )}
-            onClick={() => handleNavigation(item.id, item.path)}
-          >
-            <span className="material-icons">{item.icon}</span>
-            <span className="text-xs mt-1">{item.label}</span>
-          </button>
-        ))}
-      </div>
-    </nav>
+    <div className="fixed bottom-0 left-0 right-0 z-50 px-4 py-3">
+      <nav className="rounded-2xl bg-white/70 backdrop-blur-md shadow-lg w-full max-w-screen-lg mx-auto">
+        <div className="flex justify-between">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              className={cn(
+                "nav-item flex flex-col items-center justify-center py-3 flex-1",
+                activeTab === item.id ? "active" : ""
+              )}
+              onClick={() => handleNavigation(item.id, item.path)}
+            >
+              <span className="material-icons">{item.icon}</span>
+              <span className="text-xs mt-1">{item.label}</span>
+            </button>
+          ))}
+        </div>
+      </nav>
+    </div>
   );
 };
 
