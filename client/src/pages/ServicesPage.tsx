@@ -342,7 +342,20 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
 };
 
 const ServicesPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState<ServiceCategory>("all");
+  // Проверяем, есть ли в sessionStorage сохраненная категория
+  const initialCategory = (): ServiceCategory => {
+    if (typeof window !== 'undefined') {
+      const savedCategory = sessionStorage.getItem('selectedServiceCategory');
+      if (savedCategory && ['all', 'cosmetology', 'massage', 'bodyCorrection', 'men'].includes(savedCategory)) {
+        // Очищаем сохраненную категорию после использования
+        sessionStorage.removeItem('selectedServiceCategory');
+        return savedCategory as ServiceCategory;
+      }
+    }
+    return "all";
+  };
+
+  const [selectedCategory, setSelectedCategory] = useState<ServiceCategory>(initialCategory());
   const [selectedService, setSelectedService] = useState<ServiceDetails | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
 

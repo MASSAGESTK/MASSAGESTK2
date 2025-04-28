@@ -28,10 +28,10 @@ const popularServices = [
 ];
 
 const complexServices = [
-  { id: 1, title: "Уход за кожей", icon: "spa" },
-  { id: 2, title: "Мужской уход", icon: "face" },
-  { id: 3, title: "SPA-программы", icon: "self_improvement" },
-  { id: 4, title: "Коррекция фигуры", icon: "auto_awesome" },
+  { id: 1, title: "Уход за кожей", icon: "spa", category: "cosmetology" },
+  { id: 2, title: "Мужской уход", icon: "face", category: "men" },
+  { id: 3, title: "SPA-программы", icon: "self_improvement", category: "massage" },
+  { id: 4, title: "Коррекция фигуры", icon: "auto_awesome", category: "bodyCorrection" },
 ];
 
 // Полные данные о всех услугах с эффектами
@@ -175,8 +175,18 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
   };
 
   const handleComplexServiceClick = (id: number) => {
-    navigate("/services");
+    // Находим категорию для выбранной услуги
+    const selectedService = complexServices.find(service => service.id === id);
+    
+    // Устанавливаем активную вкладку "services" и перенаправляем на страницу услуг
     setActiveTab("services");
+    
+    // Передаем информацию о выбранной категории через sessionStorage
+    if (selectedService && selectedService.category) {
+      sessionStorage.setItem('selectedServiceCategory', selectedService.category);
+    }
+    
+    navigate("/services");
   };
 
   const handleBooking = () => {
@@ -275,6 +285,8 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
               <Button 
                 className="bg-primary hover:bg-primary/80 text-white"
                 onClick={() => {
+                  // Устанавливаем категорию "коррекция фигуры" для специального предложения
+                  sessionStorage.setItem('selectedServiceCategory', 'bodyCorrection');
                   navigate("/services");
                   setActiveTab("services");
                 }}
