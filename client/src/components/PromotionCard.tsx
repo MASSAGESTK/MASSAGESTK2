@@ -22,7 +22,7 @@ const PromotionCard = ({
   badge,
 }: PromotionCardProps) => {
   return (
-    <div className="bg-card text-card-foreground rounded-lg shadow-md dark:shadow-white/5 overflow-hidden flex flex-col md:flex-row md:h-32 transition-colors duration-200">
+    <div className="bg-card text-card-foreground rounded-lg shadow-md hover:shadow-xl dark:shadow-white/10 overflow-hidden flex flex-col md:flex-row md:h-32 transition-all duration-200 transform hover:-translate-y-1">
       <img 
         src={image} 
         alt={title} 
@@ -33,7 +33,7 @@ const PromotionCard = ({
           <div className="flex justify-between items-start">
             <h3 className="font-medium text-base">{title}</h3>
             {badge && (
-              <span className="bg-[#FF6B35] text-white text-xs px-2 py-0.5 rounded-full ml-2 whitespace-nowrap">
+              <span className="bg-[#FF6B35] text-white text-xs px-2 py-0.5 rounded-full ml-2 whitespace-nowrap shadow-sm">
                 {badge}
               </span>
             )}
@@ -42,9 +42,9 @@ const PromotionCard = ({
         </div>
         
         <div className="mt-2 flex justify-between items-center">
-          {price && <p className="font-medium text-[#FF6B35] text-sm">{price}</p>}
+          {price && <p className="font-semibold text-[#FF6B35] text-sm drop-shadow-sm">{price}</p>}
           <Button 
-            className={`${price ? '' : 'ml-auto'} bg-primary hover:bg-primary/80 text-white text-xs px-3 py-1 h-8`}
+            className={`${price ? '' : 'ml-auto'} bg-primary hover:bg-primary/90 text-white text-xs px-3 py-1 h-8 shadow-sm hover:shadow-md transition-all`}
             onClick={onButtonClick}
           >
             {buttonText}

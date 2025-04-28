@@ -270,7 +270,7 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
       {/* Специальные предложения */}
       <div className="mb-8">
         <h2 className="text-lg font-semibold mb-4">Специальные предложения</h2>
-        <div className="bg-card text-card-foreground rounded-lg shadow-md dark:shadow-white/5 overflow-hidden transition-colors duration-200">
+        <div className="bg-card text-card-foreground rounded-lg shadow-lg hover:shadow-xl dark:shadow-white/10 overflow-hidden transition-all duration-200 transform hover:-translate-y-1">
           <img 
             src={imageUrls.beautyServices[2]} 
             alt="Специальное предложение" 
@@ -279,12 +279,12 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
           <div className="p-4 flex flex-col" style={{ minHeight: '180px' }}>
             <div className="flex justify-between items-start">
               <h3 className="font-medium text-lg">Программа похудения: 10 сеансов</h3>
-              <p className="font-medium text-[#FF6B35]">35000₽</p>
+              <p className="font-semibold text-[#FF6B35] drop-shadow-sm">35000₽</p>
             </div>
             <p className="text-sm text-muted-foreground mt-1 flex-grow">Комплексная программа включает прессотерапию, вибро-прессо-роликовый массаж и антицеллюлитный массаж</p>
             <div className="flex justify-end mt-3">
               <Button 
-                className="bg-primary hover:bg-primary/80 text-white"
+                className="bg-primary hover:bg-primary/90 text-white shadow-sm hover:shadow-md transition-all"
                 onClick={() => {
                   // Устанавливаем категорию "коррекция фигуры" для специального предложения
                   sessionStorage.setItem('selectedServiceCategory', 'bodyCorrection');

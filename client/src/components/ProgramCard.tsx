@@ -10,11 +10,11 @@ interface ProgramCardProps {
 
 const ProgramCard = ({ id, title, price, features, onClick }: ProgramCardProps) => {
   return (
-    <div className="service-card bg-card text-card-foreground rounded-lg shadow-md dark:shadow-white/5 overflow-hidden transition-colors duration-200 h-full">
+    <div className="service-card bg-card text-card-foreground rounded-lg shadow-md hover:shadow-xl dark:shadow-white/10 overflow-hidden transition-all duration-200 h-full transform hover:-translate-y-1">
       <div className="p-4 flex flex-col h-full">
         <div className="flex justify-between items-start">
           <h3 className="font-medium text-lg">{title}</h3>
-          <p className="text-[#FF6B35] font-medium">{price}</p>
+          <p className="text-[#FF6B35] font-semibold drop-shadow-sm">{price}</p>
         </div>
         <ul className="mt-2 text-sm text-muted-foreground ml-5 list-disc flex-grow">
           {features.map((feature, index) => (
@@ -22,7 +22,7 @@ const ProgramCard = ({ id, title, price, features, onClick }: ProgramCardProps) 
           ))}
         </ul>
         <Button 
-          className="w-full mt-4 bg-primary hover:bg-primary/80 text-white"
+          className="w-full mt-4 bg-primary hover:bg-primary/90 text-white shadow-sm hover:shadow-md transition-all"
           onClick={() => onClick(id)}
         >
           Подробнее

@@ -46,14 +46,14 @@ const ProgramModal = ({ isOpen, onClose, program }: ProgramModalProps) => {
   return (
     <>
       <Dialog open={isOpen && !showTelegramModal} onOpenChange={onClose}>
-        <DialogContent className="bg-card text-card-foreground rounded-lg max-w-md w-full transition-colors duration-200">
+        <DialogContent className="bg-card text-card-foreground rounded-lg max-w-md w-full shadow-xl dark:shadow-white/10 transition-all duration-200">
           <DialogHeader>
             <DialogTitle className="text-center text-lg font-semibold">
               {program.title}
             </DialogTitle>
           </DialogHeader>
           
-          <div className="overflow-hidden rounded-md mb-3">
+          <div className="overflow-hidden rounded-md mb-3 shadow-md">
             <img 
               src={program.image} 
               alt={program.title} 
@@ -65,19 +65,19 @@ const ProgramModal = ({ isOpen, onClose, program }: ProgramModalProps) => {
             <div className="flex justify-between items-start">
               <div className="space-y-1">
                 {program.duration && (
-                  <Badge variant="outline" className="bg-muted/50">
+                  <Badge variant="outline" className="bg-muted/50 shadow-sm">
                     <span className="material-icons text-sm mr-1">schedule</span>
                     {program.duration}
                   </Badge>
                 )}
                 {program.sessions && (
-                  <Badge variant="outline" className="bg-muted/50 ml-2">
+                  <Badge variant="outline" className="bg-muted/50 ml-2 shadow-sm">
                     <span className="material-icons text-sm mr-1">repeat</span>
                     {program.sessions}
                   </Badge>
                 )}
               </div>
-              <span className="font-semibold text-[#FF6B35] text-lg">{program.price}</span>
+              <span className="font-semibold text-[#FF6B35] text-lg drop-shadow-sm">{program.price}</span>
             </div>
             
             <div>
@@ -89,7 +89,7 @@ const ProgramModal = ({ isOpen, onClose, program }: ProgramModalProps) => {
               <div className="space-y-1">
                 {program.features.map((feature, index) => (
                   <div key={index} className="flex items-center text-sm">
-                    <span className="material-icons text-primary text-sm mr-2">check_circle</span>
+                    <span className="material-icons text-primary text-sm mr-2 drop-shadow-sm">check_circle</span>
                     <span>{feature}</span>
                   </div>
                 ))}
@@ -102,7 +102,7 @@ const ProgramModal = ({ isOpen, onClose, program }: ProgramModalProps) => {
                 <div className="space-y-1">
                   {program.additionalInfo.map((info, index) => (
                     <div key={index} className="flex items-center text-sm">
-                      <span className="material-icons text-primary text-sm mr-2">info</span>
+                      <span className="material-icons text-primary text-sm mr-2 drop-shadow-sm">info</span>
                       <span>{info}</span>
                     </div>
                   ))}
@@ -113,7 +113,7 @@ const ProgramModal = ({ isOpen, onClose, program }: ProgramModalProps) => {
           
           <DialogFooter className="flex justify-center pt-2">
             <Button 
-              className="bg-primary hover:bg-primary/80 text-white w-full"
+              className="bg-primary hover:bg-primary/90 text-white w-full shadow-sm hover:shadow-md transition-all"
               onClick={handleBooking}
             >
               Получить консультацию
@@ -124,7 +124,7 @@ const ProgramModal = ({ isOpen, onClose, program }: ProgramModalProps) => {
 
       {/* Модальное окно с предупреждением о Telegram */}
       <Dialog open={showTelegramModal} onOpenChange={() => setShowTelegramModal(false)}>
-        <DialogContent className="bg-card text-card-foreground rounded-lg max-w-md w-full p-4 transition-colors duration-200">
+        <DialogContent className="bg-card text-card-foreground rounded-lg max-w-md w-full p-4 shadow-xl dark:shadow-white/10 transition-all duration-200">
           <DialogHeader>
             <DialogTitle className="text-center text-base">Консультация по программе</DialogTitle>
           </DialogHeader>
@@ -138,7 +138,7 @@ const ProgramModal = ({ isOpen, onClose, program }: ProgramModalProps) => {
           
           <DialogFooter className="flex justify-center">
             <Button 
-              className="bg-primary hover:bg-primary/80 text-white w-full"
+              className="bg-primary hover:bg-primary/90 text-white w-full shadow-sm hover:shadow-md transition-all"
               onClick={handleConfirmTelegram}
             >
               Перейти в Telegram

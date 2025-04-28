@@ -37,7 +37,7 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
   return (
     <>
       <Dialog open={isOpen && !showTelegramModal} onOpenChange={onClose}>
-        <DialogContent className="bg-card text-card-foreground rounded-lg max-w-lg w-full overflow-hidden max-h-[90vh] flex flex-col sm:max-w-lg transition-colors duration-200">
+        <DialogContent className="bg-card text-card-foreground rounded-lg max-w-lg w-full overflow-hidden max-h-[90vh] flex flex-col sm:max-w-lg transition-all duration-200 shadow-xl dark:shadow-white/10">
           <DialogHeader className="border-b border-border p-3 flex justify-between items-center">
             <DialogTitle className="text-base font-medium">{service.name}</DialogTitle>
           </DialogHeader>
@@ -46,9 +46,9 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
             <img 
               src={service.image} 
               alt={service.name} 
-              className="w-full h-48 object-cover rounded-lg mb-3"
+              className="w-full h-48 object-cover rounded-lg mb-3 shadow-md"
             />
-            <p className="text-[#FF6B35] font-medium text-lg mb-2">{service.price}</p>
+            <p className="text-[#FF6B35] font-semibold text-lg mb-2 drop-shadow-sm">{service.price}</p>
             <div className="space-y-3">
               <div>
                 <h3 className="font-medium mb-1 text-sm">Описание</h3>
@@ -58,7 +58,7 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
                 <h3 className="font-medium mb-1 text-sm">Эффект</h3>
                 <ul className="text-xs text-muted-foreground list-disc pl-4 space-y-0.5">
                   {service.effects.map((effect, index) => (
-                    <li key={index}>{effect}</li>
+                    <li key={index} className="drop-shadow-xs">{effect}</li>
                   ))}
                 </ul>
               </div>
@@ -71,7 +71,7 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
           
           <DialogFooter className="p-3 border-t border-border">
             <Button 
-              className="w-full bg-primary hover:bg-primary/80 text-white"
+              className="w-full bg-primary hover:bg-primary/90 text-white shadow-sm hover:shadow-md transition-all"
               onClick={handleBooking}
             >
               Записаться
