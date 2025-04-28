@@ -10,13 +10,13 @@ interface ProgramCardProps {
 
 const ProgramCard = ({ id, title, price, features, onClick }: ProgramCardProps) => {
   return (
-    <div className="service-card bg-white rounded-lg shadow-md overflow-hidden">
+    <div className="service-card bg-card text-card-foreground rounded-lg shadow-md dark:shadow-white/5 overflow-hidden transition-colors duration-200">
       <div className="p-4">
         <div className="flex justify-between items-start">
           <h3 className="font-medium text-lg">{title}</h3>
           <p className="text-[#FF6B35] font-medium">{price}</p>
         </div>
-        <ul className="mt-2 text-sm text-gray-600 ml-5 list-disc">
+        <ul className="mt-2 text-sm text-muted-foreground ml-5 list-disc">
           {features.map((feature, index) => (
             <li key={index}>{feature}</li>
           ))}

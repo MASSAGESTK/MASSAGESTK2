@@ -187,15 +187,15 @@ const HomePage = () => {
   return (
     <div className="p-4 md:p-8">
       {/* Главный баннер */}
-      <div className="rounded-lg overflow-hidden shadow-md mb-8">
+      <div className="rounded-lg overflow-hidden shadow-md dark:shadow-white/5 mb-8 transition-colors duration-200">
         <img 
           src={imageUrls.salonInterior[1]} 
           alt="Natali Secrets Spa" 
           className="w-full h-48 md:h-64 object-cover"
         />
-        <div className="bg-white p-4 relative">
+        <div className="bg-card text-card-foreground p-4 relative transition-colors duration-200">
           <h2 className="text-lg font-medium">Добро пожаловать в мир красоты и релаксации</h2>
-          <p className="text-sm text-gray-600 mt-1">Профессиональные услуги для вашего совершенства</p>
+          <p className="text-sm text-muted-foreground mt-1">Профессиональные услуги для вашего совершенства</p>
           <Button 
             className="mt-3 bg-[#FF6B35] hover:bg-[#FF6B35]/80 text-white"
             onClick={handleBooking}
@@ -249,7 +249,7 @@ const HomePage = () => {
       {/* Специальные предложения */}
       <div className="mb-8">
         <h2 className="text-lg font-semibold mb-4">Специальные предложения</h2>
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
+        <div className="bg-card text-card-foreground rounded-lg shadow-md dark:shadow-white/5 overflow-hidden transition-colors duration-200">
           <img 
             src={imageUrls.beautyServices[2]} 
             alt="Специальное предложение" 
@@ -260,7 +260,7 @@ const HomePage = () => {
               <h3 className="font-medium text-lg">Программа похудения: 10 сеансов</h3>
               <p className="font-medium text-[#FF6B35]">35000₽</p>
             </div>
-            <p className="text-sm text-gray-600 mt-1">Комплексная программа включает прессотерапию, вибро-прессо-роликовый массаж и антицеллюлитный массаж</p>
+            <p className="text-sm text-muted-foreground mt-1">Комплексная программа включает прессотерапию, вибро-прессо-роликовый массаж и антицеллюлитный массаж</p>
             <div className="flex justify-end mt-3">
               <Button 
                 className="bg-primary hover:bg-primary/80 text-white"
