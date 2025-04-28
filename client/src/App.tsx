@@ -10,7 +10,6 @@ import ServicesPage from "@/pages/ServicesPage";
 import PromotionsPage from "@/pages/PromotionsPage";
 import SettingsPage from "@/pages/SettingsPage";
 import AboutPage from "@/pages/AboutPage";
-import Header from "@/components/Header";
 import BottomNavigation from "@/components/BottomNavigation";
 
 function Router() {
@@ -33,8 +32,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <div className="min-h-screen">
-          <Header />
-          <main className="pt-24 pb-28"> {/* Добавлены отступы сверху и снизу для контента */}
+          <main className="pt-4 pb-28"> {/* Убран большой отступ сверху, добавлен небольшой */}
             <Router />
           </main>
           <BottomNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
