@@ -4,7 +4,7 @@ import PromotionCard from "@/components/PromotionCard";
 const promotions = [
   {
     id: 1,
-    title: "Скидка 20% на первое посещение",
+    title: "Скидка 10% на первое посещение",
     description: "Получите скидку 20% на любую услугу при первом посещении нашего салона. Предложение действует для новых клиентов.",
     image: imageUrls.beautyServices[0],
     badge: "До 31.12.2023",
@@ -24,7 +24,7 @@ const promotions = [
     title: "Подарочные сертификаты",
     description: "Порадуйте близких подарочным сертификатом на услуги нашего салона. Доступны сертификаты различного номинала.",
     image: imageUrls.massageTherapy[0],
-    badge: "Всегда актуально",
+    badge: "Актуально",
     buttonText: "Выбрать сертификат",
   },
 ];

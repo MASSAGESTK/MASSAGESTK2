@@ -25,9 +25,6 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
       <DialogContent className="bg-white rounded-lg max-w-lg w-full overflow-hidden max-h-[90vh] flex flex-col sm:max-w-lg">
         <DialogHeader className="border-b p-4 flex justify-between items-center">
           <DialogTitle className="text-lg font-medium">{service.name}</DialogTitle>
-          <DialogClose className="text-gray-500">
-            <span className="material-icons">close</span>
-          </DialogClose>
         </DialogHeader>
         
         <div className="overflow-y-auto flex-grow p-4">
