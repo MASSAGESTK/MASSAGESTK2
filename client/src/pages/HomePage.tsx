@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import ServiceCard from "@/components/ServiceCard";
 import ServiceModal, { ServiceDetails } from "@/components/ServiceModal";
 import { imageUrls } from "@/lib/utils";
@@ -161,6 +162,7 @@ const HomePage = () => {
   const [, navigate] = useLocation();
   const [selectedService, setSelectedService] = useState<ServiceDetails | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
+  const [showTelegramModal, setShowTelegramModal] = useState(false);
 
   const handleServiceClick = (id: number) => {
     // Получаем данные об услуге из нашей карты serviceDetailsMap
@@ -170,6 +172,16 @@ const HomePage = () => {
 
   const handleComplexServiceClick = (id: number) => {
     navigate("/services");
+  };
+
+  const handleBooking = () => {
+    setShowTelegramModal(true);
+  };
+
+  const handleConfirmTelegram = () => {
+    // Здесь можно добавить перенаправление на Telegram бота
+    // window.open('https://t.me/your_bot_name', '_blank');
+    setShowTelegramModal(false);
   };
 
   return (
@@ -184,7 +196,10 @@ const HomePage = () => {
         <div className="bg-white p-4 relative">
           <h2 className="text-lg font-medium">Добро пожаловать в мир красоты и релаксации</h2>
           <p className="text-sm text-gray-600 mt-1">Профессиональные услуги для вашего совершенства</p>
-          <Button className="mt-3 bg-[#FF6B35] hover:bg-[#FF6B35]/80 text-white">
+          <Button 
+            className="mt-3 bg-[#FF6B35] hover:bg-[#FF6B35]/80 text-white"
+            onClick={handleBooking}
+          >
             Записаться
           </Button>
         </div>
@@ -264,6 +279,31 @@ const HomePage = () => {
         onClose={() => setModalOpen(false)} 
         service={selectedService} 
       />
+
+      {/* Модальное окно с предупреждением о Telegram */}
+      <Dialog open={showTelegramModal} onOpenChange={() => setShowTelegramModal(false)}>
+        <DialogContent className="bg-white rounded-lg max-w-md w-full p-4">
+          <DialogHeader>
+            <DialogTitle className="text-center text-base">Запись на услугу</DialogTitle>
+          </DialogHeader>
+          
+          <div className="py-3">
+            <p className="text-sm text-center">
+              Для записи на услугу вы будете перенаправлены в Telegram бот, 
+              где сможете выбрать удобное время и оформить запись.
+            </p>
+          </div>
+          
+          <DialogFooter className="flex justify-center">
+            <Button 
+              className="bg-primary hover:bg-primary/80 text-white w-full"
+              onClick={handleConfirmTelegram}
+            >
+              Перейти в Telegram
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
