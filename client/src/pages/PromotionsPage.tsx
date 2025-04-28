@@ -13,7 +13,7 @@ const promotions = [
     description: "Получите скидку 10% на любую услугу при первом посещении нашего салона. Предложение действует для новых клиентов.",
     image: imageUrls.beautyServices[0],
     badge: "Актуально",
-    buttonText: "Получить скидку",
+    buttonText: "Выбрать",
   },
   {
     id: 2,
@@ -103,7 +103,7 @@ const PromotionsPage = () => {
         <DialogContent className="bg-card text-card-foreground rounded-lg max-w-md w-full p-4 shadow-xl dark:shadow-white/10 transition-all duration-200">
           <DialogHeader>
             <DialogTitle className="text-center text-base">
-              {selectedPromoId === 1 ? "Получение скидки" : "Приобретение абонемента"}
+              {selectedPromoId === 1 ? "Скидка 10% на первое посещение" : "Приобретение абонемента"}
             </DialogTitle>
           </DialogHeader>
           
