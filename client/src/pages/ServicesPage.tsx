@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import ServiceCard from "@/components/ServiceCard";
 import ProgramCard from "@/components/ProgramCard";
 import ServiceModal, { ServiceDetails } from "@/components/ServiceModal";
+import ProgramModal, { ProgramDetails } from "@/components/ProgramModal";
 import { imageUrls } from "@/lib/utils";
 
 type ServiceCategory = "all" | "complex" | "cosmetology" | "massage" | "bodyCorrection" | "men";
@@ -97,6 +98,91 @@ const complexPrograms = [
     ]
   },
 ];
+
+// Подробные данные о комплексных программах
+const programDetailsMap: Record<number, ProgramDetails> = {
+  1: {
+    id: 1,
+    title: "Коррекция фигуры: 5 сеансов",
+    price: "17000₽",
+    description: "Комплексная программа для моделирования силуэта и борьбы с целлюлитом. Сочетает в себе аппаратные и ручные методики для достижения максимального эффекта.",
+    image: imageUrls.spaServices[0],
+    sessions: "5 сеансов",
+    duration: "90 минут",
+    features: [
+      "Прессотерапия (аппаратный лимфодренаж)",
+      "Вибро-прессо-роликовый массаж",
+      "Антицеллюлитный массаж проблемных зон",
+      "Обертывание для усиления эффекта",
+      "Коктейль для ускорения метаболизма"
+    ],
+    additionalInfo: [
+      "Рекомендуемая частота: 2 раза в неделю",
+      "Видимый эффект после 2-3 сеансов",
+      "Включает рекомендации по питанию"
+    ]
+  },
+  2: {
+    id: 2,
+    title: "Программа похудения: 10 сеансов",
+    price: "35000₽",
+    description: "Интенсивная программа для значительной коррекции фигуры и снижения объемов. Данный курс обеспечивает стойкие результаты благодаря комплексному подходу и длительности воздействия.",
+    image: imageUrls.spaServices[2],
+    sessions: "10 сеансов",
+    duration: "120 минут",
+    features: [
+      "Прессотерапия для лимфодренажа",
+      "Вибро-прессо-роликовый массаж для разбивания жировых отложений",
+      "Интенсивный антицеллюлитный массаж",
+      "Обертывание с активными компонентами",
+      "Аппаратные процедуры для моделирования силуэта",
+      "Миостимуляция для тонуса мышц"
+    ],
+    additionalInfo: [
+      "Индивидуальное сопровождение специалиста",
+      "Составление плана питания на весь курс",
+      "Дополнительные рекомендации по поддержанию результата"
+    ]
+  },
+  3: {
+    id: 3,
+    title: "Программа для тела: 1 сеанс",
+    price: "4000₽",
+    description: "Единоразовый комплекс процедур для тела, который поможет получить мгновенный эффект перед важным событием. Идеально подходит для тех, кто хочет выглядеть безупречно к определенной дате.",
+    image: imageUrls.massageTherapy[0],
+    duration: "120 минут",
+    features: [
+      "Релаксирующий или моделирующий массаж",
+      "Аппаратные процедуры по выбору",
+      "Вспомогательные процедуры для улучшения состояния кожи",
+      "Майдеротерапия (массаж деревянными инструментами)",
+      "Обёртывание (на выбор: антицеллюлитное, увлажняющее, детокс)"
+    ],
+    additionalInfo: [
+      "Можно приобрести как разовую процедуру",
+      "Доступны пакетные предложения со скидкой"
+    ]
+  },
+  4: {
+    id: 4,
+    title: "Программа для лица: 1 сеанс",
+    price: "4000₽",
+    description: "Комплексный уход за лицом, который объединяет все необходимые этапы для достижения видимого результата после одной процедуры. Подарите себе мгновенное преображение.",
+    image: imageUrls.beautyServices[1],
+    duration: "90 минут",
+    features: [
+      "Массаж лица по индивидуальной методике",
+      "Уходовые процедуры с использованием премиальной косметики",
+      "Аппаратная процедура по показаниям (микротоки, RF-лифтинг)",
+      "Маска с активными компонентами",
+      "Парафин рук в подарок"
+    ],
+    additionalInfo: [
+      "Эффект сохраняется до 5-7 дней",
+      "Идеально перед важными мероприятиями"
+    ]
+  }
+};
 
 // Полные данные обо всех услугах с эффектами
 const serviceDetailsMap: Record<number, ServiceDetails> = {
@@ -359,6 +445,8 @@ const ServicesPage = () => {
   const [selectedCategory, setSelectedCategory] = useState<ServiceCategory>(initialCategory());
   const [selectedService, setSelectedService] = useState<ServiceDetails | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
+  const [selectedProgram, setSelectedProgram] = useState<ProgramDetails | null>(null);
+  const [programModalOpen, setProgramModalOpen] = useState(false);
 
   const filteredServices = selectedCategory === "all" 
     ? allServices 
@@ -376,8 +464,9 @@ const ServicesPage = () => {
   };
 
   const handleProgramClick = (id: number) => {
-    // Обработка клика по программе, возможно открытие модального окна с подробностями о программе
-    console.log("Program clicked:", id);
+    // Получаем данные о программе из нашей карты programDetailsMap
+    setSelectedProgram(programDetailsMap[id]);
+    setProgramModalOpen(true);
   };
 
   return (
@@ -521,6 +610,13 @@ const ServicesPage = () => {
         isOpen={modalOpen} 
         onClose={() => setModalOpen(false)} 
         service={selectedService} 
+      />
+      
+      {/* Модальное окно программы */}
+      <ProgramModal
+        isOpen={programModalOpen}
+        onClose={() => setProgramModalOpen(false)}
+        program={selectedProgram}
       />
     </div>
   );
