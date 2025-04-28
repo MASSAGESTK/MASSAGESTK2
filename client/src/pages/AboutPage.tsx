@@ -26,7 +26,7 @@ const AboutPage = () => {
           <div className="space-y-3">
             <div className="flex">
               <span className="material-icons text-primary mr-3">location_on</span>
-              <p className="text-sm">г. Москва, ул. Красная, д. 12</p>
+              <p className="text-sm">г. Сыктывкар, ул. Красная, д. 12</p>
             </div>
             <div className="flex">
               <span className="material-icons text-primary mr-3">phone</span>

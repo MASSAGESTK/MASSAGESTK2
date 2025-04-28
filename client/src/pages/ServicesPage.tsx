@@ -97,7 +97,7 @@ const complexPrograms = [
   },
 ];
 
-// Sample service details for demonstration
+// Пример данных услуги для демонстрации
 const serviceDetailsMap: Record<number, ServiceDetails> = {
   1: {
     id: 1,

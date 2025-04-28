@@ -20,7 +20,7 @@ const popularServices = [
   },
   {
     id: 7,
-    name: "Спа массаж",
+    name: "Расслабляющий спа массаж",
     price: "2000₽",
     image: imageUrls.spaServices[1],
   },
@@ -33,7 +33,7 @@ const complexServices = [
   { id: 4, title: "Коррекция фигуры", icon: "auto_awesome" },
 ];
 
-// Mock service details for demo
+// Демонстрационные данные услуги для примера
 const serviceDetails: ServiceDetails = {
   id: 1,
   name: "Комбинированная чистка лица",
@@ -56,7 +56,7 @@ const HomePage = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleServiceClick = (id: number) => {
-    // In a real app, you would fetch the service details from an API
+    // В реальном приложении здесь был бы запрос к API для получения данных об услуге
     setSelectedService(serviceDetails);
     setModalOpen(true);
   };
@@ -67,7 +67,7 @@ const HomePage = () => {
 
   return (
     <div className="p-4 md:p-8">
-      {/* Hero Banner */}
+      {/* Главный баннер */}
       <div className="rounded-lg overflow-hidden shadow-md mb-8">
         <img 
           src={imageUrls.salonInterior[1]} 
@@ -83,7 +83,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* Popular Services */}
+      {/* Популярные услуги */}
       <div className="mb-8">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-semibold">Популярные услуги</h2>
@@ -107,7 +107,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* Complex Services */}
+      {/* Комплексные услуги */}
       <div className="mb-8">
         <h2 className="text-lg font-semibold mb-4">Комплексные программы</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -124,7 +124,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* Special Offers */}
+      {/* Специальные предложения */}
       <div className="mb-8">
         <h2 className="text-lg font-semibold mb-4">Специальные предложения</h2>
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
@@ -151,7 +151,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* Service Modal */}
+      {/* Модальное окно услуги */}
       <ServiceModal 
         isOpen={modalOpen} 
         onClose={() => setModalOpen(false)} 
