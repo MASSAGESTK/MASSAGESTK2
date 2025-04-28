@@ -191,7 +191,7 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
     name: "Комбинированная чистка лица",
     price: "2700₽",
     description: "Комбинированная чистка лица - это процедура глубокого очищения кожи, которая сочетает в себе механическое удаление загрязнений и использование специальных средств для более эффективного результата.",
-    image: imageUrls.beautyServices[0],
+    image: imageUrls.facialTreatments[0],
     duration: "60 минут",
     effects: [
       "Глубокое очищение пор",
@@ -236,7 +236,7 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
     name: "Уходовая процедура для чувствительной кожи",
     price: "2600₽",
     description: "Деликатная процедура для чувствительной кожи с использованием успокаивающих и увлажняющих компонентов, не вызывающих раздражения.",
-    image: imageUrls.beautyServices[0],
+    image: imageUrls.facialTreatments[1],
     duration: "50 минут",
     effects: [
       "Снятие раздражения",
@@ -356,7 +356,7 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
     name: "Комбинированная чистка лица",
     price: "3000₽",
     description: "Процедура глубокого очищения кожи, адаптированная специально для мужчин, учитывающая особенности мужской кожи.",
-    image: imageUrls.beautyServices[0],
+    image: imageUrls.menServices[0],
     duration: "60 минут",
     effects: [
       "Глубокое очищение пор",
@@ -371,7 +371,7 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
     name: "Уходовая процедура для лица",
     price: "2800₽",
     description: "Комплексный уход за мужской кожей с учетом ее особенностей: большей толщины, повышенной жирности и склонности к раздражениям.",
-    image: imageUrls.beautyServices[1],
+    image: imageUrls.menServices[1],
     duration: "50 минут",
     effects: [
       "Глубокое увлажнение",
