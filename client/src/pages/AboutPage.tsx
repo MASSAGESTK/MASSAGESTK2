@@ -5,7 +5,7 @@ const AboutPage = () => {
     <div className="p-4 md:p-8">
       <h1 className="text-xl font-semibold mb-6">О нас</h1>
       
-      <div className="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+      <div className="bg-card text-card-foreground rounded-lg shadow-md dark:shadow-white/5 overflow-hidden mb-6 transition-colors duration-200">
         <img 
           src={imageUrls.salonInterior[0]} 
           alt="Интерьер салона Natali Secrets" 
@@ -13,14 +13,14 @@ const AboutPage = () => {
         />
         <div className="p-4">
           <h2 className="font-medium text-lg mb-2">Natali Secrets</h2>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-muted-foreground">
             Салон красоты Natali Secrets – это место, где каждый клиент получает индивидуальный подход и высококачественные услуги. 
             Мы специализируемся на косметологии, массаже и коррекции фигуры, используя профессиональные продукты и современное оборудование.
           </p>
         </div>
       </div>
       
-      <div className="bg-white rounded-lg shadow-md overflow-hidden mb-6">
+      <div className="bg-card text-card-foreground rounded-lg shadow-md dark:shadow-white/5 overflow-hidden mb-6 transition-colors duration-200">
         <div className="p-4">
           <h2 className="font-medium text-lg mb-3">Наши контакты</h2>
           <div className="space-y-3">
@@ -44,16 +44,16 @@ const AboutPage = () => {
         </div>
       </div>
       
-      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="bg-card text-card-foreground rounded-lg shadow-md dark:shadow-white/5 overflow-hidden transition-colors duration-200">
         <div className="p-4">
           <h2 className="font-medium text-lg mb-2">Наше расположение</h2>
-          <div className="h-56 bg-gray-200 rounded-lg overflow-hidden flex items-center justify-center">
-            <span className="material-icons text-gray-400 text-4xl">map</span>
+          <div className="h-56 bg-muted rounded-lg overflow-hidden flex items-center justify-center">
+            <span className="material-icons text-muted-foreground text-4xl">map</span>
           </div>
         </div>
       </div>
       
-      <div className="bg-white rounded-lg shadow-md overflow-hidden mt-6">
+      <div className="bg-card text-card-foreground rounded-lg shadow-md dark:shadow-white/5 overflow-hidden mt-6 transition-colors duration-200">
         <div className="p-4">
           <h2 className="font-medium text-lg mb-2">Социальные сети</h2>
           <div className="flex space-x-4 mt-2">
