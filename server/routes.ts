@@ -3,9 +3,9 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // API Routes
+  // Маршруты API
   
-  // Get all services
+  // Получить все услуги
   app.get('/api/services', async (req, res) => {
     try {
       const services = await storage.getAllServices();
@@ -15,7 +15,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get service by ID
+  // Получить услугу по ID
   app.get('/api/services/:id', async (req, res) => {
     try {
       const service = await storage.getServiceById(parseInt(req.params.id));
@@ -28,7 +28,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get services by category
+  // Получить услуги по категории
   app.get('/api/services/category/:category', async (req, res) => {
     try {
       const services = await storage.getServicesByCategory(req.params.category);
@@ -38,7 +38,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Get all programs
+  // Получить все программы
   app.get('/api/programs', async (req, res) => {
     try {
       const programs = await storage.getAllPrograms();
