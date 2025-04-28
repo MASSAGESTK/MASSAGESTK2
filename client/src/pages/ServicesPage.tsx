@@ -473,7 +473,7 @@ const ServicesPage = () => {
     <div className="p-4 md:p-8 pt-0">
       
       {/* Фильтры категорий - закреплены при прокрутке */}
-      <div className="sticky top-0 bg-background z-10 pt-3 pb-2 mb-4 -mx-4 px-4 shadow-sm dark:shadow-white/5 transition-colors duration-200">
+      <div className="sticky top-0 bg-background z-50 pt-3 pb-2 mb-4 -mx-4 px-4 shadow-md dark:shadow-white/10 transition-colors duration-200">
         <div className="overflow-x-auto scrollbar-hide">
           <div className="flex space-x-2 pb-1">
             {categories.map((category) => (

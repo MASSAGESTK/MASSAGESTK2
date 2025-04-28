@@ -39,7 +39,7 @@ function App() {
           {/* Компонент для прокрутки страницы вверх при переходе между маршрутами */}
           <ScrollToTop />
           <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
-            <main className="pt-4 pb-28"> {/* Убран большой отступ сверху, добавлен небольшой */}
+            <main className="pt-0 pb-28"> {/* Убран большой отступ сверху, добавлен небольшой */}
               <Router setActiveTab={setActiveTab} />
             </main>
             <BottomNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
