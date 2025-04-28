@@ -1,6 +1,7 @@
 import { imageUrls } from "@/lib/utils";
 import PromotionCard from "@/components/PromotionCard";
 
+// Данные о акциях и специальных предложениях
 const promotions = [
   {
     id: 1,
@@ -23,7 +24,7 @@ const promotions = [
     id: 3,
     title: "Подарочные сертификаты",
     description: "Порадуйте близких подарочным сертификатом на услуги нашего салона. Доступны сертификаты различного номинала.",
-    image: imageUrls.massageTherapy[0],
+    image: imageUrls.massageTherapy[1],
     badge: "Актуально",
     buttonText: "Выбрать сертификат",
   },

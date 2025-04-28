@@ -22,18 +22,18 @@ const PromotionCard = ({
   badge,
 }: PromotionCardProps) => {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row md:h-32">
       <img 
         src={image} 
         alt={title} 
-        className="w-full md:w-1/3 h-32 md:h-full object-cover"
+        className="w-full md:w-1/3 h-32 object-cover"
       />
       <div className="p-3 flex-1 flex flex-col justify-between">
         <div>
           <div className="flex justify-between items-start">
             <h3 className="font-medium text-base">{title}</h3>
             {badge && (
-              <span className="bg-[#FF6B35] text-white text-xs px-2 py-0.5 rounded-full ml-2">
+              <span className="bg-[#FF6B35] text-white text-xs px-2 py-0.5 rounded-full ml-2 whitespace-nowrap">
                 {badge}
               </span>
             )}
