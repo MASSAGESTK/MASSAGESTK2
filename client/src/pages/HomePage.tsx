@@ -203,7 +203,7 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
   return (
     <div className="p-4 md:p-8">
       {/* Главный баннер */}
-      <div className="rounded-lg overflow-hidden shadow-md dark:shadow-white/5 mb-8 transition-colors duration-200">
+      <div className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl dark:shadow-white/10 mb-8 transition-all duration-200 transform hover:-translate-y-1">
         <img 
           src={imageUrls.salonInterior[1]} 
           alt="Natali Secrets Spa" 
@@ -213,7 +213,7 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
           <h2 className="text-lg font-medium">Добро пожаловать в мир красоты и релаксации</h2>
           <p className="text-sm text-muted-foreground mt-1">Профессиональные услуги для вашего совершенства</p>
           <Button 
-            className="mt-3 bg-[#FF6B35] hover:bg-[#FF6B35]/80 text-white"
+            className="mt-3 bg-[#FF6B35] hover:bg-[#FF6B35]/90 text-white shadow-sm hover:shadow-md transition-all"
             onClick={handleBooking}
           >
             Записаться
@@ -227,7 +227,7 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
           <h2 className="text-lg font-semibold">Популярные услуги</h2>
           <span 
             onClick={() => handleComplexServiceClick(1)} // 1 соответствует services в навигации
-            className="text-primary text-sm font-medium cursor-pointer"
+            className="text-primary text-sm font-medium cursor-pointer hover:drop-shadow-md transition-all"
           >
             Смотреть все
           </span>
@@ -257,10 +257,10 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
           {complexServices.map((service) => (
             <div 
               key={service.id}
-              className="bg-primary rounded-lg p-3 text-white flex flex-col items-center justify-center aspect-square shadow-md cursor-pointer"
+              className="bg-primary rounded-lg p-3 text-white flex flex-col items-center justify-center aspect-square shadow-md hover:shadow-lg dark:shadow-white/10 cursor-pointer transition-all duration-200 transform hover:-translate-y-1"
               onClick={() => handleComplexServiceClick(service.id)}
             >
-              <span className="material-icons text-3xl mb-2">{service.icon}</span>
+              <span className="material-icons text-xl mb-2 drop-shadow-sm">{service.icon}</span>
               <h3 className="text-center font-medium text-sm md:text-base">{service.title}</h3>
             </div>
           ))}
@@ -308,7 +308,7 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
 
       {/* Модальное окно с предупреждением о Telegram */}
       <Dialog open={showTelegramModal} onOpenChange={() => setShowTelegramModal(false)}>
-        <DialogContent className="bg-card text-card-foreground rounded-lg max-w-md w-full p-4 transition-colors duration-200">
+        <DialogContent className="bg-card text-card-foreground rounded-lg max-w-md w-full p-4 shadow-xl dark:shadow-white/10 transition-all duration-200">
           <DialogHeader>
             <DialogTitle className="text-center text-base">Запись на услугу</DialogTitle>
           </DialogHeader>
@@ -322,7 +322,7 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
           
           <DialogFooter className="flex justify-center">
             <Button 
-              className="bg-primary hover:bg-primary/80 text-white w-full"
+              className="bg-primary hover:bg-primary/90 text-white w-full shadow-sm hover:shadow-md transition-all"
               onClick={handleConfirmTelegram}
             >
               Перейти в Telegram
