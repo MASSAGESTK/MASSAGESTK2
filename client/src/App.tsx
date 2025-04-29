@@ -11,6 +11,7 @@ import ServicesPage from "@/pages/ServicesPage";
 import PromotionsPage from "@/pages/PromotionsPage";
 import SettingsPage from "@/pages/SettingsPage";
 import AboutPage from "@/pages/AboutPage";
+import MembershipsPage from "@/pages/MembershipsPage";
 import BottomNavigation from "@/components/BottomNavigation";
 import ScrollToTop from "@/components/ScrollToTop";
 
@@ -24,6 +25,7 @@ function Router({ setActiveTab }: { setActiveTab: (tab: string) => void }) {
       <Route path="/promotions" component={PromotionsPage} />
       <Route path="/settings" component={SettingsPage} />
       <Route path="/about" component={AboutPage} />
+      <Route path="/memberships" component={MembershipsPage} />
       <Route component={NotFound} />
     </Switch>
   );

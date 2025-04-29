@@ -54,6 +54,12 @@ const complexServices = [
     icon: "dashboard",
     category: "complex",
   },
+  {
+    id: 6,
+    title: "Абонементы",
+    icon: "card_membership",
+    category: "memberships",
+  },
 ];
 
 // Полные данные о всех услугах с эффектами
@@ -212,6 +218,15 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
       (service) => service.id === id,
     );
 
+    // Проверяем, выбраны ли абонементы
+    if (selectedService?.category === "memberships") {
+      // Для абонементов переходим на специальную страницу
+      setActiveTab("memberships");
+      navigate("/memberships");
+      return;
+    }
+
+    // Для остальных категорий
     // Устанавливаем активную вкладку "services" и перенаправляем на страницу услуг
     setActiveTab("services");
 
