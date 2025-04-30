@@ -52,23 +52,8 @@ const PromotionsPage = () => {
   };
 
   const handleConfirmTelegram = () => {
-    // Кодируем информацию об акции в параметре start
-    if (selectedPromoId === 1) {
-      const promoTitle = btoa(encodeURIComponent("Скидка 10% на первое посещение"));
-      const promoDesc = btoa(encodeURIComponent("Скидка для новых клиентов"));
-      
-      const startParam = `promo_${selectedPromoId}_${promoTitle}_${promoDesc}`;
-      window.open(`https://t.me/Natali_Secrets_bot?start=${startParam}`, "_blank");
-    } else if (selectedPromoId === 2) {
-      const promoTitle = btoa(encodeURIComponent("Абонемент на массаж спины"));
-      const promoDesc = btoa(encodeURIComponent("10 сеансов за 8200₽"));
-      
-      const startParam = `promo_${selectedPromoId}_${promoTitle}_${promoDesc}`;
-      window.open(`https://t.me/Natali_Secrets_bot?start=${startParam}`, "_blank");
-    } else {
-      window.open("https://t.me/Natali_Secrets_bot", "_blank");
-    }
-    
+    // Простое открытие Telegram бота без кодировки параметров
+    window.open("https://t.me/Natali_Secrets_bot", "_blank");
     setShowTelegramModal(false);
   };
 

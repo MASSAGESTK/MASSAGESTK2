@@ -85,21 +85,8 @@ const CertificateModal = ({ isOpen, onClose }: CertificateModalProps) => {
   };
 
   const handleConfirmTelegram = () => {
-    if (selectedCertificate) {
-      // Кодируем информацию о сертификате в параметре start
-      // Формат: certificate_id_title_price_type
-      // Данные кодируем в base64 для безопасной передачи специальных символов
-      const titleEncoded = btoa(encodeURIComponent(selectedCertificate.title));
-      const priceEncoded = btoa(encodeURIComponent(selectedCertificate.price));
-      const typeEncoded = btoa(encodeURIComponent(selectedCertificate.type));
-      
-      const startParam = `certificate_${selectedCertificate.id}_${titleEncoded}_${priceEncoded}_${typeEncoded}`;
-      
-      // Открываем Telegram бот с закодированной информацией
-      window.open(`https://t.me/Natali_Secrets_bot?start=${startParam}`, "_blank");
-    } else {
-      window.open("https://t.me/Natali_Secrets_bot", "_blank");
-    }
+    // Простое открытие Telegram бота без кодировки параметров
+    window.open("https://t.me/Natali_Secrets_bot", "_blank");
     setShowTelegramModal(false);
     onClose();
   };

@@ -37,34 +37,8 @@ const ProgramModal = ({ isOpen, onClose, program }: ProgramModalProps) => {
   };
 
   const handleConfirmTelegram = () => {
-    if (program) {
-      // Кодируем информацию о программе в параметре start
-      // Формат: program_id_title_price_duration_sessions
-      // Данные кодируем в base64 для безопасной передачи специальных символов
-      const titleEncoded = btoa(encodeURIComponent(program.title));
-      const priceEncoded = btoa(encodeURIComponent(program.price));
-      
-      let startParam = `program_${program.id}_${titleEncoded}_${priceEncoded}`;
-      
-      if (program.duration) {
-        const durationEncoded = btoa(encodeURIComponent(program.duration));
-        startParam += `_${durationEncoded}`;
-      } else {
-        startParam += `_none`;
-      }
-      
-      if (program.sessions) {
-        const sessionsEncoded = btoa(encodeURIComponent(program.sessions));
-        startParam += `_${sessionsEncoded}`;
-      } else {
-        startParam += `_none`;
-      }
-      
-      // Открываем Telegram бот с закодированной информацией
-      window.open(`https://t.me/Natali_Secrets_bot?start=${startParam}`, "_blank");
-    } else {
-      window.open("https://t.me/Natali_Secrets_bot", "_blank");
-    }
+    // Простое открытие Telegram бота без кодировки параметров
+    window.open("https://t.me/Natali_Secrets_bot", "_blank");
     setShowTelegramModal(false);
     onClose();
   };

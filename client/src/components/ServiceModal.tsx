@@ -28,21 +28,8 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
   };
 
   const handleConfirmTelegram = () => {
-    if (service) {
-      // Кодируем информацию об услуге в параметре start
-      // Формат: service_id_name_price_duration
-      // Имя и другие данные кодируем в base64 для безопасной передачи специальных символов
-      const serviceNameEncoded = btoa(encodeURIComponent(service.name));
-      const servicePriceEncoded = btoa(encodeURIComponent(service.price));
-      const serviceDurationEncoded = btoa(encodeURIComponent(service.duration));
-      
-      const startParam = `service_${service.id}_${serviceNameEncoded}_${servicePriceEncoded}_${serviceDurationEncoded}`;
-      
-      // Открываем Telegram бот с закодированной информацией
-      window.open(`https://t.me/Natali_Secrets_bot?start=${startParam}`, "_blank");
-    } else {
-      window.open("https://t.me/Natali_Secrets_bot", "_blank");
-    }
+    // Простое открытие Telegram бота без кодировки параметров
+    window.open("https://t.me/Natali_Secrets_bot", "_blank");
     setShowTelegramModal(false);
     onClose();
   };
