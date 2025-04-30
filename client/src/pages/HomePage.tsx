@@ -311,7 +311,7 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
 
       {/* Комплексные услуги */}
       <div className="mb-8">
-        <h2 className="text-lg font-semibold mb-4">Комплексные программы</h2>
+        <h2 className="text-lg font-semibold mb-4">Спектор услуг</h2>
         <div className="grid grid-cols-3 md:grid-cols-5 gap-3 mx-auto">
           {complexServices.map((service) => (
             <div
