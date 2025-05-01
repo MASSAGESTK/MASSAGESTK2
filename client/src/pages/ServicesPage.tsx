@@ -4,7 +4,10 @@ import ServiceCard from "@/components/ServiceCard";
 import ProgramCard from "@/components/ProgramCard";
 import ServiceModal, { ServiceDetails } from "@/components/ServiceModal";
 import ProgramModal, { ProgramDetails } from "@/components/ProgramModal";
+import Breadcrumb from "@/components/Breadcrumb";
+import { Helmet } from "react-helmet";
 import { imageUrls } from "@/lib/utils";
+import { generateServiceSchema } from "@/utils/seoUtils";
 
 type ServiceCategory = "all" | "complex" | "cosmetology" | "massage" | "bodyCorrection" | "men";
 
@@ -469,8 +472,38 @@ const ServicesPage = () => {
     setProgramModalOpen(true);
   };
 
+  // Структурированные данные для услуг
+  const servicesSchemaData = [
+    serviceDetailsMap[1],
+    serviceDetailsMap[6],
+    serviceDetailsMap[7]
+  ].map(service => generateServiceSchema({
+    name: service.name,
+    description: service.description,
+    price: service.price,
+    image: service.image,
+    category: "Beauty Service"
+  }));
+
   return (
     <div className="p-4 md:p-8 pt-0">
+      {/* SEO - структурированные данные Schema.org */}
+      <Helmet>
+        {servicesSchemaData.map((schema, index) => (
+          <script key={`service-schema-${index}`} type="application/ld+json">
+            {schema}
+          </script>
+        ))}
+      </Helmet>
+      
+      {/* Хлебные крошки */}
+      <Breadcrumb 
+        items={[
+          { name: 'Главная', url: '/' },
+          { name: 'Услуги', url: '/services' }
+        ]}
+        className="mb-4 text-sm"
+      />
       
       {/* Фильтры категорий - закреплены при прокрутке */}
       <div className="sticky top-0 bg-background z-50 pt-3 pb-2 mb-4 -mx-4 px-4 shadow-md dark:shadow-white/10 transition-colors duration-200">

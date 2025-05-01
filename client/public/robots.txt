@@ -1,7 +1,13 @@
+# Natali Secrets - Правила индексации для поисковых систем
 User-agent: *
 Allow: /
-Disallow: /settings
 
-# Разрешаем индексацию всех страниц, кроме страницы настроек
+# Разрешаем доступ ко всем страницам сайта
+Disallow: /settings # Запрещаем доступ к страницам настроек
+Disallow: /admin # Запрещаем доступ к админке (если будет в будущем)
 
+# Директива Host указывает на основной домен сайта
+Host: natali-secrets.ru
+
+# Карта сайта
 Sitemap: https://natali-secrets.ru/sitemap.xml

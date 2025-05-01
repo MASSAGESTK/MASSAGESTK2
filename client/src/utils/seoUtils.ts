@@ -131,8 +131,12 @@ export function measureWebVitals(): void {
     if ('PerformanceObserver' in window) {
       const fidObserver = new PerformanceObserver((list) => {
         list.getEntries().forEach((entry) => {
-          const delay = entry.processingStart - entry.startTime;
-          console.log(`FID: ${delay.toFixed(2)}ms`);
+          // Приведение типа к PerformanceEventTiming, который имеет processingStart
+          if (entry.entryType === 'first-input') {
+            const fidEntry = entry as unknown as {processingStart: number, startTime: number};
+            const delay = fidEntry.processingStart - fidEntry.startTime;
+            console.log(`FID: ${delay.toFixed(2)}ms`);
+          }
         });
       });
       
