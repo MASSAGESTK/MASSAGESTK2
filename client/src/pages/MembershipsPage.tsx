@@ -219,15 +219,12 @@ const MembershipsPage = () => {
   };
 
   return (
-    <div className="p-4 md:p-8 pt-0">
-      <div className="mb-6 pt-4">
+    <div className="p-4 md:p-8 pt-4">
+      <div className="mb-1 pt-0">
         <h1 className="text-xl font-semibold text-primary">АБОНЕМЕНТЫ</h1>
-        <p className="text-sm text-muted-foreground mt-1 mb-4">
-          Наши абонементы помогают сэкономить до 30% стоимости процедур и получить дополнительные привилегии
-        </p>
 
         {/* Информационный блок о преимуществах абонементов */}
-        <div className="bg-card text-card-foreground rounded-lg p-4 mb-6 shadow-md dark:shadow-white/10 transition-colors duration-200">
+        <div className="bg-card text-card-foreground rounded-lg p-3 mb-6 shadow-md dark:shadow-white/10 transition-colors duration-200">
           <h2 className="text-base font-medium mb-2">Преимущества абонементов</h2>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
             <li className="flex items-center">

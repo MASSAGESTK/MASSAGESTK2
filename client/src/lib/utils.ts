@@ -25,7 +25,7 @@ export const imageUrls = {
   // Интерьер салона
   salonInterior: [
     "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1607008829749-c0f284a49841?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+    "https://image2.yell.ru/imager/ZWYwNTdmZGE5MDc0ZDJhNDMzM/700x000/responses/6/6/9/r_dar-dary-krasnaya-polyana-14386214-6vq2uziunv_1640596467.jpg",
   ],
   // Массажные процедуры
   massageTherapy: [

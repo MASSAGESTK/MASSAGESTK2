@@ -268,15 +268,9 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
           <h2 className="text-lg font-medium">
             Добро пожаловать в мир красоты и релаксации
           </h2>
-          <p className="text-sm text-muted-foreground mt-1">
+          <p className="text-sm text-muted-foreground mt-3">
             Профессиональные услуги для вашего совершенства
           </p>
-          <Button
-            className="mt-3 bg-[#FF6B35] hover:bg-[#FF6B35]/90 text-white shadow-sm hover:shadow-md transition-all"
-            onClick={handleBooking}
-          >
-            Записаться
-          </Button>
         </div>
       </div>
 

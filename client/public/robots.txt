@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /settings
+
+# Разрешаем индексацию всех страниц, кроме страницы настроек
+
+Sitemap: https://natali-secrets.ru/sitemap.xml
