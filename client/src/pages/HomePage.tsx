@@ -263,27 +263,25 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
   return (
     <div className="p-4 md:p-8">
       {/* Главный баннер */}
-      <div className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl dark:shadow-white/10 mb-8 transition-all duration-200 transform hover:-translate-y-1">
-        <div className="relative">
-          <img
-            src={imageUrls.salonInterior[1]}
-            alt="Natali Secrets Spa"
-            className="w-full h-48 md:h-64 object-cover"
-          />
-          <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4">
-            <h2 className="text-lg font-medium text-white">
-              Добро пожаловать в мир красоты и релаксации
-            </h2>
-            <p className="text-sm text-gray-300 mt-1">
-              Профессиональные услуги для вашего здоровья и совершенства
-            </p>
-          </div>
+      <div className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl dark:shadow-white/15 mb-3 transition-all duration-200 transform hover:-translate-y-0">
+        <img
+          src={imageUrls.salonInterior[1]}
+          alt="Natali Secrets Spa"
+          className="w-full h-48 md:h-64 object-cover"
+        />
+        <div className="bg-card text-card-foreground p-4 relative transition-colors duration-200">
+          <h2 className="text-lg font-medium">
+            Добро пожаловать в мир красоты и релаксации
+          </h2>
+          <p className="text-sm text-muted-foreground mt-3">
+            Профессиональные услуги для вашего здоровья и совершенства
+          </p>
         </div>
       </div>
 
       {/* Популярные услуги */}
       <div className="mb-2">
-        <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center justify-between mb-3">
           <h2 className="text-lg font-semibold">Популярные услуги</h2>
           <span
             onClick={() => handleComplexServiceClick(1)} // 1 соответствует services в навигации
@@ -311,8 +309,8 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
       </div>
 
       {/* Комплексные услуги */}
-      <div className="mb-8">
-        <h2 className="text-lg font-semibold mb-4">Спектр услуг</h2>
+      <div className="mb-0">
+        <h2 className="text-lg font-semibold mb-3">Спектр услуг</h2>
         <div className="grid grid-cols-3 md:grid-cols-6 gap-3 mx-auto">
           {complexServices.map((service) => (
             <div
