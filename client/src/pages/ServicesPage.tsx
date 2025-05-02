@@ -21,31 +21,31 @@ const categories = [
 ];
 
 const cosmetologyServices = [
-  { id: 1, name: "Комбинированная чистка лица", duration: "60 минут", price: "2700₽", category: "cosmetology" },
-  { id: 2, name: "Пилинг омолаживающий", duration: "45 минут", price: "2500₽", category: "cosmetology" },
-  { id: 3, name: "Уходовая процедура для проблемной кожи", duration: "60 минут", price: "2800₽", category: "cosmetology" },
-  { id: 4, name: "Уходовая процедура для чувствительной кожи", duration: "50 минут", price: "2600₽", category: "cosmetology" },
-  { id: 5, name: "Anti-age (омолаживающая, уходовая процедура)", duration: "75 минут", price: "3000₽", category: "cosmetology" },
+  { id: 1, name: "Комбинированная чистка лица", duration: "60 минут", price: "2700₽", category: "cosmetology", image: imageUrls.facialTreatments[0] },
+  { id: 2, name: "Пилинг омолаживающий", duration: "45 минут", price: "2500₽", category: "cosmetology", image: imageUrls.facialTreatments[2] },
+  { id: 3, name: "Уходовая процедура для проблемной кожи", duration: "60 минут", price: "2800₽", category: "cosmetology", image: imageUrls.facialTreatments[3] },
+  { id: 4, name: "Уходовая процедура для чувствительной кожи", duration: "50 минут", price: "2600₽", category: "cosmetology", image: imageUrls.facialTreatments[1] },
+  { id: 5, name: "Anti-age (омолаживающая, уходовая процедура)", duration: "75 минут", price: "3000₽", category: "cosmetology", image: imageUrls.antiAge[0] },
 ];
 
 const massageServices = [
-  { id: 6, name: "Антицеллюлитный массаж", duration: "45 минут", price: "1200₽", category: "massage" },
-  { id: 7, name: "Спа массаж", duration: "60 минут", price: "2000₽", category: "massage" },
-  { id: 8, name: "Скульптурно-буккальный массаж", duration: "45 минут", price: "1800₽", category: "massage" },
-  { id: 9, name: "Классический массаж спины", duration: "30 минут", price: "900₽", category: "massage" },
+  { id: 6, name: "Антицеллюлитный массаж", duration: "45 минут", price: "1200₽", category: "massage", image: imageUrls.massageTherapy[0] },
+  { id: 7, name: "Спа массаж", duration: "60 минут", price: "2000₽", category: "massage", image: imageUrls.massageTherapy[1] },
+  { id: 8, name: "Скульптурно-буккальный массаж", duration: "45 минут", price: "1800₽", category: "massage", image: imageUrls.facialMassage[0] },
+  { id: 9, name: "Классический массаж спины", duration: "30 минут", price: "900₽", category: "massage", image: imageUrls.massageTherapy[2] },
 ];
 
 const bodyCorrectionServices = [
-  { id: 10, name: "Прессотерапия", duration: "40 минут", price: "1200₽", category: "bodyCorrection" },
-  { id: 11, name: "Вибро-прессо-роликовый массаж", duration: "30 минут", price: "1600₽", category: "bodyCorrection" },
+  { id: 10, name: "Прессотерапия", duration: "40 минут", price: "1200₽", category: "bodyCorrection", image: imageUrls.bodyTreatments[0] },
+  { id: 11, name: "Вибро-прессо-роликовый массаж", duration: "30 минут", price: "1600₽", category: "bodyCorrection", image: imageUrls.bodyTreatments[1] },
 ];
 
 const menServices = [
-  { id: 12, name: "Комбинированная чистка лица", duration: "60 минут", price: "3000₽", category: "men" },
-  { id: 13, name: "Уходовая процедура для лица", duration: "50 минут", price: "2800₽", category: "men" },
-  { id: 14, name: "Спортивный массаж", duration: "45 минут", price: "1300₽", category: "men" },
-  { id: 15, name: "Анистресс-массаж", duration: "60 минут", price: "2000₽", category: "men" },
-  { id: 16, name: "Массаж спины, шеи, рук", duration: "40 минут", price: "1000₽", category: "men" },
+  { id: 12, name: "Комбинированная чистка лица", duration: "60 минут", price: "3000₽", category: "men", image: imageUrls.menServices[0] },
+  { id: 13, name: "Уходовая процедура для лица", duration: "50 минут", price: "2800₽", category: "men", image: imageUrls.menServices[1] },
+  { id: 14, name: "Спортивный массаж", duration: "45 минут", price: "1300₽", category: "men", image: imageUrls.menServices[2] },
+  { id: 15, name: "Анистресс-массаж", duration: "60 минут", price: "2000₽", category: "men", image: imageUrls.menServices[3] },
+  { id: 16, name: "Массаж спины, шеи, рук", duration: "40 минут", price: "1000₽", category: "men", image: imageUrls.massageTherapy[3] },
 ];
 
 const allServices = [
@@ -60,6 +60,7 @@ const complexPrograms = [
     id: 1, 
     title: "Коррекция фигуры: 5 сеансов", 
     price: "17000₽", 
+    image: imageUrls.spaServices[0],
     features: [
       "прессотерапия",
       "вибро-прессо-роликовый массаж",
@@ -70,6 +71,7 @@ const complexPrograms = [
     id: 2, 
     title: "Программа похудения: 10 сеансов", 
     price: "35000₽", 
+    image: imageUrls.spaServices[2],
     features: [
       "прессотерапия",
       "вибро-прессо-роликовый массаж",
@@ -80,6 +82,7 @@ const complexPrograms = [
     id: 3, 
     title: "Программа для тела: 1 сеанс", 
     price: "4000₽", 
+    image: imageUrls.massageTherapy[0],
     features: [
       "массаж",
       "аппаратные процедуры",
@@ -92,6 +95,7 @@ const complexPrograms = [
     id: 4, 
     title: "Программа для лица: 1 сеанс", 
     price: "4000₽", 
+    image: imageUrls.antiAge[0],
     features: [
       "массаж лица",
       "уходовые процедуры",

@@ -5,6 +5,7 @@ interface ProgramCardProps {
   title: string;
   price: string;
   features: string[];
+  image?: string;
   onClick: (id: number) => void;
 }
 
