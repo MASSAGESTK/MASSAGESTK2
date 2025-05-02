@@ -32,7 +32,7 @@ const AboutPage = () => {
             </div>
             <div className="flex">
               <span className="material-icons text-primary mr-3 drop-shadow-sm">phone</span>
-              <p className="text-sm">+7 (904) 103-47-20</p>
+              <p className="text-sm">+7 (950) 565-64-44</p>
             </div>
             <div className="flex">
               <span className="material-icons text-primary mr-3 drop-shadow-sm">schedule</span>

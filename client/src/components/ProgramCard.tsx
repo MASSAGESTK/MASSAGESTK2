@@ -5,22 +5,12 @@ interface ProgramCardProps {
   title: string;
   price: string;
   features: string[];
-  image?: string;
   onClick: (id: number) => void;
 }
 
-const ProgramCard = ({ id, title, price, features, image, onClick }: ProgramCardProps) => {
+const ProgramCard = ({ id, title, price, features, onClick }: ProgramCardProps) => {
   return (
     <div className="service-card bg-card text-card-foreground rounded-lg shadow-md hover:shadow-xl dark:shadow-white/10 overflow-hidden transition-all duration-200 h-full transform hover:-translate-y-1">
-      {image && (
-        <div className="h-48 overflow-hidden">
-          <img 
-            src={image} 
-            alt={title} 
-            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-          />
-        </div>
-      )}
       <div className="p-4 flex flex-col h-full">
         <div className="flex justify-between items-start">
           <h3 className="font-medium text-lg">{title}</h3>
