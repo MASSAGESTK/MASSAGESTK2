@@ -43,11 +43,14 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
           </DialogHeader>
           
           <div className="overflow-y-auto flex-grow p-3 scrollbar-thin scrollbar-thumb-muted-foreground/20 scrollbar-track-transparent">
-            <img 
-              src={service.image} 
-              alt={service.name} 
-              className="w-full h-40 object-cover rounded-lg mb-3 shadow-md"
-            />
+            <div className="relative w-full h-40 rounded-lg mb-3 shadow-md overflow-hidden">
+              <img 
+                src={service.image} 
+                alt={service.name} 
+                className="w-full h-40 object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-purple-600/40 to-transparent pointer-events-none"></div>
+            </div>
             <p className="text-[#FF6B35] font-semibold text-lg mb-2 drop-shadow-sm">{service.price}</p>
             <div className="space-y-3">
               <div>

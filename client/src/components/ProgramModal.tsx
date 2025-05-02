@@ -53,12 +53,13 @@ const ProgramModal = ({ isOpen, onClose, program }: ProgramModalProps) => {
             </DialogTitle>
           </DialogHeader>
           
-          <div className="overflow-hidden rounded-md mb-3 shadow-md flex-shrink-0">
+          <div className="relative overflow-hidden rounded-md mb-3 shadow-md flex-shrink-0">
             <img 
               src={program.image} 
               alt={program.title} 
               className="w-full h-40 object-cover"
             />
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-purple-600/40 to-transparent pointer-events-none"></div>
           </div>
           
           <div className="flex justify-between items-start flex-shrink-0 mb-2">

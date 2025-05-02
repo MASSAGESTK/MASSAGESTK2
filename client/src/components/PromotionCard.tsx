@@ -105,11 +105,14 @@ const PromotionCard = ({
           <DiscountSvgImage title={title} />
         </div>
       ) : (
-        <img 
-          src={image} 
-          alt={title} 
-          className="w-full md:w-1/3 h-32 object-cover"
-        />
+        <div className="relative w-full md:w-1/3 h-32 overflow-hidden">
+          <img 
+            src={image} 
+            alt={title} 
+            className="w-full h-32 object-cover"
+          />
+          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-purple-600/40 to-transparent pointer-events-none"></div>
+        </div>
       )}
       <div className="p-3 flex-1 flex flex-col justify-between">
         <div>

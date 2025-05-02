@@ -30,9 +30,10 @@ export const imageUrls = {
   // Массажные процедуры
   massageTherapy: [
     "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    "https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    "https://img.freepik.com/free-photo/relaxing-spa-concept-with-woman_23-2147816920.jpg?t=st=1746214110~exp=1746217710~hmac=0655f08e1cc6f63c57c91777d5bada095a87502d5af407d75c782c10fcf7291a&w=2000",
     "https://images.unsplash.com/photo-1545620783-e410c29033a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    "https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    "https://img.freepik.com/free-photo/close-up-greeting-card_1098-2833.jpg?t=st=1746214603~exp=1746218203~hmac=b20512233990d1adff6a508ed59d31f7e8df08089c44426633ab1e7c14ae8e21&w=1480",
+    "https://img.freepik.com/free-photo/young-attractive-woman-having-massage-relaxing-spa-salon_176420-7572.jpg?t=st=1746214433~exp=1746218033~hmac=05710534d7baa845b682d29d096a1de672f0f584cbccbce9e807cdf7d6d3982d&w=2000",
   ],
   // Уход за телом - скрабы, обертывания, коррекция фигуры
   bodyTreatments: [
