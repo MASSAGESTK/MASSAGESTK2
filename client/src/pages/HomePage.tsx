@@ -207,9 +207,14 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
   const [showTelegramModal, setShowTelegramModal] = useState(false);
 
   const handleServiceClick = (id: number) => {
-    // Получаем данные об услуге из нашей карты serviceDetailsMap
-    setSelectedService(serviceDetailsMap[id]);
-    setModalOpen(true);
+    // Переход к странице услуг и передача ID выбранной услуги
+    setActiveTab("services");
+    
+    // Сохраняем ID выбранной услуги в sessionStorage, чтобы открыть её на странице услуг
+    sessionStorage.setItem("selectedServiceId", id.toString());
+    
+    // Переходим на страницу услуг
+    navigate("/services");
   };
 
   const handleComplexServiceClick = (id: number) => {
