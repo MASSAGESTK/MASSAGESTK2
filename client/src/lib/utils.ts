@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 export const imageUrls = {
   // Услуги красоты - косметология, макияж, уход за волосами
   beautyServices: [
-    "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    "https://img.freepik.com/free-photo/top-view-smiling-bearded-man-showing-ten-percentage-torn-hole-yellow-paper_140725-106229.jpg?t=st=1746214985~exp=1746218585~hmac=0e80626436dd569c5191d36d42cdafc8c24dd5438b9e01343e2faa14ebeb7cbf&w=2000",
     "https://images.unsplash.com/photo-1596704017254-9098c6492856?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
@@ -29,7 +29,7 @@ export const imageUrls = {
   ],
   // Массажные процедуры
   massageTherapy: [
-    "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    "https://img.freepik.com/free-photo/top-view-smiling-bearded-man-showing-ten-percentage-torn-hole-yellow-paper_140725-106229.jpg?t=st=1746214985~exp=1746218585~hmac=0e80626436dd569c5191d36d42cdafc8c24dd5438b9e01343e2faa14ebeb7cbf&w=2000",
     "https://img.freepik.com/free-photo/relaxing-spa-concept-with-woman_23-2147816920.jpg?t=st=1746214110~exp=1746217710~hmac=0655f08e1cc6f63c57c91777d5bada095a87502d5af407d75c782c10fcf7291a&w=2000",
     "https://images.unsplash.com/photo-1545620783-e410c29033a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     "https://img.freepik.com/free-photo/close-up-greeting-card_1098-2833.jpg?t=st=1746214603~exp=1746218203~hmac=b20512233990d1adff6a508ed59d31f7e8df08089c44426633ab1e7c14ae8e21&w=1480",
