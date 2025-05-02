@@ -249,9 +249,12 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
     // Кодируем простую информацию для главного баннера
     const source = btoa(encodeURIComponent("main_banner"));
     const description = btoa(encodeURIComponent("Запись на консультацию"));
-    
+
     // Открываем Telegram бот с закодированной информацией
-    window.open(`https://t.me/Natali_Secrets_bot?start=main_${source}_${description}`, "_blank");
+    window.open(
+      `https://t.me/Natali_Secrets_bot?start=main_${source}_${description}`,
+      "_blank",
+    );
     setShowTelegramModal(false);
   };
 
