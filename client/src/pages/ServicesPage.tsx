@@ -33,6 +33,7 @@ const massageServices = [
   { id: 7, name: "Спа массаж", duration: "60 минут", price: "2000₽", category: "massage" },
   { id: 8, name: "Скульптурно-буккальный массаж", duration: "45 минут", price: "1800₽", category: "massage" },
   { id: 9, name: "Классический массаж спины", duration: "30 минут", price: "900₽", category: "massage" },
+  { id: 17, name: "Лимфодренажный массаж", duration: "40 минут", price: "1000₽", category: "massage" },
 ];
 
 const bodyCorrectionServices = [
@@ -428,6 +429,21 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
       "Профилактика остеохондроза",
       "Снижение болевых ощущений",
       "Расслабление мышц спины"
+    ]
+  },
+  17: {
+    id: 17,
+    name: "Лимфодренажный массаж",
+    price: "1000₽",
+    description: "Деликатная техника массажа, направленная на стимуляцию лимфатической системы и улучшение оттока лимфы, способствующая уменьшению отечности и детоксикации организма.",
+    image: imageUrls.spaServices[0],
+    duration: "40 минут",
+    effects: [
+      "Уменьшение отечности",
+      "Стимуляция лимфотока",
+      "Детоксикация организма",
+      "Улучшение метаболизма",
+      "Повышение тонуса кожи"
     ]
   }
 };
