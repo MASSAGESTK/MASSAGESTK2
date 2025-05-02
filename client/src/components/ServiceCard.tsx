@@ -22,7 +22,10 @@ const ServiceCard = ({
 }: ServiceCardProps) => {
   if (featured) {
     return (
-      <div className="service-card bg-card rounded-lg shadow-lg hover:shadow-xl dark:shadow-white/10 flex-shrink-0 w-64 overflow-hidden transition-all duration-200 transform hover:-translate-y-1">
+      <div 
+        className="service-card bg-card rounded-lg shadow-lg hover:shadow-xl dark:shadow-white/10 flex-shrink-0 w-64 overflow-hidden transition-all duration-200 transform hover:-translate-y-1 cursor-pointer"
+        onClick={() => onClick(id)}
+      >
         {image && (
           <img src={image} alt={name} className="w-full h-32 object-cover" />
         )}
@@ -31,6 +34,12 @@ const ServiceCard = ({
             <h3 className="font-medium">{name}</h3>
             <p className="text-[#FF6B35] font-semibold drop-shadow-sm">{price}</p>
           </div>
+          <Button 
+            variant="link"
+            className="text-xs text-primary p-0 mt-2 h-auto"
+          >
+            Подробнее →
+          </Button>
         </div>
       </div>
     );
