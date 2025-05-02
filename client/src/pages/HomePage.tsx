@@ -263,18 +263,18 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
   return (
     <div className="p-4 md:p-8">
       {/* Главный баннер */}
-      <div className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl dark:shadow-white/10 mb-8 transition-all duration-200 transform hover:-translate-y-1 relative">
+      <div className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl dark:shadow-white/10 mb-8 transition-all duration-200 transform hover:-translate-y-1">
         <img
           src={imageUrls.salonInterior[1]}
           alt="Natali Secrets Spa"
           className="w-full h-48 md:h-64 object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70 flex flex-col justify-end p-4">
-          <h2 className="text-lg font-medium text-white drop-shadow-md">
+        <div className="bg-card text-card-foreground p-4 relative transition-colors duration-200">
+          <h2 className="text-lg font-medium">
             Добро пожаловать в мир красоты и релаксации
           </h2>
-          <p className="text-sm text-gray-200 mt-1 drop-shadow-md">
-            Профессиональные услуги для вашего совершенства
+          <p className="text-sm text-muted-foreground mt-3">
+            Профессиональные услуги для вашего здоровья и совершенства
           </p>
         </div>
       </div>
