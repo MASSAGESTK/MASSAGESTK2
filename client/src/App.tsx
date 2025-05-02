@@ -87,7 +87,9 @@ function App() {
           <ScrollToTop />
           <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
             <main className="pt-0 pb-28"> {/* Убран большой отступ сверху, добавлен небольшой */}
-              <Router setActiveTab={setActiveTab} />
+              <div className="max-w-6xl mx-auto"> {/* Контейнер с максимальной шириной для больших экранов */}
+                <Router setActiveTab={setActiveTab} />
+              </div>
             </main>
             <BottomNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
           </div>

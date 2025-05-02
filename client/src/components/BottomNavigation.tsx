@@ -24,7 +24,7 @@ const BottomNavigation = ({ activeTab, setActiveTab }: BottomNavigationProps) =>
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 px-4 py-5">
-      <nav className="rounded-2xl bg-card/80 text-card-foreground backdrop-blur-md shadow-lg dark:shadow-white/5 w-full max-w-screen-lg mx-auto transition-colors duration-200">
+      <nav className="rounded-2xl bg-card/80 text-card-foreground backdrop-blur-md shadow-lg dark:shadow-white/5 w-full max-w-6xl mx-auto transition-colors duration-200">
         <div className="flex justify-between">
           {navItems.map((item) => (
             <button
