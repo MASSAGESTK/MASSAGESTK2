@@ -636,6 +636,7 @@ const ServicesPage = () => {
                 title={program.title}
                 price={program.price}
                 features={program.features}
+                image={program.image}
                 onClick={handleProgramClick}
               />
             ))}
