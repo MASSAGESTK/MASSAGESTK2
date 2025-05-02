@@ -15,6 +15,7 @@ import MembershipsPage from "@/pages/MembershipsPage";
 import BottomNavigation from "@/components/BottomNavigation";
 import ScrollToTop from "@/components/ScrollToTop";
 import SEO from "@/components/SEO";
+import SplashScreen from "@/components/SplashScreen";
 
 // Карта заголовков и описаний для разных маршрутов (для SEO)
 const routeSeoData = {
@@ -64,6 +65,7 @@ function Router({ setActiveTab }: { setActiveTab: (tab: string) => void }) {
 function App() {
   const [activeTab, setActiveTab] = useState("home");
   const [location] = useLocation();
+  const [showSplash, setShowSplash] = useState(true);
   
   // Получаем SEO данные для текущего маршрута или используем данные по умолчанию
   const seoData = routeSeoData[location as keyof typeof routeSeoData] || {
@@ -85,6 +87,10 @@ function App() {
           
           {/* Компонент для прокрутки страницы вверх при переходе между маршрутами */}
           <ScrollToTop />
+          
+          {/* Показываем заставку при загрузке приложения */}
+          {showSplash && <SplashScreen onFinished={() => setShowSplash(false)} />}
+          
           <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
             <main className="pt-0 pb-28"> {/* Убран большой отступ сверху, добавлен небольшой */}
               <div className="max-w-6xl mx-auto"> {/* Контейнер с максимальной шириной для больших экранов */}
