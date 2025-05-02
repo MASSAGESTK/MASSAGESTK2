@@ -503,7 +503,7 @@ const ServicesPage = () => {
           { name: 'Главная', url: '/' },
           { name: 'Услуги', url: '/services' }
         ]}
-        className="mb-4 text-sm"
+        className="mb-0 text-sm"
       />
       
       {/* Фильтры категорий - закреплены при прокрутке */}
