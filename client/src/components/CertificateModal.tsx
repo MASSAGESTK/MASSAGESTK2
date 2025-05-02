@@ -35,7 +35,7 @@ export const certificates: Certificate[] = [
     id: 2,
     title: "Сертификат на SPA-массаж",
     description: "Подарочный сертификат на расслабляющий спа-массаж",
-    image: imageUrls.massageTherapy[0],
+    image: imageUrls.massageTherapy[1],
     price: "2500₽",
     type: "service"
   },
@@ -114,30 +114,36 @@ const CertificateModal = ({ isOpen, onClose }: CertificateModalProps) => {
               {filteredCertificates.map((certificate) => (
                 <div 
                   key={certificate.id} 
-                  className="bg-background rounded-lg p-3 shadow-md hover:shadow-lg dark:shadow-white/5 transition-all duration-200 transform hover:-translate-y-0.5 border border-border"
+                  className="overflow-hidden rounded-lg shadow-md hover:shadow-lg dark:shadow-white/5 transition-all duration-200 transform hover:-translate-y-0.5 border border-border"
                 >
-                  <div className="flex items-start space-x-3">
-                    <div className="w-20 h-20 rounded-md overflow-hidden flex-shrink-0 shadow-sm">
-                      <img src={certificate.image} alt={certificate.title} className="w-full h-full object-cover" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex justify-between items-start">
-                        <h3 className="font-medium text-sm mb-1">{certificate.title}</h3>
-                        <Badge variant="secondary" className="ml-2">
-                          {certificate.price}
-                        </Badge>
+                  {/* Верхняя часть с градиентом в фиолетовый цвет */}
+                  <div className="bg-gradient-to-b from-primary/80 to-primary/20 h-3"></div>
+                  <div className="bg-background p-3">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-20 h-20 rounded-md overflow-hidden flex-shrink-0 shadow-sm">
+                        <img src={certificate.image} alt={certificate.title} className="w-full h-full object-cover" />
                       </div>
-                      <p className="text-xs text-muted-foreground mb-3">{certificate.description}</p>
-                      <Button 
-                        variant="default" 
-                        size="sm" 
-                        className="bg-primary hover:bg-primary/90 text-white w-full shadow-sm hover:shadow-md transition-all"
-                        onClick={() => handleCertificateSelect(certificate)}
-                      >
-                        Выбрать
-                      </Button>
+                      <div className="flex-1">
+                        <div className="flex justify-between items-start">
+                          <h3 className="font-medium text-sm mb-1">{certificate.title}</h3>
+                          <Badge variant="secondary" className="ml-2">
+                            {certificate.price}
+                          </Badge>
+                        </div>
+                        <p className="text-xs text-muted-foreground mb-3">{certificate.description}</p>
+                        <Button 
+                          variant="default" 
+                          size="sm" 
+                          className="bg-primary hover:bg-primary/90 text-white w-full shadow-sm hover:shadow-md transition-all"
+                          onClick={() => handleCertificateSelect(certificate)}
+                        >
+                          Выбрать
+                        </Button>
+                      </div>
                     </div>
                   </div>
+                  {/* Нижнее затемнение в цвет кнопок */}
+                  <div className="bg-gradient-to-t from-primary/20 to-transparent h-2"></div>
                 </div>
               ))}
             </div>
