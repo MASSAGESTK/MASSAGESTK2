@@ -57,7 +57,14 @@ function Router({ setActiveTab }: { setActiveTab: (tab: string) => void }) {
       <Route path="/settings" component={SettingsPage} />
       <Route path="/about" component={AboutPage} />
       <Route path="/memberships" component={MembershipsPage} />
-      <Route component={NotFound} />
+      {/* Перенаправляем на главную вместо 404 страницы */}
+      <Route>
+        {() => {
+          // Перенаправляем на главную и устанавливаем активную вкладку "home"
+          setActiveTab("home");
+          return <HomePage setActiveTab={setActiveTab} />;
+        }}
+      </Route>
     </Switch>
   );
 }
