@@ -452,6 +452,23 @@ const ServicesPage = () => {
   const [selectedProgram, setSelectedProgram] = useState<ProgramDetails | null>(null);
   const [programModalOpen, setProgramModalOpen] = useState(false);
 
+  // Проверяем наличие ID выбранной услуги в sessionStorage при загрузке компонента
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const selectedServiceId = sessionStorage.getItem('selectedServiceId');
+      if (selectedServiceId) {
+        const serviceId = parseInt(selectedServiceId);
+        // Получаем данные выбранной услуги
+        if (serviceDetailsMap[serviceId]) {
+          setSelectedService(serviceDetailsMap[serviceId]);
+          setModalOpen(true);
+        }
+        // Очищаем sessionStorage после использования
+        sessionStorage.removeItem('selectedServiceId');
+      }
+    }
+  }, []);
+
   const filteredServices = selectedCategory === "all" 
     ? allServices 
     : allServices.filter(service => service.category === selectedCategory);
