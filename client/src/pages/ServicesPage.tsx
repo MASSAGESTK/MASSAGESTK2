@@ -211,7 +211,7 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
     name: "Пилинг омолаживающий",
     price: "2500₽",
     description: "Омолаживающий пилинг помогает отшелушить верхний слой клеток кожи, стимулируя обновление и регенерацию тканей для более молодого и свежего вида.",
-    image: imageUrls.facialTreatments[2],
+    image: imageUrls.facialTreatments[1],
     duration: "45 минут",
     effects: [
       "Омоложение кожи",
@@ -241,7 +241,7 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
     name: "Уходовая процедура для чувствительной кожи",
     price: "2600₽",
     description: "Деликатная процедура для чувствительной кожи с использованием успокаивающих и увлажняющих компонентов, не вызывающих раздражения.",
-    image: imageUrls.facialTreatments[1],
+    image: imageUrls.facialTreatments[4],
     duration: "50 минут",
     effects: [
       "Снятие раздражения",
@@ -271,7 +271,7 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
     name: "Антицеллюлитный массаж",
     price: "1200₽",
     description: "Интенсивный массаж, направленный на разбивание жировых отложений и улучшение кровообращения в проблемных зонах.",
-    image: imageUrls.massageTherapy[0],
+    image: imageUrls.massageTherapy[1],
     duration: "45 минут",
     effects: [
       "Уменьшение целлюлита",
@@ -316,7 +316,7 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
     name: "Классический массаж спины",
     price: "900₽",
     description: "Традиционный массаж, направленный на расслабление мышц спины, снятие напряжения и улучшение общего самочувствия.",
-    image: imageUrls.massageTherapy[1],
+    image: imageUrls.massageTherapy[2],
     duration: "30 минут",
     effects: [
       "Снятие мышечного напряжения",
@@ -331,7 +331,7 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
     name: "Прессотерапия",
     price: "1200₽",
     description: "Аппаратная методика, основанная на сжатии тканей при помощи специального костюма, создающего давление в различных зонах.",
-    image: imageUrls.spaServices[0],
+    image: imageUrls.spaServices[4],
     duration: "40 минут",
     effects: [
       "Выведение лишней жидкости",
@@ -346,7 +346,7 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
     name: "Вибро-прессо-роликовый массаж",
     price: "1600₽",
     description: "Процедура, сочетающая в себе роликовый массаж и прессотерапию, а также вибрационное воздействие для более эффективной коррекции фигуры.",
-    image: imageUrls.bodyTreatments[1],
+    image: imageUrls.bodyTreatments[0],
     duration: "30 минут",
     effects: [
       "Разрушение жировых клеток",
@@ -391,7 +391,7 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
     name: "Спортивный массаж",
     price: "1300₽",
     description: "Интенсивный массаж для восстановления после физических нагрузок, снятия мышечного напряжения и подготовки тела к тренировкам.",
-    image: imageUrls.massageTherapy[0],
+    image: imageUrls.massageTherapy[5],
     duration: "45 минут",
     effects: [
       "Снятие мышечной усталости",
@@ -406,7 +406,7 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
     name: "Анистресс-массаж",
     price: "2000₽",
     description: "Специальная техника массажа, направленная на глубокое расслабление и снятие стресса, улучшение общего самочувствия.",
-    image: imageUrls.spaServices[1],
+    image: imageUrls.spaServices[5],
     duration: "60 минут",
     effects: [
       "Снятие психоэмоционального напряжения",
@@ -421,7 +421,7 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
     name: "Массаж спины, шеи, рук",
     price: "1000₽",
     description: "Комбинированный массаж, охватывающий основные зоны напряжения у мужчин: спину, шею и руки, особенно актуальный при сидячей работе.",
-    image: imageUrls.massageTherapy[1],
+    image: imageUrls.massageTherapy[6],
     duration: "40 минут",
     effects: [
       "Снятие напряжения в зоне шеи и плеч",

@@ -17,13 +17,13 @@ const popularServices = [
     id: 1,
     name: "Комбинированная чистка лица",
     price: "2700₽",
-    image: imageUrls.beautyServices[1],
+    image: imageUrls.beautyServices[0],
   },
   {
     id: 6,
     name: "Антицеллюлитный массаж",
     price: "1200₽",
-    image: imageUrls.massageTherapy[0],
+    image: imageUrls.massageTherapy[1],
   },
   {
     id: 7,
@@ -70,7 +70,7 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
     price: "2700₽",
     description:
       "Комбинированная чистка лица - это процедура глубокого очищения кожи, которая сочетает в себе механическое удаление загрязнений и использование специальных средств для более эффективного результата.",
-    image: imageUrls.beautyServices[0],
+    image: imageUrls.beautyServices[2],
     duration: "60 минут",
     effects: [
       "Глубокое очищение пор",
@@ -102,7 +102,7 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
     price: "1200₽",
     description:
       "Интенсивный массаж, направленный на разбивание жировых отложений и улучшение кровообращения в проблемных зонах.",
-    image: imageUrls.massageTherapy[0],
+    image: imageUrls.massageTherapy[1],
     duration: "45 минут",
     effects: [
       "Уменьшение целлюлита",
@@ -150,7 +150,7 @@ const serviceDetailsMap: Record<number, ServiceDetails> = {
     price: "1200₽",
     description:
       "Интенсивный массаж, направленный на разбивание жировых отложений и улучшение кровообращения в проблемных зонах.",
-    image: imageUrls.massageTherapy[0],
+    image: imageUrls.massageTherapy[1],
     duration: "45 минут",
     effects: [
       "Уменьшение целлюлита",

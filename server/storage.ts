@@ -99,7 +99,7 @@ export class MemStorage implements IStorage {
         description: "Интенсивный массаж, направленный на разбивание жировых отложений и улучшение кровообращения в проблемных зонах.",
         duration: "45 минут",
         category: "massage",
-        image: imageUrls.massageTherapy[0],
+        image: imageUrls.massageTherapy[1],
         isPopular: true,
       },
       {
