@@ -264,18 +264,20 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
     <div className="p-4 md:p-8">
       {/* Главный баннер */}
       <div className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl dark:shadow-white/10 mb-8 transition-all duration-200 transform hover:-translate-y-1">
-        <img
-          src={imageUrls.salonInterior[1]}
-          alt="Natali Secrets Spa"
-          className="w-full h-48 md:h-64 object-cover"
-        />
-        <div className="bg-card text-card-foreground p-4 relative transition-colors duration-200">
-          <h2 className="text-lg font-medium">
-            Добро пожаловать в мир красоты и релаксации
-          </h2>
-          <p className="text-sm text-muted-foreground mt-3">
-            Профессиональные услуги для вашего здоровья и совершенства
-          </p>
+        <div className="relative">
+          <img
+            src={imageUrls.salonInterior[1]}
+            alt="Natali Secrets Spa"
+            className="w-full h-48 md:h-64 object-cover"
+          />
+          <div className="absolute bottom-0 left-0 right-0 bg-black/70 p-4">
+            <h2 className="text-lg font-medium text-white">
+              Добро пожаловать в мир красоты и релаксации
+            </h2>
+            <p className="text-sm text-gray-300 mt-1">
+              Профессиональные услуги для вашего здоровья и совершенства
+            </p>
+          </div>
         </div>
       </div>
 
