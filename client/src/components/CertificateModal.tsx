@@ -9,14 +9,12 @@ import {
 } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
-import { imageUrls } from "@/lib/utils";
 
 // Типы сертификатов
 export interface Certificate {
   id: number;
   title: string;
   description: string;
-  image: string;
   price: string;
   type: "service" | "amount" | "program";
 }
@@ -27,7 +25,6 @@ export const certificates: Certificate[] = [
     id: 1,
     title: "Сертификат на уходовые процедуры",
     description: "Подарочный сертификат на любую уходовую процедуру для лица",
-    image: imageUrls.beautyServices[0],
     price: "3000₽",
     type: "service"
   },
@@ -35,7 +32,6 @@ export const certificates: Certificate[] = [
     id: 2,
     title: "Сертификат на SPA-массаж",
     description: "Подарочный сертификат на расслабляющий спа-массаж",
-    image: imageUrls.massageTherapy[0],
     price: "2500₽",
     type: "service"
   },
@@ -43,7 +39,6 @@ export const certificates: Certificate[] = [
     id: 3,
     title: "Сертификат на 5000₽",
     description: "Подарочный сертификат номиналом 5000₽ на любые услуги салона",
-    image: imageUrls.spaServices[1],
     price: "5000₽",
     type: "amount"
   },
@@ -51,7 +46,6 @@ export const certificates: Certificate[] = [
     id: 4,
     title: "Сертификат на 10000₽",
     description: "Подарочный сертификат номиналом 10000₽ на любые услуги салона",
-    image: imageUrls.spaServices[0],
     price: "10000₽",
     type: "amount"
   },
@@ -59,7 +53,6 @@ export const certificates: Certificate[] = [
     id: 5,
     title: "Сертификат на программу коррекции фигуры",
     description: "Подарочный сертификат на комплексную программу коррекции фигуры (5 сеансов)",
-    image: imageUrls.spaServices[2],
     price: "17000₽",
     type: "program"
   }
@@ -114,29 +107,24 @@ const CertificateModal = ({ isOpen, onClose }: CertificateModalProps) => {
               {filteredCertificates.map((certificate) => (
                 <div 
                   key={certificate.id} 
-                  className="bg-background rounded-lg p-3 shadow-md hover:shadow-lg dark:shadow-white/5 transition-all duration-200 transform hover:-translate-y-0.5 border border-border"
+                  className="bg-background rounded-lg p-4 shadow-md hover:shadow-lg dark:shadow-white/5 transition-all duration-200 transform hover:-translate-y-0.5 border border-border"
                 >
-                  <div className="flex items-start space-x-3">
-                    <div className="w-20 h-20 rounded-md overflow-hidden flex-shrink-0 shadow-sm">
-                      <img src={certificate.image} alt={certificate.title} className="w-full h-full object-cover" />
+                  <div className="flex flex-col">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="font-medium text-sm">{certificate.title}</h3>
+                      <Badge variant="secondary" className="ml-2">
+                        {certificate.price}
+                      </Badge>
                     </div>
-                    <div className="flex-1">
-                      <div className="flex justify-between items-start">
-                        <h3 className="font-medium text-sm mb-1">{certificate.title}</h3>
-                        <Badge variant="secondary" className="ml-2">
-                          {certificate.price}
-                        </Badge>
-                      </div>
-                      <p className="text-xs text-muted-foreground mb-3">{certificate.description}</p>
-                      <Button 
-                        variant="default" 
-                        size="sm" 
-                        className="bg-primary hover:bg-primary/90 text-white w-full shadow-sm hover:shadow-md transition-all"
-                        onClick={() => handleCertificateSelect(certificate)}
-                      >
-                        Выбрать
-                      </Button>
-                    </div>
+                    <p className="text-xs text-muted-foreground mb-3">{certificate.description}</p>
+                    <Button 
+                      variant="default" 
+                      size="sm" 
+                      className="bg-primary hover:bg-primary/90 text-white w-full shadow-sm hover:shadow-md transition-all"
+                      onClick={() => handleCertificateSelect(certificate)}
+                    >
+                      Выбрать
+                    </Button>
                   </div>
                 </div>
               ))}

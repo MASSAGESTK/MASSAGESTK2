@@ -191,7 +191,7 @@ const membershipDetailsMap: Record<number, ProgramDetails> = {
     title: "Абонемент 'Здоровая спина'",
     price: "7500₽",
     description: "Идеальное решение для тех, кто страдает от болей в спине, проблем с осанкой или проводит много времени за компьютером. Комплекс процедур, направленных на восстановление и поддержание здоровья спины.",
-    image: imageUrls.massageTherapy[1],
+    image: imageUrls.massageTherapy[4],
     duration: "4 месяца",
     features: [
       "10 массажей спины",
@@ -270,21 +270,7 @@ const MembershipsPage = () => {
             <li>• При покупке абонемента в подарок, активация происходит при первом визите</li>
             <li>• Для получения абонемента необходимо обратиться в администратору салона</li>
           </ul>
-          <div className="mt-4">
-            <Button
-              className="bg-primary hover:bg-primary/90 text-white shadow-sm hover:shadow-md transition-all w-full sm:w-auto"
-              onClick={() => {
-                // Кодируем информацию для Telegram бота
-                const source = btoa(encodeURIComponent("memberships_page"));
-                const description = btoa(encodeURIComponent("Запрос информации об абонементах"));
-                
-                // Открываем Telegram бот с закодированной информацией
-                window.open(`https://t.me/Natali_Secrets_bot?start=memberships_${source}_${description}`, "_blank");
-              }}
-            >
-              Узнать подробнее
-            </Button>
-          </div>
+          
         </div>
       </div>
 
