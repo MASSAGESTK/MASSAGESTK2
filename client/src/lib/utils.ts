@@ -9,7 +9,7 @@ export const imageUrls = {
   // Услуги красоты - косметология, макияж, уход за волосами
   beautyServices: [
     "https://img.freepik.com/free-photo/top-view-smiling-bearded-man-showing-ten-percentage-torn-hole-yellow-paper_140725-106229.jpg?t=st=1746214985~exp=1746218585~hmac=0e80626436dd569c5191d36d42cdafc8c24dd5438b9e01343e2faa14ebeb7cbf&w=2000",
-    "https://images.unsplash.com/photo-1596704017254-9098c6492856?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    "https://img.freepik.com/free-photo/close-up-shot-puzzled-woman-with-blue-scrub-face-covers-one-eye-with-hand-tries-hide-herself-has-stupefied-expression-wears-protective-bathcap-wants-look-younger-stands-shirtless_273609-30748.jpg?t=st=1746216333~exp=1746219933~hmac=a627f07e75356a2d5bb516cb3850a03a69a7ecee554e713a05d86982f94c1aac&w=2000",
     "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
@@ -18,18 +18,18 @@ export const imageUrls = {
   // SPA-услуги - общие процедуры для релаксации
   spaServices: [
     "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    "https://img.freepik.com/free-photo/young-attractive-woman-having-massage-relaxing-spa-salon_176420-7572.jpg?t=st=1746216810~exp=1746220410~hmac=7a4746dca9b4c406fea8ca32c388e4209c0bc0f10ed3601c411f7ec57d15e44e&w=2000",
     "https://images.unsplash.com/photo-1515377905703-c4788e51af15?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     "https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
   ],
   // Интерьер салона
   salonInterior: [
     "https://images.unsplash.com/photo-1600948836101-f9ffda59d250?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
-    "https://image2.yell.ru/imager/ZWYwNTdmZGE5MDc0ZDJhNDMzM/700x000/responses/6/6/9/r_dar-dary-krasnaya-polyana-14386214-6vq2uziunv_1640596467.jpg",
+    "https://img.freepik.com/free-photo/front-view-womans-hand-with-flowers-valentines-day_23-2149164940.jpg?t=st=1746217558~exp=1746221158~hmac=afc7bdf5346d12cf8546b44d046421e78faf5ec0017b6b47c212fa0f2b95d9e2&w=1800",
   ],
   // Массажные процедуры
   massageTherapy: [
-    "https://img.freepik.com/free-photo/top-view-smiling-bearded-man-showing-ten-percentage-torn-hole-yellow-paper_140725-106229.jpg?t=st=1746214985~exp=1746218585~hmac=0e80626436dd569c5191d36d42cdafc8c24dd5438b9e01343e2faa14ebeb7cbf&w=2000",
+    "https://img.freepik.com/free-photo/vertical-shot-faceless-healthy-woman-brown-underwear-holds-orange-body-has-clean-healthy-skin-without-cellulite-slender-legs-demonstrates-perfect-figure-after-liposuction-poses-indoor_273609-59278.jpg?t=st=1746216431~exp=1746220031~hmac=64518d9bace08ef4588e8bf717d39e0b4cd36dcfb123a20ce43d40630f8a6c81&w=826",
     "https://img.freepik.com/free-photo/relaxing-spa-concept-with-woman_23-2147816920.jpg?t=st=1746214110~exp=1746217710~hmac=0655f08e1cc6f63c57c91777d5bada095a87502d5af407d75c782c10fcf7291a&w=2000",
     "https://images.unsplash.com/photo-1545620783-e410c29033a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     "https://img.freepik.com/free-photo/close-up-greeting-card_1098-2833.jpg?t=st=1746214603~exp=1746218203~hmac=b20512233990d1adff6a508ed59d31f7e8df08089c44426633ab1e7c14ae8e21&w=1480",

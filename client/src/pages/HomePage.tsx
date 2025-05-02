@@ -17,7 +17,7 @@ const popularServices = [
     id: 1,
     name: "Комбинированная чистка лица",
     price: "2700₽",
-    image: imageUrls.beautyServices[0],
+    image: imageUrls.beautyServices[1],
   },
   {
     id: 6,
@@ -263,24 +263,24 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
   return (
     <div className="p-4 md:p-8">
       {/* Главный баннер */}
-      <div className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl dark:shadow-white/10 mb-8 transition-all duration-200 transform hover:-translate-y-1">
+      <div className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl dark:shadow-white/10 mb-8 transition-all duration-200 transform hover:-translate-y-1 relative">
         <img
           src={imageUrls.salonInterior[1]}
           alt="Natali Secrets Spa"
           className="w-full h-48 md:h-64 object-cover"
         />
-        <div className="bg-card text-card-foreground p-4 relative transition-colors duration-200">
-          <h2 className="text-lg font-medium">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/70 flex flex-col justify-end p-4">
+          <h2 className="text-lg font-medium text-white drop-shadow-md">
             Добро пожаловать в мир красоты и релаксации
           </h2>
-          <p className="text-sm text-muted-foreground mt-3">
+          <p className="text-sm text-gray-200 mt-1 drop-shadow-md">
             Профессиональные услуги для вашего совершенства
           </p>
         </div>
       </div>
 
       {/* Популярные услуги */}
-      <div className="mb-8">
+      <div className="mb-2">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-semibold">Популярные услуги</h2>
           <span
