@@ -38,9 +38,6 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
     <>
       <Dialog open={isOpen && !showTelegramModal} onOpenChange={onClose}>
         <DialogContent className="bg-card text-card-foreground rounded-lg max-w-lg w-full overflow-hidden max-h-[90vh] flex flex-col sm:max-w-lg transition-all duration-200 shadow-xl dark:shadow-white/10">
-          {/* Добавляем верхний градиент */}
-          <div className="bg-gradient-to-b from-primary/80 to-primary/20 h-3 flex-shrink-0"></div>
-          
           <DialogHeader className="border-b border-border p-3 flex justify-between items-center flex-shrink-0">
             <DialogTitle className="text-base font-medium">{service.name}</DialogTitle>
           </DialogHeader>
@@ -71,9 +68,6 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
               </div>
             </div>
           </div>
-          
-          {/* Добавляем нижний градиент */}
-          <div className="bg-gradient-to-t from-primary/20 to-transparent h-2 flex-shrink-0 mb-2"></div>
           
           <DialogFooter className="p-3 border-t border-border flex-shrink-0">
             <Button 
