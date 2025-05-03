@@ -44,16 +44,12 @@ const LazyLoadImage = ({
   
   // Обрабатываем загрузку изображения
   const handleLoad = () => {
-    console.log('Image loaded:', src);
     setIsLoaded(true);
   };
 
   const handleError = () => {
-    console.error('Image failed to load:', src);
+    // Тихая обработка ошибки, чтобы приложение не ломалось при ошибке загрузки
   };
-
-  // Для отладки
-  console.log('LazyLoadImage:', { src, isInView, isLoaded });
 
   return (
     <div 

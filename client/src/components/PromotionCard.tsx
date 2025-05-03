@@ -29,7 +29,7 @@ const PromotionCard = ({
     <div className="bg-card text-card-foreground rounded-lg shadow-md hover:shadow-xl dark:shadow-white/10 overflow-hidden flex flex-col md:flex-row md:h-32 transition-all duration-200 transform hover:-translate-y-1">
       <div className="relative w-full md:w-1/3 h-32 overflow-hidden">
         <img 
-          src={isDiscountPromo ? imageUrls.beautyServices[0] : image} 
+          src={isDiscountPromo ? imageUrls.certificates[0] : image} 
           alt={title} 
           className="w-full h-32 object-cover"
         />

@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const imageUrls = {
-  // Услуги красоты - косметология, макияж, уход за волосами
+  // Услуги красоты - косметология
   beautyServices: [
     "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
@@ -62,9 +62,7 @@ export const imageUrls = {
   ],
   // Сертификаты и подарочные карты
   certificates: [
-    "https://images.unsplash.com/photo-1607344645866-009c320c5ab8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    "https://images.unsplash.com/photo-1545658969-19d8739eecc6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-    "https://images.unsplash.com/photo-1607344585290-2074f292ead7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    "https://img.freepik.com/free-photo/front-view-young-male-holding-yellow-background_140725-103809.jpg?",
   ],
   // Anti-age процедуры
   antiAge: [

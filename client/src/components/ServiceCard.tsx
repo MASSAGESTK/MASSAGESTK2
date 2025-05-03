@@ -21,8 +21,7 @@ const ServiceCard = ({
   onClick,
   featured = false,
 }: ServiceCardProps) => {
-  // Для отладки
-  console.log('ServiceCard:', { id, name, image, featured });
+
   if (featured) {
     return (
       <div 

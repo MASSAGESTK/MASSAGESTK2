@@ -6,7 +6,7 @@ export const promotions = [
     id: 1,
     title: "Скидка 10% на первое посещение",
     description: "Получите скидку 10% на любую услугу при первом посещении нашего салона. Предложение действует для новых клиентов.",
-    image: imageUrls.beautyServices[0],
+    image: imageUrls.certificates[0],
     badge: "Актуально",
     buttonText: "Выбрать",
   },

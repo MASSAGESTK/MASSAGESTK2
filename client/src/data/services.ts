@@ -15,8 +15,8 @@ export const categories = [
 export const cosmetologyServices = [
   { id: 1, name: "Комбинированная чистка лица", duration: "60 минут", price: "2700₽", category: "cosmetology", image: imageUrls.facialTreatments[0] },
   { id: 2, name: "Пилинг омолаживающий", duration: "45 минут", price: "2500₽", category: "cosmetology", image: imageUrls.facialTreatments[1] },
-  { id: 3, name: "Уходовая процедура для проблемной кожи", duration: "60 минут", price: "2800₽", category: "cosmetology", image: imageUrls.facialTreatments[2] },
-  { id: 4, name: "Уходовая процедура для чувствительной кожи", duration: "50 минут", price: "2600₽", category: "cosmetology", image: imageUrls.facialTreatments[3] },
+  { id: 3, name: "Уходовая процедура для проблемной кожи", duration: "60 минут", price: "2800₽", category: "cosmetology", image: imageUrls.facialTreatments[3] },
+  { id: 4, name: "Уходовая процедура для чувствительной кожи", duration: "50 минут", price: "2600₽", category: "cosmetology", image: imageUrls.facialTreatments[4] },
   { id: 5, name: "Anti-age (омолаживающая, уходовая процедура)", duration: "75 минут", price: "3000₽", category: "cosmetology", image: imageUrls.antiAge[0] },
 ];
 
@@ -26,7 +26,7 @@ export const massageServices = [
   { id: 7, name: "Спа массаж", duration: "60 минут", price: "2000₽", category: "massage", image: imageUrls.spaServices[1] },
   { id: 8, name: "Скульптурно-буккальный массаж", duration: "45 минут", price: "1800₽", category: "massage", image: imageUrls.facialTreatments[2] },
   { id: 9, name: "Классический массаж спины", duration: "30 минут", price: "900₽", category: "massage", image: imageUrls.massageTherapy[2] },
-  { id: 17, name: "Лимфодренажный массаж", duration: "40 минут", price: "1000₽", category: "massage", image: imageUrls.massageTherapy[5] },
+  { id: 17, name: "Лимфодренажный массаж", duration: "40 минут", price: "1000₽", category: "massage", image: imageUrls.spaServices[0] },
 ];
 
 // Услуги коррекции фигуры
@@ -39,9 +39,9 @@ export const bodyCorrectionServices = [
 export const menServices = [
   { id: 12, name: "Комбинированная чистка лица", duration: "60 минут", price: "3000₽", category: "men", image: imageUrls.menServices[0] },
   { id: 13, name: "Уходовая процедура для лица", duration: "50 минут", price: "2800₽", category: "men", image: imageUrls.menServices[1] },
-  { id: 14, name: "Спортивный массаж", duration: "45 минут", price: "1300₽", category: "men", image: imageUrls.massageTherapy[6] },
-  { id: 15, name: "Анистресс-массаж", duration: "60 минут", price: "2000₽", category: "men", image: imageUrls.massageTherapy[3] },
-  { id: 16, name: "Массаж спины, шеи, рук", duration: "40 минут", price: "1000₽", category: "men", image: imageUrls.massageTherapy[4] },
+  { id: 14, name: "Спортивный массаж", duration: "45 минут", price: "1300₽", category: "men", image: imageUrls.massageTherapy[5] },
+  { id: 15, name: "Анистресс-массаж", duration: "60 минут", price: "2000₽", category: "men", image: imageUrls.spaServices[5] },
+  { id: 16, name: "Массаж спины, шеи, рук", duration: "40 минут", price: "1000₽", category: "men", image: imageUrls.massageTherapy[6] },
 ];
 
 // Все услуги
