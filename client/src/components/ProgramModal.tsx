@@ -24,7 +24,7 @@ export interface ProgramDetails {
 interface ProgramModalProps {
   isOpen: boolean;
   onClose: () => void;
-  program: ProgramDetails | null;
+  program: ProgramDetails | null | undefined;
 }
 
 const ProgramModal = ({ isOpen, onClose, program }: ProgramModalProps) => {
