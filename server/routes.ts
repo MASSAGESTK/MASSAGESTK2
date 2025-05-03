@@ -1,10 +1,10 @@
 import type { Express, Request, Response, NextFunction } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { setupAuth } from "./auth";
 import helmet from "helmet";
 import { z } from "zod";
 import xss from "xss";
+import rateLimit from "express-rate-limit";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Настройка базовой защиты
@@ -15,7 +15,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         scriptSrc: ["'self'", "'unsafe-inline'"], // Разрешаем inline скрипты для работы клиентского приложения
         styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
         fontSrc: ["'self'", "https://fonts.gstatic.com"],
-        imgSrc: ["'self'", "data:", "blob:"],
+        imgSrc: ["'self'", "data:", "blob:", "https://images.unsplash.com", "https://img.freepik.com", "https://*.unsplash.com", "https://*.freepik.com"],
         connectSrc: ["'self'", "https://api.example.com"], // Разрешаем подключение к API (при необходимости)
       }
     },
@@ -26,8 +26,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
     referrerPolicy: { policy: "same-origin" }
   }));
 
-  // Настройка авторизации и аутентификации
-  const { apiLimiter, authenticateToken, sanitizeInput, csrfProtection } = setupAuth(app);
+  // Настройка базового ограничения запросов для API
+  const apiLimiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 минут
+    max: 100, // 100 запросов за 15 минут
+    standardHeaders: true,
+    message: { message: "Слишком много запросов, пожалуйста, попробуйте позже" }
+  });
+  
+  // Функция для санитизации ввода
+  const sanitizeInput = (input: string): string => {
+    return xss(input);
+  };
 
   // Общая обработка ошибок для API запросов
   const apiErrorHandler = (err: Error, req: Request, res: Response, next: NextFunction) => {
@@ -148,11 +158,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Защищенные маршруты с CSRF и JWT защитой 
-  // ======================================
-  
-  // Пример маршрута с защитой CSRF для web-приложения через куки
-  app.post('/api/contact', csrfProtection, async (req, res, next) => {
+  // Маршрут для контактной формы
+  app.post('/api/contact', async (req, res, next) => {
     try {
       // Валидация и санитизация
       const name = sanitizeInput(req.body.name || '');
@@ -166,20 +173,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // TODO: Обработка формы контакта, например, отправка email
 
       res.status(200).json({ message: 'Your message has been sent' });
-    } catch (error) {
-      next(error);
-    }
-  });
-  
-  // Пример защищенного маршрута, требующего JWT аутентификацию
-  // Используется для API интеграций и мобильных приложений
-  app.post('/api/protected/action', authenticateToken, async (req, res, next) => {
-    try {
-      // Пример защищенного действия
-      res.json({ 
-        message: 'Protected action successful',
-        user: req.user
-      });
     } catch (error) {
       next(error);
     }

@@ -22,7 +22,7 @@ const PromotionsPage = lazy(() => import("@/pages/PromotionsPage"));
 const SettingsPage = lazy(() => import("@/pages/SettingsPage"));
 const AboutPage = lazy(() => import("@/pages/AboutPage"));
 const MembershipsPage = lazy(() => import("@/pages/MembershipsPage"));
-const AuthPage = lazy(() => import("@/pages/auth-page"));
+// Auth page removed temporarily
 
 function Router({ setActiveTab }: { setActiveTab: (tab: string) => void }) {
   // Компонент для показа во время загрузки страниц
@@ -50,7 +50,7 @@ function Router({ setActiveTab }: { setActiveTab: (tab: string) => void }) {
         
         {/* Публичные маршруты */}
         <Route path="/about" component={AboutPage} />
-        <Route path="/auth" component={AuthPage} />
+        {/* <Route path="/auth" component={AuthPage} /> */}
         <Route component={NotFound} />
       </Switch>
     </Suspense>

@@ -1,0 +1,117 @@
+services:1 Refused to load the image 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80' because it violates the following Content Security Policy directive: "img-src 'self' data: blob:".
+Пояснение к ошибке
+7Refused to load the image '<URL>?' because it violates the following Content Security Policy directive: "img-src 'self' data: blob:".
+Пояснение к ошибке
+LazyLoadImage.tsx:52 Image failed to load: https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80
+handleError @ LazyLoadImage.tsx:52
+callCallback2 @ chunk-WERSD76P.js?v=4fb497df:3674
+invokeGuardedCallbackDev @ chunk-WERSD76P.js?v=4fb497df:3699
+invokeGuardedCallback @ chunk-WERSD76P.js?v=4fb497df:3733
+invokeGuardedCallbackAndCatchFirstError @ chunk-WERSD76P.js?v=4fb497df:3736
+executeDispatch @ chunk-WERSD76P.js?v=4fb497df:7014
+processDispatchQueueItemsInOrder @ chunk-WERSD76P.js?v=4fb497df:7034
+processDispatchQueue @ chunk-WERSD76P.js?v=4fb497df:7043
+dispatchEventsForPlugins @ chunk-WERSD76P.js?v=4fb497df:7051
+(анонимная) @ chunk-WERSD76P.js?v=4fb497df:7174
+batchedUpdates$1 @ chunk-WERSD76P.js?v=4fb497df:18913
+batchedUpdates @ chunk-WERSD76P.js?v=4fb497df:3579
+dispatchEventForPluginEventSystem @ chunk-WERSD76P.js?v=4fb497df:7173
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-WERSD76P.js?v=4fb497df:5478
+dispatchEvent @ chunk-WERSD76P.js?v=4fb497df:5472Пояснение к ошибке
+LazyLoadImage.tsx:52 Image failed to load: https://img.freepik.com/free-photo/close-up-smiley-woman-with-face-treatment_23-2149182155.jpg?
+handleError @ LazyLoadImage.tsx:52
+callCallback2 @ chunk-WERSD76P.js?v=4fb497df:3674
+invokeGuardedCallbackDev @ chunk-WERSD76P.js?v=4fb497df:3699
+invokeGuardedCallback @ chunk-WERSD76P.js?v=4fb497df:3733
+invokeGuardedCallbackAndCatchFirstError @ chunk-WERSD76P.js?v=4fb497df:3736
+executeDispatch @ chunk-WERSD76P.js?v=4fb497df:7014
+processDispatchQueueItemsInOrder @ chunk-WERSD76P.js?v=4fb497df:7034
+processDispatchQueue @ chunk-WERSD76P.js?v=4fb497df:7043
+dispatchEventsForPlugins @ chunk-WERSD76P.js?v=4fb497df:7051
+(анонимная) @ chunk-WERSD76P.js?v=4fb497df:7174
+batchedUpdates$1 @ chunk-WERSD76P.js?v=4fb497df:18913
+batchedUpdates @ chunk-WERSD76P.js?v=4fb497df:3579
+dispatchEventForPluginEventSystem @ chunk-WERSD76P.js?v=4fb497df:7173
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-WERSD76P.js?v=4fb497df:5478
+dispatchEvent @ chunk-WERSD76P.js?v=4fb497df:5472Пояснение к ошибке
+LazyLoadImage.tsx:52 Image failed to load: https://img.freepik.com/free-photo/view-woman-getting-facial-yoga-massage-stay-young_23-2150520769.jpg?
+handleError @ LazyLoadImage.tsx:52
+callCallback2 @ chunk-WERSD76P.js?v=4fb497df:3674
+invokeGuardedCallbackDev @ chunk-WERSD76P.js?v=4fb497df:3699
+invokeGuardedCallback @ chunk-WERSD76P.js?v=4fb497df:3733
+invokeGuardedCallbackAndCatchFirstError @ chunk-WERSD76P.js?v=4fb497df:3736
+executeDispatch @ chunk-WERSD76P.js?v=4fb497df:7014
+processDispatchQueueItemsInOrder @ chunk-WERSD76P.js?v=4fb497df:7034
+processDispatchQueue @ chunk-WERSD76P.js?v=4fb497df:7043
+dispatchEventsForPlugins @ chunk-WERSD76P.js?v=4fb497df:7051
+(анонимная) @ chunk-WERSD76P.js?v=4fb497df:7174
+batchedUpdates$1 @ chunk-WERSD76P.js?v=4fb497df:18913
+batchedUpdates @ chunk-WERSD76P.js?v=4fb497df:3579
+dispatchEventForPluginEventSystem @ chunk-WERSD76P.js?v=4fb497df:7173
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-WERSD76P.js?v=4fb497df:5478
+dispatchEvent @ chunk-WERSD76P.js?v=4fb497df:5472Пояснение к ошибке
+LazyLoadImage.tsx:52 Image failed to load: https://img.freepik.com/free-photo/photo-lovely-european-woman-has-blue-spa-salt-granules-face-wears-waterproof-headgear-points-with-index-finger-upwards_273609-30751.jpg?
+handleError @ LazyLoadImage.tsx:52
+callCallback2 @ chunk-WERSD76P.js?v=4fb497df:3674
+invokeGuardedCallbackDev @ chunk-WERSD76P.js?v=4fb497df:3699
+invokeGuardedCallback @ chunk-WERSD76P.js?v=4fb497df:3733
+invokeGuardedCallbackAndCatchFirstError @ chunk-WERSD76P.js?v=4fb497df:3736
+executeDispatch @ chunk-WERSD76P.js?v=4fb497df:7014
+processDispatchQueueItemsInOrder @ chunk-WERSD76P.js?v=4fb497df:7034
+processDispatchQueue @ chunk-WERSD76P.js?v=4fb497df:7043
+dispatchEventsForPlugins @ chunk-WERSD76P.js?v=4fb497df:7051
+(анонимная) @ chunk-WERSD76P.js?v=4fb497df:7174
+batchedUpdates$1 @ chunk-WERSD76P.js?v=4fb497df:18913
+batchedUpdates @ chunk-WERSD76P.js?v=4fb497df:3579
+dispatchEventForPluginEventSystem @ chunk-WERSD76P.js?v=4fb497df:7173
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-WERSD76P.js?v=4fb497df:5478
+dispatchEvent @ chunk-WERSD76P.js?v=4fb497df:5472Пояснение к ошибке
+LazyLoadImage.tsx:52 Image failed to load: https://img.freepik.com/free-photo/front-view-hands-touching-woman-s-face_23-2149349930.jpg?
+handleError @ LazyLoadImage.tsx:52
+callCallback2 @ chunk-WERSD76P.js?v=4fb497df:3674
+invokeGuardedCallbackDev @ chunk-WERSD76P.js?v=4fb497df:3699
+invokeGuardedCallback @ chunk-WERSD76P.js?v=4fb497df:3733
+invokeGuardedCallbackAndCatchFirstError @ chunk-WERSD76P.js?v=4fb497df:3736
+executeDispatch @ chunk-WERSD76P.js?v=4fb497df:7014
+processDispatchQueueItemsInOrder @ chunk-WERSD76P.js?v=4fb497df:7034
+processDispatchQueue @ chunk-WERSD76P.js?v=4fb497df:7043
+dispatchEventsForPlugins @ chunk-WERSD76P.js?v=4fb497df:7051
+(анонимная) @ chunk-WERSD76P.js?v=4fb497df:7174
+batchedUpdates$1 @ chunk-WERSD76P.js?v=4fb497df:18913
+batchedUpdates @ chunk-WERSD76P.js?v=4fb497df:3579
+dispatchEventForPluginEventSystem @ chunk-WERSD76P.js?v=4fb497df:7173
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-WERSD76P.js?v=4fb497df:5478
+dispatchEvent @ chunk-WERSD76P.js?v=4fb497df:5472Пояснение к ошибке
+LazyLoadImage.tsx:52 Image failed to load: https://img.freepik.com/free-photo/relaxing-spa-concept-with-woman_23-2147816920.jpg?
+handleError @ LazyLoadImage.tsx:52
+callCallback2 @ chunk-WERSD76P.js?v=4fb497df:3674
+invokeGuardedCallbackDev @ chunk-WERSD76P.js?v=4fb497df:3699
+invokeGuardedCallback @ chunk-WERSD76P.js?v=4fb497df:3733
+invokeGuardedCallbackAndCatchFirstError @ chunk-WERSD76P.js?v=4fb497df:3736
+executeDispatch @ chunk-WERSD76P.js?v=4fb497df:7014
+processDispatchQueueItemsInOrder @ chunk-WERSD76P.js?v=4fb497df:7034
+processDispatchQueue @ chunk-WERSD76P.js?v=4fb497df:7043
+dispatchEventsForPlugins @ chunk-WERSD76P.js?v=4fb497df:7051
+(анонимная) @ chunk-WERSD76P.js?v=4fb497df:7174
+batchedUpdates$1 @ chunk-WERSD76P.js?v=4fb497df:18913
+batchedUpdates @ chunk-WERSD76P.js?v=4fb497df:3579
+dispatchEventForPluginEventSystem @ chunk-WERSD76P.js?v=4fb497df:7173
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-WERSD76P.js?v=4fb497df:5478
+dispatchEvent @ chunk-WERSD76P.js?v=4fb497df:5472Пояснение к ошибке
+LazyLoadImage.tsx:52 Image failed to load: https://img.freepik.com/free-photo/young-attractive-woman-having-massage-relaxing-spa-salon_176420-7572.jpg?
+handleError @ LazyLoadImage.tsx:52
+callCallback2 @ chunk-WERSD76P.js?v=4fb497df:3674
+invokeGuardedCallbackDev @ chunk-WERSD76P.js?v=4fb497df:3699
+invokeGuardedCallback @ chunk-WERSD76P.js?v=4fb497df:3733
+invokeGuardedCallbackAndCatchFirstError @ chunk-WERSD76P.js?v=4fb497df:3736
+executeDispatch @ chunk-WERSD76P.js?v=4fb497df:7014
+processDispatchQueueItemsInOrder @ chunk-WERSD76P.js?v=4fb497df:7034
+processDispatchQueue @ chunk-WERSD76P.js?v=4fb497df:7043
+dispatchEventsForPlugins @ chunk-WERSD76P.js?v=4fb497df:7051
+(анонимная) @ chunk-WERSD76P.js?v=4fb497df:7174
+batchedUpdates$1 @ chunk-WERSD76P.js?v=4fb497df:18913
+batchedUpdates @ chunk-WERSD76P.js?v=4fb497df:3579
+dispatchEventForPluginEventSystem @ chunk-WERSD76P.js?v=4fb497df:7173
+dispatchEventWithEnableCapturePhaseSelectiveHydrationWithoutDiscreteEventReplay @ chunk-WERSD76P.js?v=4fb497df:5478
+dispatchEvent @ chunk-WERSD76P.js?v=4fb497df:5472Пояснение к ошибке
+LazyLoadImage.tsx:52 Image failed to load: https://img.freepik.com/free-photo/view-woman-getting-facial-yoga-massage-stay-young_23-2150520769.jpg?
