@@ -5,13 +5,11 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { useState, useEffect, useMemo, lazy, Suspense } from "react";
 import { routeSeoData } from "@/data/navigation";
-import { AuthProvider } from "@/hooks/use-auth";
-import { ProtectedRoute } from "@/lib/protected-route";
 
 // Базовые компоненты с обычным импортом для ключевых элементов интерфейса
 import BottomNavigation from "@/components/BottomNavigation";
 import ScrollToTop from "@/components/ScrollToTop";
-import SEO from "@/components/SEO";
+import { SEO } from "@/components/SEO";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import NotFound from "@/pages/not-found";
 
@@ -44,9 +42,9 @@ function Router({ setActiveTab }: { setActiveTab: (tab: string) => void }) {
         <Route path="/services" component={ServicesPage} />
         <Route path="/promotions" component={PromotionsPage} />
         
-        {/* Защищенные маршруты, требующие авторизации */}
-        <ProtectedRoute path="/settings" component={() => <SettingsPage />} />
-        <ProtectedRoute path="/memberships" component={() => <MembershipsPage />} />
+        {/* Страницы настроек */}
+        <Route path="/settings" component={SettingsPage} />
+        <Route path="/memberships" component={MembershipsPage} />
         
         {/* Публичные маршруты */}
         <Route path="/about" component={AboutPage} />
@@ -70,33 +68,31 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        <TooltipProvider>
-          {/* SEO компонент для управления мета-тегами */}
-          <SEO
-            title={seoData.title}
-            description={seoData.description}
-            schemaType={seoData.schemaType}
-          />
-          
-          {/* Компонент для прокрутки страницы вверх при переходе между маршрутами */}
-          <ScrollToTop />
-          
-          {/* Оборачиваем всё приложение в ErrorBoundary для обработки ошибок */}
-          <ErrorBoundary>
-            <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
-              <main className="pt-0 pb-28"> {/* Убран большой отступ сверху, добавлен небольшой */}
-                <div className="max-w-6xl mx-auto"> {/* Контейнер с максимальной шириной для больших экранов */}
-                  <Router setActiveTab={setActiveTab} />
-                </div>
-              </main>
-              <BottomNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
-            </div>
-          </ErrorBoundary>
-          
-          <Toaster />
-        </TooltipProvider>
-      </AuthProvider>
+      <TooltipProvider>
+        {/* SEO компонент для управления мета-тегами */}
+        <SEO 
+          title={seoData.title}
+          description={seoData.description}
+          schemaType={seoData.schemaType}
+        />
+        
+        {/* Компонент для прокрутки страницы вверх при переходе между маршрутами */}
+        <ScrollToTop />
+        
+        {/* Оборачиваем всё приложение в ErrorBoundary для обработки ошибок */}
+        <ErrorBoundary>
+          <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+            <main className="pt-0 pb-28"> {/* Убран большой отступ сверху, добавлен небольшой */}
+              <div className="max-w-6xl mx-auto"> {/* Контейнер с максимальной шириной для больших экранов */}
+                <Router setActiveTab={setActiveTab} />
+              </div>
+            </main>
+            <BottomNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
+          </div>
+        </ErrorBoundary>
+        
+        <Toaster />
+      </TooltipProvider>
     </QueryClientProvider>
   );
 }
