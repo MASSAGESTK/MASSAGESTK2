@@ -6,6 +6,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { useState, useEffect, useMemo, lazy, Suspense } from "react";
 import { ThemeProvider } from "next-themes";
 import { routeSeoData } from "@/data/navigation";
+import { AuthProvider } from "@/hooks/use-auth";
+import { ProtectedRoute } from "@/lib/protected-route";
 
 // Базовые компоненты с обычным импортом для ключевых элементов интерфейса
 import BottomNavigation from "@/components/BottomNavigation";
@@ -21,6 +23,7 @@ const PromotionsPage = lazy(() => import("@/pages/PromotionsPage"));
 const SettingsPage = lazy(() => import("@/pages/SettingsPage"));
 const AboutPage = lazy(() => import("@/pages/AboutPage"));
 const MembershipsPage = lazy(() => import("@/pages/MembershipsPage"));
+const AuthPage = lazy(() => import("@/pages/auth-page"));
 
 function Router({ setActiveTab }: { setActiveTab: (tab: string) => void }) {
   // Компонент для показа во время загрузки страниц
@@ -41,9 +44,14 @@ function Router({ setActiveTab }: { setActiveTab: (tab: string) => void }) {
         </Route>
         <Route path="/services" component={ServicesPage} />
         <Route path="/promotions" component={PromotionsPage} />
-        <Route path="/settings" component={SettingsPage} />
+        
+        {/* Защищенные маршруты, требующие авторизации */}
+        <ProtectedRoute path="/settings" component={SettingsPage} />
+        <ProtectedRoute path="/memberships" component={MembershipsPage} />
+        
+        {/* Публичные маршруты */}
         <Route path="/about" component={AboutPage} />
-        <Route path="/memberships" component={MembershipsPage} />
+        <Route path="/auth" component={AuthPage} />
         <Route component={NotFound} />
       </Switch>
     </Suspense>
@@ -63,33 +71,35 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-        <TooltipProvider>
-          {/* SEO компонент для управления мета-тегами */}
-          <SEO
-            title={seoData.title}
-            description={seoData.description}
-            schemaType={seoData.schemaType}
-          />
-          
-          {/* Компонент для прокрутки страницы вверх при переходе между маршрутами */}
-          <ScrollToTop />
-          
-          {/* Оборачиваем всё приложение в ErrorBoundary для обработки ошибок */}
-          <ErrorBoundary>
-            <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
-              <main className="pt-0 pb-28"> {/* Убран большой отступ сверху, добавлен небольшой */}
-                <div className="max-w-6xl mx-auto"> {/* Контейнер с максимальной шириной для больших экранов */}
-                  <Router setActiveTab={setActiveTab} />
-                </div>
-              </main>
-              <BottomNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
-            </div>
-          </ErrorBoundary>
-          
-          <Toaster />
-        </TooltipProvider>
-      </ThemeProvider>
+      <AuthProvider>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+          <TooltipProvider>
+            {/* SEO компонент для управления мета-тегами */}
+            <SEO
+              title={seoData.title}
+              description={seoData.description}
+              schemaType={seoData.schemaType}
+            />
+            
+            {/* Компонент для прокрутки страницы вверх при переходе между маршрутами */}
+            <ScrollToTop />
+            
+            {/* Оборачиваем всё приложение в ErrorBoundary для обработки ошибок */}
+            <ErrorBoundary>
+              <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
+                <main className="pt-0 pb-28"> {/* Убран большой отступ сверху, добавлен небольшой */}
+                  <div className="max-w-6xl mx-auto"> {/* Контейнер с максимальной шириной для больших экранов */}
+                    <Router setActiveTab={setActiveTab} />
+                  </div>
+                </main>
+                <BottomNavigation activeTab={activeTab} setActiveTab={setActiveTab} />
+              </div>
+            </ErrorBoundary>
+            
+            <Toaster />
+          </TooltipProvider>
+        </ThemeProvider>
+      </AuthProvider>
     </QueryClientProvider>
   );
 }

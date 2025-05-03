@@ -229,7 +229,14 @@ export class MemStorage implements IStorage {
 
   async createService(insertService: InsertService): Promise<Service> {
     const id = this.currentServiceId++;
-    const service: Service = { ...insertService, id };
+    
+    // Устанавливаем isPopular значение по умолчанию, чтобы избежать undefined
+    const service: Service = { 
+      ...insertService, 
+      id,
+      isPopular: insertService.isPopular ?? false, // Используем null coalescing для установки значения по умолчанию
+    };
+    
     this.services.set(id, service);
     return service;
   }
@@ -261,7 +268,16 @@ export class MemStorage implements IStorage {
 
   async createPromotion(insertPromotion: InsertPromotion): Promise<Promotion> {
     const id = this.currentPromotionId++;
-    const promotion: Promotion = { ...insertPromotion, id };
+    
+    // Обеспечиваем корректные типы для полей, не допуская undefined
+    const promotion: Promotion = { 
+      ...insertPromotion, 
+      id,
+      price: insertPromotion.price ?? null,
+      badge: insertPromotion.badge ?? null,
+      expiryDate: insertPromotion.expiryDate ?? null
+    };
+    
     this.promotions.set(id, promotion);
     return promotion;
   }

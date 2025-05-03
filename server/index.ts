@@ -2,10 +2,19 @@ import express, { type Request, Response, NextFunction } from "express";
 import path from "path";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
+import { config } from "dotenv";
 
+// Загружаем переменные окружения
+config();
+
+// Получаем необходимые секреты из переменных окружения
+process.env.SESSION_SECRET = process.env.SESSION_SECRET || "natalisecrets_session_secret_change_in_production";
+process.env.JWT_SECRET = process.env.JWT_SECRET || "natalisecrets_jwt_secret_change_in_production";
+
+// Создаем express приложение с дополнительными настройками безопасности
 const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.json({ limit: '1mb' })); // Ограничиваем размер тела запроса
+app.use(express.urlencoded({ extended: false, limit: '1mb' }));
 
 // Serve PWA static files from client/public directory
 app.use(express.static(path.join(import.meta.dirname, '../client/public')));
