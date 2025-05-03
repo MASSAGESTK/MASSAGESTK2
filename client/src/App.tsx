@@ -46,8 +46,8 @@ function Router({ setActiveTab }: { setActiveTab: (tab: string) => void }) {
         <Route path="/promotions" component={PromotionsPage} />
         
         {/* Защищенные маршруты, требующие авторизации */}
-        <ProtectedRoute path="/settings" component={SettingsPage} />
-        <ProtectedRoute path="/memberships" component={MembershipsPage} />
+        <ProtectedRoute path="/settings" component={() => <SettingsPage />} />
+        <ProtectedRoute path="/memberships" component={() => <MembershipsPage />} />
         
         {/* Публичные маршруты */}
         <Route path="/about" component={AboutPage} />

@@ -24,6 +24,16 @@ export const routeSeoData = {
     title: "О нас - Natali Secrets салон красоты и спа",
     description: "О салоне красоты Natali Secrets. Наша история, ценности и команда профессионалов. Современное оборудование и высококачественные материалы.",
     schemaType: "AboutPage"
+  },
+  "/auth": {
+    title: "Вход в личный кабинет - Natali Secrets",
+    description: "Авторизация в личном кабинете салона красоты Natali Secrets. Получите доступ к персональным предложениям, программам и эксклюзивным акциям.",
+    schemaType: "WebPage"
+  },
+  "/settings": {
+    title: "Личный кабинет - Natali Secrets",
+    description: "Личный кабинет клиента салона красоты Natali Secrets. Управление профилем, история услуг и персональные рекомендации.",
+    schemaType: "ProfilePage"
   }
 };
 
