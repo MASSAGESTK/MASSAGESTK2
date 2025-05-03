@@ -101,7 +101,10 @@ export function measureWebVitals(): void {
       const entries = list.getEntries();
       entries.forEach((entry) => {
         if (entry.name === 'first-contentful-paint') {
-          console.log(`FCP: ${entry.startTime.toFixed(2)}ms`);
+          // Логируем только в режиме разработки
+          if (process.env.NODE_ENV === 'development') {
+            console.log(`FCP: ${entry.startTime.toFixed(2)}ms`);
+          }
         }
       });
     });
@@ -117,7 +120,9 @@ export function measureWebVitals(): void {
       const lcpObserver = new PerformanceObserver((list) => {
         const entries = list.getEntries();
         const lastEntry = entries[entries.length - 1];
-        console.log(`LCP: ${lastEntry.startTime.toFixed(2)}ms`);
+        if (process.env.NODE_ENV === 'development') {
+          console.log(`LCP: ${lastEntry.startTime.toFixed(2)}ms`);
+        }
       });
       
       try {
@@ -135,7 +140,9 @@ export function measureWebVitals(): void {
           if (entry.entryType === 'first-input') {
             const fidEntry = entry as unknown as {processingStart: number, startTime: number};
             const delay = fidEntry.processingStart - fidEntry.startTime;
-            console.log(`FID: ${delay.toFixed(2)}ms`);
+            if (process.env.NODE_ENV === 'development') {
+              console.log(`FID: ${delay.toFixed(2)}ms`);
+            }
           }
         });
       });

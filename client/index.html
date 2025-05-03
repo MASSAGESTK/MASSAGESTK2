@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
     <title>Natali Secrets - Профессиональный салон красоты и спа услуг</title>
     
+    <!-- Script для GitHub Pages SPA редиректов -->
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    
     <!-- SEO Meta Tags -->
     <meta name="description" content="Natali Secrets - студия красоты и спа в Сыктывкаре. Профессиональные косметологические услуги, массаж, уходовые процедуры, коррекция фигуры и комплексные программы омоложения для женщин и мужчин." />
     <meta name="keywords" content="студия красоты, косметология, массаж, спа, уход за лицом, уход за телом, коррекция фигуры, антицеллюлитный массаж, омоложение, подарочные сертификаты" />

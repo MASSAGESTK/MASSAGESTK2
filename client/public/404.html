@@ -2,10 +2,15 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Natali Secrets</title>
+  <title>Natali Secrets - Перенаправление</title>
   <script type="text/javascript">
-    // Единый код для обработки redirects на SPA
-    var pathSegmentsToKeep = 1;
+    // Single Page Apps для GitHub Pages
+    // Техника из https://github.com/rafgraph/spa-github-pages
+    
+    // Этот скрипт проверяет, был ли запрос сделан непосредственно на 404.html,
+    // и перенаправляет его на index.html с добавлением URL в строку поиска,
+    // которая будет обработана скриптом перенаправления в index.html.
+    var pathSegmentsToKeep = 0;
 
     var l = window.location;
     l.replace(
@@ -18,6 +23,6 @@
   </script>
 </head>
 <body>
-  <h1>Перенаправление...</h1>
+  <h2>Перенаправление...</h2>
 </body>
 </html>
