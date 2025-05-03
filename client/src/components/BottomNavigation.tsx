@@ -1,5 +1,7 @@
-import { Link, useLocation } from "wouter";
+import { useLocation } from "wouter";
 import { cn } from "@/lib/utils";
+import { useCallback, useMemo } from "react";
+import { navigationItems } from "@/data/navigation";
 
 interface BottomNavigationProps {
   activeTab: string;
@@ -7,20 +9,16 @@ interface BottomNavigationProps {
 }
 
 const BottomNavigation = ({ activeTab, setActiveTab }: BottomNavigationProps) => {
-  const [location, navigate] = useLocation();
+  const [, navigate] = useLocation();
 
-  const navItems = [
-    { id: "home", label: "Главная", icon: "home", path: "/" },
-    { id: "promotions", label: "Акции", icon: "card_giftcard", path: "/promotions" },
-    { id: "services", label: "Услуги", icon: "spa", path: "/services" },
-    { id: "settings", label: "Настройки", icon: "settings", path: "/settings" },
-    { id: "about", label: "О нас", icon: "info", path: "/about" },
-  ];
+  // Используем useMemo для предотвращения лишних перерисовок
+  const navItems = useMemo(() => navigationItems, []);
 
-  const handleNavigation = (id: string, path: string) => {
+  // Оптимизированная функция навигации с useCallback
+  const handleNavigation = useCallback((id: string, path: string) => {
     setActiveTab(id);
     navigate(path);
-  };
+  }, [setActiveTab, navigate]);
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 px-4 py-5">
