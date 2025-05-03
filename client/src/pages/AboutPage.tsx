@@ -9,9 +9,9 @@ const AboutPage = () => {
       
       <div className="bg-card text-card-foreground rounded-lg shadow-lg hover:shadow-xl dark:shadow-white/10 overflow-hidden mb-6 transition-all duration-200 transform hover:-translate-y-1">
         <img 
-          src={imageUrls.salonInterior[2]} 
+          src={imageUrls.salonInterior[0]} 
           alt="Интерьер салона Natali Secrets" 
-          className="w-full h-56 object-cover shadow-sm"
+          className="w-full h-32 object-cover shadow-sm"
         />
         <div className="p-4">
           <h2 className="font-medium text-lg mb-2">Natali Secrets</h2>
