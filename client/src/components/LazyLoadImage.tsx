@@ -53,7 +53,8 @@ const LazyLoadImage = ({
       className="relative overflow-hidden" 
       style={{ 
         backgroundColor: placeholderColor,
-        paddingBottom: props.height ? undefined : "66.67%" // Default aspect ratio
+        height: props.height || '100%',
+        width: props.width || '100%'
       }}
     >
       {isInView && (
@@ -61,8 +62,8 @@ const LazyLoadImage = ({
           src={src}
           alt={alt}
           className={cn(
-            "transition-opacity duration-300 w-full h-full object-cover absolute top-0 left-0",
-            isLoaded ? "opacity-100" : "opacity-40", // Changed from opacity-0 to opacity-40 to show loading state
+            "transition-opacity duration-300 w-full h-full object-cover",
+            isLoaded ? "opacity-100" : "opacity-40",
             className
           )}
           onLoad={handleLoad}
