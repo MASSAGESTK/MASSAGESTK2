@@ -53,8 +53,6 @@ const LazyLoadImage = ({
       className="relative overflow-hidden" 
       style={{ 
         backgroundColor: placeholderColor,
-        height: props.height || '100%',
-        width: props.width || '100%'
       }}
     >
       {isInView && (
