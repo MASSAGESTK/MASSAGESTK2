@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { useLocation } from "wouter";
+import { useState, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -9,256 +8,86 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import ServiceCard from "@/components/ServiceCard";
-import ServiceModal, { ServiceDetails } from "@/components/ServiceModal";
+import ServiceModal from "@/components/ServiceModal";
 import { imageUrls } from "@/lib/utils";
-
-const popularServices = [
-  {
-    id: 1,
-    name: "Комбинированная чистка лица",
-    price: "2700₽",
-    image: imageUrls.beautyServices[0],
-  },
-  {
-    id: 6,
-    name: "Антицеллюлитный массаж",
-    price: "1200₽",
-    image: imageUrls.massageTherapy[1],
-  },
-  {
-    id: 7,
-    name: "Расслабляющий спа массаж",
-    price: "2000₽",
-    image: imageUrls.spaServices[1],
-  },
-];
-
-const complexServices = [
-  { id: 1, title: "Уход за кожей", icon: "spa", category: "cosmetology" },
-  { id: 2, title: "Мужской уход", icon: "face", category: "men" },
-  {
-    id: 3,
-    title: "SPA-программы",
-    icon: "self_improvement",
-    category: "massage",
-  },
-  {
-    id: 4,
-    title: "Коррекция фигуры",
-    icon: "auto_awesome",
-    category: "bodyCorrection",
-  },
-  {
-    id: 5,
-    title: "Комплексные программы",
-    icon: "dashboard",
-    category: "complex",
-  },
-  {
-    id: 6,
-    title: "Абонементы",
-    icon: "card_membership",
-    category: "memberships",
-  },
-];
-
-// Полные данные о всех услугах с эффектами
-const serviceDetailsMap: Record<number, ServiceDetails> = {
-  1: {
-    id: 1,
-    name: "Комбинированная чистка лица",
-    price: "2700₽",
-    description:
-      "Комбинированная чистка лица - это процедура глубокого очищения кожи, которая сочетает в себе механическое удаление загрязнений и использование специальных средств для более эффективного результата.",
-    image: imageUrls.beautyServices[2],
-    duration: "60 минут",
-    effects: [
-      "Глубокое очищение пор",
-      "Удаление комедонов и загрязнений",
-      "Выравнивание текстуры кожи",
-      "Улучшение цвета лица",
-      "Подготовка кожи к дальнейшим процедурам",
-    ],
-  },
-  2: {
-    id: 2,
-    name: "Пилинг омолаживающий",
-    price: "2500₽",
-    description:
-      "Омолаживающий пилинг помогает отшелушить верхний слой клеток кожи, стимулируя обновление и регенерацию тканей для более молодого и свежего вида.",
-    image: imageUrls.beautyServices[1],
-    duration: "45 минут",
-    effects: [
-      "Омоложение кожи",
-      "Уменьшение морщин",
-      "Выравнивание тона кожи",
-      "Стимуляция выработки коллагена",
-      "Улучшение текстуры кожи",
-    ],
-  },
-  3: {
-    id: 3,
-    name: "Антицеллюлитный массаж",
-    price: "1200₽",
-    description:
-      "Интенсивный массаж, направленный на разбивание жировых отложений и улучшение кровообращения в проблемных зонах.",
-    image: imageUrls.massageTherapy[1],
-    duration: "45 минут",
-    effects: [
-      "Уменьшение целлюлита",
-      "Улучшение кровообращения",
-      "Повышение упругости кожи",
-      "Выведение лишней жидкости",
-      "Улучшение обмена веществ в тканях",
-    ],
-  },
-  4: {
-    id: 4,
-    name: "Спа массаж",
-    price: "2000₽",
-    description:
-      "Расслабляющий массаж с использованием ароматических масел для полного расслабления тела и разума.",
-    image: imageUrls.spaServices[1],
-    duration: "60 минут",
-    effects: [
-      "Снятие стресса",
-      "Глубокое расслабление",
-      "Улучшение сна",
-      "Снятие мышечного напряжения",
-      "Повышение общего тонуса организма",
-    ],
-  },
-  5: {
-    id: 5,
-    name: "Микротоковая терапия",
-    price: "3200₽",
-    description:
-      "Аппаратная процедура, при которой используются слабые электрические импульсы для стимуляции клеток кожи и мышц лица.",
-    image: imageUrls.beautyServices[2],
-    duration: "40 минут",
-    effects: [
-      "Лифтинг-эффект",
-      "Улучшение тонуса кожи",
-      "Уменьшение отечности",
-      "Разглаживание мелких морщин",
-      "Стимуляция обменных процессов",
-    ],
-  },
-  6: {
-    id: 6,
-    name: "Антицеллюлитный массаж",
-    price: "1200₽",
-    description:
-      "Интенсивный массаж, направленный на разбивание жировых отложений и улучшение кровообращения в проблемных зонах.",
-    image: imageUrls.massageTherapy[1],
-    duration: "45 минут",
-    effects: [
-      "Уменьшение целлюлита",
-      "Улучшение кровообращения",
-      "Повышение упругости кожи",
-      "Выведение лишней жидкости",
-      "Улучшение обмена веществ в тканях",
-    ],
-  },
-  7: {
-    id: 7,
-    name: "Расслабляющий спа массаж",
-    price: "2000₽",
-    description:
-      "Расслабляющий массаж с использованием ароматических масел для полного расслабления тела и разума.",
-    image: imageUrls.spaServices[1],
-    duration: "60 минут",
-    effects: [
-      "Снятие стресса",
-      "Глубокое расслабление",
-      "Улучшение сна",
-      "Снятие мышечного напряжения",
-      "Повышение общего тонуса организма",
-    ],
-  },
-  8: {
-    id: 8,
-    name: "Мужской уход за лицом",
-    price: "2300₽",
-    description:
-      "Специальная программа ухода за мужской кожей, учитывающая особенности и потребности мужской кожи.",
-    image: imageUrls.spaServices[0],
-    duration: "50 минут",
-    effects: [
-      "Глубокое очищение",
-      "Увлажнение кожи",
-      "Снятие раздражения",
-      "Тонизация кожи",
-      "Защита от негативных внешних факторов",
-    ],
-  },
-};
+import { useModal } from "@/hooks/use-modal";
+import { useSafeNavigate } from "@/hooks/use-safe-navigate";
+import { popularServices } from "@/data/services";
+import { complexServices } from "@/data/navigation";
 
 interface HomePageProps {
   setActiveTab: (tab: string) => void;
 }
 
 const HomePage = ({ setActiveTab }: HomePageProps) => {
-  const [, navigate] = useLocation();
-  const [selectedService, setSelectedService] = useState<ServiceDetails | null>(
-    null,
-  );
-  const [modalOpen, setModalOpen] = useState(false);
-  const [showTelegramModal, setShowTelegramModal] = useState(false);
-
-  const handleServiceClick = (id: number) => {
-    // Переход к странице услуг и передача ID выбранной услуги
+  // Используем кастомные хуки
+  const { navigateWithData } = useSafeNavigate();
+  const telegramModal = useModal();
+  
+  /**
+   * Обработчик клика по услуге
+   */
+  const handleServiceClick = useCallback((id: number) => {
+    // Переход к странице услуг с сохранением ID выбранной услуги
     setActiveTab("services");
-    
-    // Сохраняем ID выбранной услуги в sessionStorage, чтобы открыть её на странице услуг
-    sessionStorage.setItem("selectedServiceId", id.toString());
-    
-    // Переходим на страницу услуг
-    navigate("/services");
-  };
+    navigateWithData("/services", { selectedServiceId: id.toString() });
+  }, [setActiveTab, navigateWithData]);
 
-  const handleComplexServiceClick = (id: number) => {
+  /**
+   * Обработчик клика по комплексной услуге
+   */
+  const handleComplexServiceClick = useCallback((id: number) => {
     // Находим категорию для выбранной услуги
-    const selectedService = complexServices.find(
-      (service) => service.id === id,
-    );
+    const selectedService = complexServices.find(service => service.id === id);
 
     // Проверяем, выбраны ли абонементы
     if (selectedService?.category === "memberships") {
-      // Для абонементов переходим на специальную страницу
       setActiveTab("memberships");
-      navigate("/memberships");
+      navigateWithData("/memberships");
       return;
     }
 
     // Для остальных категорий
-    // Устанавливаем активную вкладку "services" и перенаправляем на страницу услуг
     setActiveTab("services");
-
-    // Передаем информацию о выбранной категории через sessionStorage
-    if (selectedService && selectedService.category) {
-      sessionStorage.setItem(
-        "selectedServiceCategory",
-        selectedService.category,
-      );
-    }
-
-    navigate("/services");
-  };
-
-  const handleBooking = () => {
-    setShowTelegramModal(true);
-  };
-
-  const handleConfirmTelegram = () => {
-    // Кодируем простую информацию для главного баннера
-    const source = btoa(encodeURIComponent("main_banner"));
-    const description = btoa(encodeURIComponent("Запись на консультацию"));
     
-    // Открываем Telegram бот с закодированной информацией
-    window.open(`https://t.me/Natali_Secrets_bot?start=main_${source}_${description}`, "_blank");
-    setShowTelegramModal(false);
-  };
+    // Передаем информацию о выбранной категории
+    if (selectedService && selectedService.category) {
+      navigateWithData("/services", { 
+        selectedServiceCategory: selectedService.category 
+      });
+    } else {
+      navigateWithData("/services");
+    }
+  }, [setActiveTab, navigateWithData]);
+
+  /**
+   * Обработчик клика по кнопке записи
+   */
+  const handleBooking = useCallback(() => {
+    telegramModal.open();
+  }, [telegramModal]);
+
+  /**
+   * Обработчик подтверждения перехода в Telegram
+   */
+  const handleConfirmTelegram = useCallback(() => {
+    try {
+      // Кодируем информацию для безопасной передачи
+      const source = btoa(encodeURIComponent("main_banner"));
+      const description = btoa(encodeURIComponent("Запись на консультацию"));
+      
+      // Безопасное открытие Telegram бота с параметрами
+      window.open(
+        `https://t.me/Natali_Secrets_bot?start=main_${source}_${description}`, 
+        "_blank",
+        "noopener,noreferrer"
+      );
+    } catch (error) {
+      console.error("Ошибка при открытии Telegram:", error);
+    }
+    
+    telegramModal.close();
+  }, [telegramModal]);
 
   return (
     <div className="p-4 md:p-8">
@@ -268,6 +97,7 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
           src={imageUrls.salonInterior[1]}
           alt="Natali Secrets Spa"
           className="w-full h-48 md:h-64 object-cover"
+          loading="eager" // Приоритетная загрузка главного изображения
         />
         <div className="bg-card text-card-foreground p-4 relative transition-colors duration-200">
           <h2 className="text-lg font-medium">
@@ -329,18 +159,8 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
         </div>
       </div>
 
-      {/* Модальное окно услуги */}
-      <ServiceModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        service={selectedService}
-      />
-
       {/* Модальное окно с предупреждением о Telegram */}
-      <Dialog
-        open={showTelegramModal}
-        onOpenChange={() => setShowTelegramModal(false)}
-      >
+      <Dialog open={telegramModal.isOpen} onOpenChange={telegramModal.close}>
         <DialogContent className="bg-card text-card-foreground rounded-lg max-w-md w-full p-4 shadow-xl dark:shadow-white/10 transition-all duration-200">
           <DialogHeader>
             <DialogTitle className="text-center text-base">

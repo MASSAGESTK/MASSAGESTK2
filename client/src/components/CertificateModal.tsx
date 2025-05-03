@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -9,6 +9,8 @@ import {
 } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
+import { useModal } from "@/hooks/use-modal";
+import { certificates } from "@/data/certificates";
 
 // Типы сертификатов
 export interface Certificate {
@@ -19,74 +21,50 @@ export interface Certificate {
   type: "service" | "amount" | "program";
 }
 
-// Данные о доступных сертификатах
-export const certificates: Certificate[] = [
-  {
-    id: 1,
-    title: "Сертификат на уходовые процедуры",
-    description: "Подарочный сертификат на любую уходовую процедуру для лица",
-    price: "3000₽",
-    type: "service"
-  },
-  {
-    id: 2,
-    title: "Сертификат на SPA-массаж",
-    description: "Подарочный сертификат на расслабляющий спа-массаж",
-    price: "2500₽",
-    type: "service"
-  },
-  {
-    id: 3,
-    title: "Сертификат на 5000₽",
-    description: "Подарочный сертификат номиналом 5000₽ на любые услуги салона",
-    price: "5000₽",
-    type: "amount"
-  },
-  {
-    id: 4,
-    title: "Сертификат на 10000₽",
-    description: "Подарочный сертификат номиналом 10000₽ на любые услуги салона",
-    price: "10000₽",
-    type: "amount"
-  },
-  {
-    id: 5,
-    title: "Сертификат на программу коррекции фигуры",
-    description: "Подарочный сертификат на комплексную программу коррекции фигуры (5 сеансов)",
-    price: "17000₽",
-    type: "program"
-  }
-];
-
 interface CertificateModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
 const CertificateModal = ({ isOpen, onClose }: CertificateModalProps) => {
+  // Состояние вкладки
   const [selectedTab, setSelectedTab] = useState<string>("all");
-  const [showTelegramModal, setShowTelegramModal] = useState(false);
-  const [selectedCertificate, setSelectedCertificate] = useState<Certificate | null>(null);
+  
+  // Используем хук для управления модальным окном Telegram
+  const telegramModal = useModal<Certificate>();
+  
+  // Фильтрация сертификатов по выбранной вкладке с помощью useMemo для оптимизации
+  const filteredCertificates = useMemo(() => 
+    selectedTab === "all" 
+      ? certificates 
+      : certificates.filter(cert => cert.type === selectedTab),
+    [selectedTab]
+  );
 
-  const filteredCertificates = selectedTab === "all" 
-    ? certificates 
-    : certificates.filter(cert => cert.type === selectedTab);
+  // Обработчик выбора сертификата с оптимизацией через useCallback
+  const handleCertificateSelect = useCallback((certificate: Certificate) => {
+    telegramModal.open(certificate);
+  }, [telegramModal]);
 
-  const handleCertificateSelect = (certificate: Certificate) => {
-    setSelectedCertificate(certificate);
-    setShowTelegramModal(true);
-  };
-
-  const handleConfirmTelegram = () => {
-    // Простое открытие Telegram бота без кодировки параметров
-    window.open("https://t.me/Natali_Secrets_bot", "_blank");
-    setShowTelegramModal(false);
+  // Обработчик подтверждения перехода в Telegram с оптимизацией через useCallback
+  const handleConfirmTelegram = useCallback(() => {
+    // Безопасное открытие Telegram бота
+    if (telegramModal.data) {
+      try {
+        // Использование безопасного метода открытия URL с настройками безопасности
+        const telegramUrl = "https://t.me/Natali_Secrets_bot";
+        window.open(telegramUrl, "_blank", "noopener,noreferrer");
+      } catch (error) {
+        console.error("Ошибка при открытии Telegram:", error);
+      }
+    }
+    telegramModal.close();
     onClose();
-  };
+  }, [telegramModal, onClose]);
 
   return (
     <>
-      <Dialog open={isOpen && !showTelegramModal} onOpenChange={onClose}>
+      <Dialog open={isOpen && !telegramModal.isOpen} onOpenChange={onClose}>
         <DialogContent className="bg-card text-card-foreground rounded-lg max-w-lg w-full max-h-[90vh] flex flex-col overflow-hidden shadow-xl dark:shadow-white/10 transition-all duration-200">
           <DialogHeader className="flex-shrink-0">
             <DialogTitle className="text-center text-lg font-semibold">
@@ -134,17 +112,17 @@ const CertificateModal = ({ isOpen, onClose }: CertificateModalProps) => {
       </Dialog>
 
       {/* Модальное окно с предупреждением о Telegram */}
-      <Dialog open={showTelegramModal} onOpenChange={() => setShowTelegramModal(false)}>
+      <Dialog open={telegramModal.isOpen} onOpenChange={telegramModal.close}>
         <DialogContent className="bg-card text-card-foreground rounded-lg max-w-md w-full p-4 shadow-xl dark:shadow-white/10 transition-all duration-200">
           <DialogHeader>
             <DialogTitle className="text-center text-base">Приобретение сертификата</DialogTitle>
           </DialogHeader>
           
           <div className="py-3">
-            {selectedCertificate && (
+            {telegramModal.data && (
               <div className="mb-4 text-center">
-                <p className="font-medium text-sm mb-1">{selectedCertificate.title}</p>
-                <p className="text-[#FF6B35] font-semibold">{selectedCertificate.price}</p>
+                <p className="font-medium text-sm mb-1">{telegramModal.data.title}</p>
+                <p className="text-[#FF6B35] font-semibold">{telegramModal.data.price}</p>
               </div>
             )}
             <p className="text-sm text-center text-muted-foreground">

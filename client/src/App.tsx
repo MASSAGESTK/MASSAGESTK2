@@ -3,7 +3,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { ThemeProvider } from "next-themes";
 import NotFound from "@/pages/not-found";
 import HomePage from "@/pages/HomePage";
@@ -15,35 +15,7 @@ import MembershipsPage from "@/pages/MembershipsPage";
 import BottomNavigation from "@/components/BottomNavigation";
 import ScrollToTop from "@/components/ScrollToTop";
 import SEO from "@/components/SEO";
-
-// Карта заголовков и описаний для разных маршрутов (для SEO)
-const routeSeoData = {
-  "/": {
-    title: "Natali Secrets - Профессиональный салон красоты и спа услуг",
-    description: "Салон красоты Natali Secrets предлагает широкий спектр услуг: косметология, массаж, спа-процедуры, коррекция фигуры и индивидуальные программы ухода.",
-    schemaType: "WebSite"
-  },
-  "/services": {
-    title: "Услуги салона красоты Natali Secrets - косметология, массаж, спа",
-    description: "Полный список услуг салона красоты Natali Secrets: косметология, массаж, спа-процедуры, коррекция фигуры. Профессиональный подход и современные технологии.",
-    schemaType: "Service"
-  },
-  "/promotions": {
-    title: "Акции и специальные предложения - Natali Secrets",
-    description: "Выгодные акции и специальные предложения салона красоты Natali Secrets. Скидки на услуги, подарочные сертификаты и комплексные программы.",
-    schemaType: "SpecialOffer"
-  },
-  "/memberships": {
-    title: "Абонементы на услуги салона красоты - Natali Secrets",
-    description: "Абонементы на услуги салона красоты Natali Secrets. Выгодные комплексные программы для поддержания красоты и здоровья.",
-    schemaType: "Product"
-  },
-  "/about": {
-    title: "О нас - Natali Secrets салон красоты и спа",
-    description: "О салоне красоты Natali Secrets. Наша история, ценности и команда профессионалов. Современное оборудование и высококачественные материалы.",
-    schemaType: "AboutPage"
-  }
-};
+import { routeSeoData } from "@/data/navigation";
 
 function Router({ setActiveTab }: { setActiveTab: (tab: string) => void }) {
   return (
