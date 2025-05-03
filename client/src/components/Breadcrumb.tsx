@@ -55,10 +55,8 @@ export const Breadcrumb = ({
                 </span>
               ) : (
                 <>
-                  <Link href={item.url}>
-                    <a className="text-muted-foreground hover:text-primary transition-colors duration-200">
-                      {item.name}
-                    </a>
+                  <Link href={item.url} className="text-muted-foreground hover:text-primary transition-colors duration-200">
+                    {item.name}
                   </Link>
                   <span className="mx-1">{separator}</span>
                 </>
