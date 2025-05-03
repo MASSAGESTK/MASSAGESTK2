@@ -61,7 +61,7 @@ const LazyLoadImage = ({
           src={src}
           alt={alt}
           className={cn(
-            "transition-opacity duration-300",
+            "transition-opacity duration-300 w-full h-full object-cover absolute top-0 left-0",
             isLoaded ? "opacity-100" : "opacity-0",
             className
           )}

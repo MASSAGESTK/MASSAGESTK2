@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import LazyLoadImage from "./LazyLoadImage";
 
 interface ServiceCardProps {
   id: number;
