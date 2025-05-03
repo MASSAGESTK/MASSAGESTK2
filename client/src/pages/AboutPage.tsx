@@ -32,21 +32,12 @@ const AboutPage = () => {
             </div>
             <div className="flex">
               <span className="material-icons text-primary mr-3 drop-shadow-sm">phone</span>
-              <p className="text-sm">+7 (950) 565-64-44</p>
+              <p className="text-sm">+7 (904) 103-47-20</p>
             </div>
             <div className="flex">
               <span className="material-icons text-primary mr-3 drop-shadow-sm">schedule</span>
               <p className="text-sm">Пн-Вс: 10:00 - 18:00</p>
             </div>
-          </div>
-        </div>
-      </div>
-      
-      <div className="bg-card text-card-foreground rounded-lg shadow-lg hover:shadow-xl dark:shadow-white/10 overflow-hidden transition-all duration-200 transform hover:-translate-y-1">
-        <div className="p-4">
-          <h2 className="font-medium text-lg mb-2">Наше расположение</h2>
-          <div className="h-56 bg-muted rounded-lg overflow-hidden flex items-center justify-center shadow-inner">
-            <span className="material-icons text-muted-foreground text-4xl drop-shadow-sm">map</span>
           </div>
         </div>
       </div>
