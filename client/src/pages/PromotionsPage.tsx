@@ -1,61 +1,38 @@
-import { useState } from "react";
-import { imageUrls } from "@/lib/utils";
+import { useState, useCallback } from "react";
 import PromotionCard from "@/components/PromotionCard";
 import CertificateModal from "@/components/CertificateModal";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-
-// Данные о акциях и специальных предложениях
-const promotions = [
-  {
-    id: 1,
-    title: "Скидка 10% на первое посещение",
-    description: "Получите скидку 10% на любую услугу при первом посещении нашего салона. Предложение действует для новых клиентов.",
-    image: imageUrls.beautyServices[0],
-    badge: "Актуально",
-    buttonText: "Выбрать",
-  },
-  {
-    id: 2,
-    title: "Абонемент на массаж спины",
-    description: "10 сеансов классического массажа спины по специальной цене. Срок действия абонемента - 3 месяца.",
-    image: imageUrls.massageTherapy[4],
-    badge: "Выгода 10%",
-    price: "8200₽",
-    buttonText: "Приобрести",
-  },
-  {
-    id: 3,
-    title: "Подарочные сертификаты",
-    description: "Порадуйте близких подарочным сертификатом на услуги нашего салона. Доступны сертификаты различного номинала.",
-    image: imageUrls.massageTherapy[3],
-    badge: "Актуально",
-    buttonText: "Выбрать сертификат",
-  },
-];
+import { useModal } from "@/hooks/use-modal";
+import { promotions } from "@/data/promotions";
 
 const PromotionsPage = () => {
-  const [showCertificateModal, setShowCertificateModal] = useState(false);
-  const [showTelegramModal, setShowTelegramModal] = useState(false);
-  const [selectedPromoId, setSelectedPromoId] = useState<number | null>(null);
+  // Используем наш хук для управления модальными окнами
+  const { isOpen: showCertificateModal, open: openCertificateModal, close: closeCertificateModal } = useModal();
+  const { 
+    isOpen: showTelegramModal, 
+    open: openTelegramModal, 
+    close: closeTelegramModal, 
+    data: selectedPromoId 
+  } = useModal<number | null>(null);
 
-  const handlePromotionClick = (id: number) => {
-    setSelectedPromoId(id);
-    
+  // Мемоизированная функция обработки клика по акции
+  const handlePromotionClick = useCallback((id: number) => {    
     // Если это сертификаты (id = 3), открываем модальное окно с сертификатами
     if (id === 3) {
-      setShowCertificateModal(true);
+      openCertificateModal();
     } else {
-      // Для других акций просто открываем Телеграм-модальное окно
-      setShowTelegramModal(true);
+      // Для других акций открываем Телеграм-модальное окно
+      openTelegramModal(id);
     }
-  };
+  }, [openCertificateModal, openTelegramModal]);
 
-  const handleConfirmTelegram = () => {
+  // Мемоизированная функция обработки подтверждения перехода в Telegram
+  const handleConfirmTelegram = useCallback(() => {
     // Простое открытие Telegram бота без кодировки параметров
     window.open("https://t.me/Natali_Secrets_bot", "_blank");
-    setShowTelegramModal(false);
-  };
+    closeTelegramModal();
+  }, [closeTelegramModal]);
 
   return (
     <div className="p-4 md:p-8">
@@ -80,11 +57,11 @@ const PromotionsPage = () => {
       {/* Модальное окно с сертификатами */}
       <CertificateModal 
         isOpen={showCertificateModal} 
-        onClose={() => setShowCertificateModal(false)} 
+        onClose={closeCertificateModal} 
       />
 
       {/* Модальное окно с предупреждением о Telegram для других акций */}
-      <Dialog open={showTelegramModal} onOpenChange={() => setShowTelegramModal(false)}>
+      <Dialog open={showTelegramModal} onOpenChange={closeTelegramModal}>
         <DialogContent className="bg-card text-card-foreground rounded-lg max-w-md w-full p-4 shadow-xl dark:shadow-white/10 transition-all duration-200">
           <DialogHeader>
             <DialogTitle className="text-center text-base">
