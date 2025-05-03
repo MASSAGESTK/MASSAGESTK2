@@ -11,9 +11,16 @@ import {
   InsertUser
 } from "@shared/schema";
 import { imageUrls } from "../client/src/lib/utils";
+import session from "express-session";
+import createMemoryStore from "memorystore";
+
+// Создаем memorystore для сессий
+const MemoryStore = createMemoryStore(session);
 
 // Интерфейс для методов хранилища
 export interface IStorage {
+  // Хранилище сессий
+  sessionStore: session.Store;
   // Пользователи (сохранено из базового шаблона)
   getUser(id: number): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
@@ -54,6 +61,9 @@ export class MemStorage implements IStorage {
   private currentProgramId: number;
   private currentPromotionId: number;
   private currentServiceEffectId: number;
+  
+  // Добавляем хранилище сессий
+  public sessionStore: session.Store;
 
   constructor() {
     this.users = new Map();
@@ -67,6 +77,11 @@ export class MemStorage implements IStorage {
     this.currentProgramId = 1;
     this.currentPromotionId = 1;
     this.currentServiceEffectId = 1;
+    
+    // Инициализируем хранилище сессий
+    this.sessionStore = new MemoryStore({
+      checkPeriod: 86400000 // Очистка просроченных сессий раз в 24 часа
+    });
 
     // Инициализация данными-примерами
     this.initializeData();
