@@ -44,8 +44,16 @@ const LazyLoadImage = ({
   
   // Обрабатываем загрузку изображения
   const handleLoad = () => {
+    console.log('Image loaded:', src);
     setIsLoaded(true);
   };
+
+  const handleError = () => {
+    console.error('Image failed to load:', src);
+  };
+
+  // Для отладки
+  console.log('LazyLoadImage:', { src, isInView, isLoaded });
 
   return (
     <div 
@@ -58,13 +66,13 @@ const LazyLoadImage = ({
       {isInView && (
         <img
           src={src}
-          alt={alt}
+          alt={alt || "Image"}
           className={cn(
             "transition-opacity duration-300 w-full h-full object-cover",
-            isLoaded ? "opacity-100" : "opacity-100",
             className
           )}
           onLoad={handleLoad}
+          onError={handleError}
           {...props}
         />
       )}
