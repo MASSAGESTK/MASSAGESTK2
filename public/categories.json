@@ -1,0 +1,91 @@
+{
+  "categories": [
+    {
+      "id": "cosmetology",
+      "title": "Косметология",
+      "description": "Профессиональные косметологические услуги в Сыктывкаре для всех возрастов от 14 до 80 лет. Чистка лица, пилинги, уходовые процедуры.",
+      "url": "/services?category=cosmetology",
+      "image": "/images/categories/cosmetology.jpg",
+      "location": "Сыктывкар, Республика Коми",
+      "position": {
+        "lat": 61.668793,
+        "lng": 50.836399
+      }
+    },
+    {
+      "id": "massage",
+      "title": "Массаж",
+      "description": "Различные виды массажа в Сыктывкаре: антицеллюлитный, спа-массаж, классический массаж, скульптурно-буккальный и расслабляющий.",
+      "url": "/services?category=massage",
+      "image": "/images/categories/massage.jpg",
+      "location": "Сыктывкар, Республика Коми",
+      "position": {
+        "lat": 61.668793,
+        "lng": 50.836399
+      }
+    },
+    {
+      "id": "bodyCorrection",
+      "title": "Коррекция фигуры",
+      "description": "Эффективные процедуры коррекции фигуры в Сыктывкаре: прессотерапия, вибро-прессо-роликовый массаж и другие методики.",
+      "url": "/services?category=bodyCorrection",
+      "image": "/images/categories/body-correction.jpg",
+      "location": "Сыктывкар, Республика Коми",
+      "position": {
+        "lat": 61.668793,
+        "lng": 50.836399
+      }
+    },
+    {
+      "id": "men",
+      "title": "Услуги для мужчин",
+      "description": "Специальные косметологические услуги и массаж для мужчин в Сыктывкаре. Профессиональная забота о мужской красоте и здоровье.",
+      "url": "/services?category=men",
+      "image": "/images/categories/men.jpg",
+      "location": "Сыктывкар, Республика Коми",
+      "position": {
+        "lat": 61.668793,
+        "lng": 50.836399
+      }
+    },
+    {
+      "id": "complex",
+      "title": "Комплексные программы",
+      "description": "Комплексные программы ухода за телом и лицом в Сыктывкаре: персонализированные наборы услуг для достижения максимального результата.",
+      "url": "/services?category=complex",
+      "image": "/images/categories/complex.jpg",
+      "location": "Сыктывкар, Республика Коми",
+      "position": {
+        "lat": 61.668793,
+        "lng": 50.836399
+      }
+    }
+  ],
+  "audience": {
+    "ageRange": {
+      "min": 14,
+      "max": 80
+    },
+    "locations": [
+      {
+        "city": "Сыктывкар",
+        "region": "Республика Коми",
+        "country": "Россия",
+        "position": {
+          "lat": 61.668793,
+          "lng": 50.836399
+        }
+      },
+      {
+        "city": "Эжвинский район",
+        "region": "Республика Коми",
+        "country": "Россия"
+      },
+      {
+        "city": "Сыктывдинский район",
+        "region": "Республика Коми",
+        "country": "Россия"
+      }
+    ]
+  }
+}

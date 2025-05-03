@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+    <title>Natali Secrets - Профессиональный салон красоты и спа услуг</title>
+    
+    <!-- Script для GitHub Pages SPA редиректов -->
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Natali Secrets - студия красоты и спа в Сыктывкаре. Профессиональные косметологические услуги, массаж, уходовые процедуры, коррекция фигуры и комплексные программы омоложения для женщин и мужчин." />
+    <meta name="keywords" content="студия красоты, косметология, массаж, спа, уход за лицом, уход за телом, коррекция фигуры, антицеллюлитный массаж, омоложение, подарочные сертификаты" />
+    <meta name="author" content="Natali Secrets" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://natali-secrets.ru/" />
+    <meta property="og:title" content="Natali Secrets - Профессиональная студия красоты и спа услуг" />
+    <meta property="og:description" content="Профессиональные услуги для вашей красоты: косметология, массаж, спа-процедуры, коррекция фигуры и индивидуальные программы ухода." />
+    <meta property="og:image" content="/icons/og-image.jpg" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://natali-secrets.ru/" />
+    <meta property="twitter:title" content="Natali Secrets - Профессиональная студия красоты и спа услуг" />
+    <meta property="twitter:description" content="Профессиональные услуги для вашей красоты: косметология, массаж, спа-процедуры, коррекция фигуры и индивидуальные программы ухода." />
+    <meta property="twitter:image" content="/icons/og-image.jpg" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://natali-secrets.ru/" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#9D7AD9" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Natali Secrets" />
+    
+    <!-- Favicons and Icons -->
+    <link rel="icon" href="/favicon/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/MASSAGESTK2/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/MASSAGESTK2/favicon/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/MASSAGESTK2/favicon/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#F280FF" />
+    <link rel="manifest" href="/MASSAGESTK2/favicon/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#444444" />
+    
+    <!-- Font preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/favicon/favicon.svg" as="image" />
+    <script type="module" crossorigin src="/MASSAGESTK2/assets/index-gXeJHl0d.js"></script>
+    <link rel="stylesheet" crossorigin href="/MASSAGESTK2/assets/index-CDZj_dU0.css">
+  </head>
+  <body>
+    <div id="root"></div>
+   </script>
+    
+    <!-- Register Service Worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js').then(function(registration) {
+            console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          }, function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

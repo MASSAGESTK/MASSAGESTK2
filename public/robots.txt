@@ -1,0 +1,23 @@
+# Natali Secrets - Правила индексации для поисковых систем в Сыктывкаре
+User-agent: *
+Allow: /
+
+# Разрешаем доступ ко всем страницам сайта
+Disallow: /settings # Запрещаем доступ к страницам настроек
+Disallow: /admin # Запрещаем доступ к админке (если будет в будущем)
+
+# Директива Host указывает на основной домен сайта
+Host: natali-secrets.ru
+
+# Геолокационная информация
+Geo-Region: RU-KO
+Geo-Position: 61.668793, 50.836399
+ICBM: 61.668793, 50.836399
+
+# Карта сайта
+Sitemap: https://natali-secrets.ru/sitemap.xml
+
+# Для региональных поисковых систем
+# Яндекс имеет особые директивы для локального бизнеса
+Clean-Param: utm_source&utm_medium&utm_campaign&utm_content&utm_term
+Clean-Param: yclid&ymclid&gclid
