@@ -152,7 +152,6 @@ const ServicesPage = () => {
                   name={service.name}
                   price={service.price}
                   duration={service.duration}
-                  image={serviceDetailsMap[service.id]?.image}
                   onClick={handleServiceClick}
                 />
               ))}
@@ -176,7 +175,6 @@ const ServicesPage = () => {
                   name={service.name}
                   price={service.price}
                   duration={service.duration}
-                  image={serviceDetailsMap[service.id]?.image}
                   onClick={handleServiceClick}
                 />
               ))}
@@ -200,7 +198,6 @@ const ServicesPage = () => {
                   name={service.name}
                   price={service.price}
                   duration={service.duration}
-                  image={serviceDetailsMap[service.id]?.image}
                   onClick={handleServiceClick}
                 />
               ))}
@@ -224,7 +221,6 @@ const ServicesPage = () => {
                   name={service.name}
                   price={service.price}
                   duration={service.duration}
-                  image={serviceDetailsMap[service.id]?.image}
                   onClick={handleServiceClick}
                 />
               ))}
