@@ -67,6 +67,12 @@ export const popularServices = [
     image: imageUrls.massageTherapy[1],
   },
   {
+    id: 17,
+    name: "Лимфодренажный массаж",
+    price: "1000₽",
+    image: imageUrls.spaServices[0],
+  },
+  {
     id: 7,
     name: "Расслабляющий спа массаж",
     price: "2000₽",
