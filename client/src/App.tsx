@@ -1,10 +1,16 @@
-import { Route, Switch, useLocation } from "wouter";
+import { Route, Switch, useLocation, useRouter } from "wouter";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { useState, useEffect, useMemo, lazy, Suspense } from "react";
 import { routeSeoData } from "@/data/navigation";
+
+// Для поддержки базового пути GitHub Pages
+const BASE_PATH = process.env.NODE_ENV === 'production' 
+  ? (window.location.pathname.startsWith('/')
+     ? window.location.pathname.split('/')[1] : '')
+  : '';
 
 // Базовые компоненты с обычным импортом для ключевых элементов интерфейса
 import BottomNavigation from "@/components/BottomNavigation";
@@ -31,6 +37,20 @@ function Router({ setActiveTab }: { setActiveTab: (tab: string) => void }) {
       </div>
     </div>
   );
+
+  // Настраиваем маршрутизатор для корректной работы на GitHub Pages
+  useEffect(() => {
+    // Вспомогательная функция для обработки редиректов с GitHub Pages
+    const handleGitHubPagesRedirect = () => {
+      const { search } = window.location;
+      if (search && search.includes('?/')) {
+        const path = search.split('?/')[1].split('?')[0];
+        window.history.replaceState(null, '', '/' + (BASE_PATH ? BASE_PATH + '/' : '') + path);
+      }
+    };
+
+    handleGitHubPagesRedirect();
+  }, []);
 
   return (
     <Suspense fallback={<LoadingFallback />}>
