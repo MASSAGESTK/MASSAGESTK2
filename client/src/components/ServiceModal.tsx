@@ -92,7 +92,7 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
           
           <div className="py-3">
             <p className="text-sm text-center text-muted-foreground">
-              Для записи на услугу вы будете перенаправлены в Telegram бот, 
+              Для записи на услугу вы будете перенаправлены в ВК, 
               где сможете выбрать удобное время и оформить запись.
             </p>
           </div>
@@ -102,7 +102,7 @@ const ServiceModal = ({ isOpen, onClose, service }: ServiceModalProps) => {
               className="bg-primary hover:bg-primary/80 text-white w-full"
               onClick={handleConfirmTelegram}
             >
-              Перейти в Telegram
+              Перейти в ВК
             </Button>
           </DialogFooter>
         </DialogContent>
