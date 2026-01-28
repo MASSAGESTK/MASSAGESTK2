@@ -30,32 +30,6 @@ const SettingsPage = () => {
         <div className="p-4 border-b border-border">
           <h2 className="font-medium">Профиль</h2>
         </div>
-        
-        <div className="p-4 space-y-4">
-          <div className="flex items-center justify-between">
-            <div>
-              <h3 className="font-medium">Уведомления</h3>
-              <p className="text-sm text-muted-foreground">Получать уведомления о новых акциях и предложениях</p>
-            </div>
-            <Switch 
-              checked={notifications}
-              onCheckedChange={setNotifications}
-              className="data-[state=checked]:bg-primary"
-            />
-          </div>
-          
-          <div className="flex items-center justify-between">
-            <div>
-              <h3 className="font-medium">Напоминания</h3>
-              <p className="text-sm text-muted-foreground">Напоминать о предстоящих записях</p>
-            </div>
-            <Switch 
-              checked={reminders}
-              onCheckedChange={setReminders}
-              className="data-[state=checked]:bg-primary"
-            />
-          </div>
-        </div>
       </div>
       
       <div className="bg-card rounded-lg shadow-md dark:shadow-white/5 overflow-hidden mt-6">
@@ -74,13 +48,6 @@ const SettingsPage = () => {
               onCheckedChange={toggleTheme}
               className="data-[state=checked]:bg-primary"
             />
-          </div>
-          
-          <div>
-            <h3 className="font-medium mb-2">Связаться с поддержкой</h3>
-            <Button className="w-full bg-primary hover:bg-primary/80 text-white">
-              Написать
-            </Button>
           </div>
         </div>
       </div>
