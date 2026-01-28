@@ -30,7 +30,7 @@ const PromotionsPage = () => {
   // Мемоизированная функция обработки подтверждения перехода в Telegram
   const handleConfirmTelegram = useCallback(() => {
     // Простое открытие Telegram бота без кодировки параметров
-    window.open("https://t.me/Natali_Secrets_bot", "_blank");
+    window.open("https://vk.com/natalisecretstop", "_blank");
     closeTelegramModal();
   }, [closeTelegramModal]);
 
@@ -72,8 +72,8 @@ const PromotionsPage = () => {
           <div className="py-3">
             <p className="text-sm text-center text-muted-foreground">
               {selectedPromoId === 1 
-                ? "Для получения скидки 10% на первое посещение вы будете перенаправлены в Telegram бот, где сможете оформить запись со скидкой."
-                : "Для приобретения абонемента вы будете перенаправлены в Telegram бот, где сможете оформить покупку и получить всю необходимую информацию."}
+                ? "Для получения скидки 10% на первое посещение вы будете перенаправлены в ВК, где сможете оформить запись со скидкой."
+                : "Для приобретения абонемента вы будете перенаправлены в ВК, где сможете оформить покупку и получить всю необходимую информацию."}
             </p>
           </div>
           
@@ -82,7 +82,7 @@ const PromotionsPage = () => {
               className="bg-primary hover:bg-primary/90 text-white w-full shadow-sm hover:shadow-md transition-all"
               onClick={handleConfirmTelegram}
             >
-              Перейти в Telegram
+              Перейти в ВК
             </Button>
           </DialogFooter>
         </DialogContent>
