@@ -78,7 +78,7 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
       
       // Безопасное открытие Telegram бота с параметрами
       window.open(
-        `https://t.me/Natali_Secrets_bot?start=main_${source}_${description}`, 
+        `https://vk.com/natalisecretstop${source}_${description}`, 
         "_blank",
         "noopener,noreferrer"
       );
@@ -170,7 +170,7 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
 
           <div className="py-3">
             <p className="text-sm text-center text-muted-foreground">
-              Для записи на услугу вы будете перенаправлены в Telegram бот, где
+              Для записи на услугу вы будете перенаправлены в ВК, где
               сможете выбрать удобное время и оформить запись.
             </p>
           </div>
@@ -180,7 +180,7 @@ const HomePage = ({ setActiveTab }: HomePageProps) => {
               className="bg-primary hover:bg-primary/90 text-white w-full shadow-sm hover:shadow-md transition-all"
               onClick={handleConfirmTelegram}
             >
-              Перейти в Telegram
+              Перейти в ВК
             </Button>
           </DialogFooter>
         </DialogContent>
