@@ -14,9 +14,9 @@ const AboutPage = () => {
           className="w-full h-32 object-cover shadow-sm"
         />
         <div className="p-4">
-          <h2 className="font-medium text-lg mb-2">Natali Secrets</h2>
+          <h2 className="font-medium text-lg mb-2">Секркет Натальи</h2>
           <p className="text-sm text-muted-foreground">
-            Студия красоты Natali Secrets – это место, где каждый клиент получает индивидуальный подход и высококачественные услуги. 
+            Студия красоты Секркет Натальи – это место, где каждый клиент получает индивидуальный подход и высококачественные услуги. 
             Мы специализируемся на косметологии, массаже и коррекции фигуры, используя профессиональные продукты и современное оборудование.
           </p>
         </div>
@@ -47,15 +47,6 @@ const AboutPage = () => {
           <h2 className="font-medium text-lg mb-2">Социальные сети</h2>
           <div className="flex space-x-6 mt-3">
             <a 
-              href={socialLinks.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary text-xl hover:text-primary/80 hover:drop-shadow-md transition-all"
-              aria-label="Instagram"
-            >
-              <SiInstagram size={24} />
-            </a>
-            <a 
               href={socialLinks.vkontakte}
               target="_blank"
               rel="noopener noreferrer"
@@ -63,15 +54,6 @@ const AboutPage = () => {
               aria-label="ВКонтакте"
             >
               <SiVk size={24} />
-            </a>
-            <a 
-              href={"https://t.me/" + socialLinks.telegram.replace('@', '')}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary text-xl hover:text-primary/80 hover:drop-shadow-md transition-all"
-              aria-label="Telegram"
-            >
-              <SiTelegram size={24} />
             </a>
           </div>
         </div>
