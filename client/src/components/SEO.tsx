@@ -12,7 +12,7 @@ interface SEOProps {
  * Компонент для динамического управления SEO-метаданными и структурированными данными
  */
 export const SEO = ({
-  title = "Natali Secrets - Салон красоты и спа в Сыктывкаре",
+  title = "Секрет Натальи - Салон красоты и спа в Сыктывкаре",
   description = "Эксклюзивные программы по уходу за телом и лицом в уютном спа-салоне Натали Сикретс в Сыктывкаре. Профессиональные косметические процедуры, массаж, коррекция фигуры для всех возрастов от 14 до 80 лет.",
   image = "/icons/og-image.jpg",
   schemaType = "WebSite",
@@ -27,7 +27,7 @@ export const SEO = ({
     city: "Сыктывкар",
     region: "Республика Коми",
     postalCode: "167000",
-    address: "ул. Первомайская, 115" // Примерный адрес, замените на реальный
+    address: "ул. Морозова, 3"
   };
   
   return (
@@ -48,7 +48,7 @@ export const SEO = ({
       <link rel="canonical" href={siteUrl} />
       
       {/* Open Graph разметка */}
-      <meta property="og:site_name" content="Natali Secrets" />
+      <meta property="og:site_name" content="Секрет Натальи" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={article ? "article" : "website"} />
