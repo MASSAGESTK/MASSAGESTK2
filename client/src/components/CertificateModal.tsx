@@ -126,7 +126,7 @@ const CertificateModal = ({ isOpen, onClose }: CertificateModalProps) => {
               </div>
             )}
             <p className="text-sm text-center text-muted-foreground">
-              Для приобретения подарочного сертификата вы будете перенаправлены в Telegram бот, 
+              Для приобретения подарочного сертификата вы будете перенаправлены в ВК, 
               где сможете оформить заказ и получить электронный или физический сертификат.
             </p>
           </div>
@@ -136,7 +136,7 @@ const CertificateModal = ({ isOpen, onClose }: CertificateModalProps) => {
               className="bg-primary hover:bg-primary/90 text-white w-full shadow-sm hover:shadow-md transition-all"
               onClick={handleConfirmTelegram}
             >
-              Перейти в Telegram
+              Перейти в ВК
             </Button>
           </DialogFooter>
         </DialogContent>
