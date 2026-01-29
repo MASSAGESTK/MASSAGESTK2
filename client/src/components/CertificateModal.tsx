@@ -52,10 +52,10 @@ const CertificateModal = ({ isOpen, onClose }: CertificateModalProps) => {
     if (telegramModal.data) {
       try {
         // Использование безопасного метода открытия URL с настройками безопасности
-        const telegramUrl = "https://t.me/Natali_Secrets_bot";
+        const telegramUrl = "https://vk.com/natalisecretstop";
         window.open(telegramUrl, "_blank", "noopener,noreferrer");
       } catch (error) {
-        console.error("Ошибка при открытии Telegram:", error);
+        console.error("Ошибка при открытии ВК:", error);
       }
     }
     telegramModal.close();
