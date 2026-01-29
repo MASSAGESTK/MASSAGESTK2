@@ -38,7 +38,7 @@ const ProgramModal = ({ isOpen, onClose, program }: ProgramModalProps) => {
 
   const handleConfirmTelegram = () => {
     // Простое открытие Telegram бота без кодировки параметров
-    window.open("https://t.me/Natali_Secrets_bot", "_blank");
+    window.open("https://vk.com/natalisecretstop", "_blank");
     setShowTelegramModal(false);
     onClose();
   };
@@ -135,7 +135,7 @@ const ProgramModal = ({ isOpen, onClose, program }: ProgramModalProps) => {
           
           <div className="py-3">
             <p className="text-sm text-center text-muted-foreground">
-              Для получения консультации и записи на программу вы будете перенаправлены в Telegram бот, 
+              Для получения консультации и записи на программу вы будете перенаправлены в ВК, 
               где сможете задать интересующие вопросы и оформить запись.
             </p>
           </div>
@@ -145,7 +145,7 @@ const ProgramModal = ({ isOpen, onClose, program }: ProgramModalProps) => {
               className="bg-primary hover:bg-primary/90 text-white w-full shadow-sm hover:shadow-md transition-all"
               onClick={handleConfirmTelegram}
             >
-              Перейти в Telegram
+              Перейти в ВК
             </Button>
           </DialogFooter>
         </DialogContent>
